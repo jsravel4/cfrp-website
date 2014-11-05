@@ -2,8 +2,8 @@
 title: CFRP
 email: hyperstudio-support@mit.edu
 description: "Informational website for the Comédie Française Registers Project."
-baseurl: "/cfrp-website"
-url: "http://hyperstudio.github.io/cfrp-website"
+baseurl: ""
+url: "http://cfregisters.org"
 twitter_username: mithyperstudio
 github_username:  hyperstudio
 
