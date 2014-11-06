@@ -5,17 +5,17 @@
     <description>Informational website for the Comédie Française Registers Project.</description>
     <link>http://cfregisters.org/</link>
     <atom:link href="http://cfregisters.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 06 Nov 2014 14:47:31 -0500</pubDate>
-    <lastBuildDate>Thu, 06 Nov 2014 14:47:31 -0500</lastBuildDate>
+    <pubDate>Thu, 06 Nov 2014 14:52:56 -0500</pubDate>
+    <lastBuildDate>Thu, 06 Nov 2014 14:52:56 -0500</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
-        <title>Project History</title>
-        <description>&lt;p&gt;Project history content in English&lt;/p&gt;
+        <title>Article</title>
+        <description>&lt;p&gt;Article in English&lt;/p&gt;
 </description>
         <pubDate>Thu, 06 Nov 2014 00:00:00 -0500</pubDate>
-        <link>http://cfregisters.org/news/2014/11/06/news-item/</link>
-        <guid isPermaLink="true">http://cfregisters.org/news/2014/11/06/news-item/</guid>
+        <link>http://cfregisters.org/news/news-item/</link>
+        <guid isPermaLink="true">http://cfregisters.org/news/news-item/</guid>
         
         
         <category>news</category>
@@ -23,35 +23,15 @@
       </item>
     
       <item>
-        <title>Histoire du Projet</title>
-        <description>&lt;p&gt;Project history content in French&lt;/p&gt;
+        <title>Article en Français</title>
+        <description>&lt;p&gt;Article in French&lt;/p&gt;
 </description>
         <pubDate>Thu, 06 Nov 2014 00:00:00 -0500</pubDate>
-        <link>http://cfregisters.org/2014/11/06/histoire-du-projet/</link>
-        <guid isPermaLink="true">http://cfregisters.org/2014/11/06/histoire-du-projet/</guid>
+        <link>http://cfregisters.org/news/fr-news-item/</link>
+        <guid isPermaLink="true">http://cfregisters.org/news/fr-news-item/</guid>
         
         
-      </item>
-    
-      <item>
-        <title>Index</title>
-        <description>
-</description>
-        <pubDate>Sun, 02 Jan 0000 00:00:00 -0500</pubDate>
-        <link>http://cfregisters.org/0000/01/02/index/</link>
-        <guid isPermaLink="true">http://cfregisters.org/0000/01/02/index/</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Index</title>
-        <description>
-</description>
-        <pubDate>Sat, 01 Jan 0000 00:00:00 -0500</pubDate>
-        <link>http://cfregisters.org/0000/01/01/index/</link>
-        <guid isPermaLink="true">http://cfregisters.org/0000/01/01/index/</guid>
-        
+        <category>news</category>
         
       </item>
     

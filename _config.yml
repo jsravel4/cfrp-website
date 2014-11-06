@@ -19,18 +19,21 @@ markdown: kramdown
 
 # Outputting
 # permalink: /:categories/:title/ <-- trying to get this to use lang variable
-permalink: pretty
+permalink: /:categories/:title/
 
+# Using the following approach for multilingual posts:
+# http://sylvain.durand.tf/making-jekyll-multilingual/
+# I have a question out on whether we can get the lang variable into permalinks
 defaults:
   -
     scope:
       path: _posts/en
     values:
-      layout: _layouts/default
+      layout: _layouts/page
       lang: en
   -
     scope:
       path: _posts/fr
     values:
-      layout: _layouts/default
+      layout: _layouts/page
       lang: fr
