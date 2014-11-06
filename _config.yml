@@ -2,7 +2,7 @@
 title: CFRP
 email: hyperstudio-support@mit.edu
 description: "Informational website for the Comédie Française Registers Project."
-# baseurl: ""
+baseurl: ""
 url: "http://cfregisters.org"
 twitter_username: mithyperstudio
 github_username:  hyperstudio
@@ -10,14 +10,6 @@ github_username:  hyperstudio
 # Where things are
 destination:      ./_site
 source:           .
-
-# collections:
-#   en_news:
-#     output: true
-#     permalink: /en/news/:name/
-#   fr_news:
-#     output: true
-#     permalink: /fr/news/:name/
 
 
 # Handling Reading
@@ -27,22 +19,21 @@ exclude:           ["templates", "Gemfile", "Gemfile.lock"]
 markdown: kramdown
 
 # Outputting
-# permalink: /:categories/:title/ <-- trying to get this to use lang variable
+# Note that en and fr need to appear first as categories to establish URLs properly
 permalink: /:categories/:title/
 
 # Using the following approach for multilingual posts:
 # http://sylvain.durand.tf/making-jekyll-multilingual/
-# I have a question out on whether we can get the lang variable into permalinks
 defaults:
   -
     scope:
-      path: _posts/en
+      path: _posts/news/en
     values:
-      layout: _layouts/page
+      layout: _layouts/article
       lang: en
   -
     scope:
-      path: _posts/fr
+      path: _posts/news/fr
     values:
-      layout: _layouts/page
+      layout: _layouts/article
       lang: fr
