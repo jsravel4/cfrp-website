@@ -1,0 +1,44 @@
+/*Add fonts*/
+
+@font-face {
+  font-family: 'MuseoSans300';
+  src: url('fonts/2386DB_1_0.eot'); /* IE9 Compat Modes */
+  src: url('fonts/2386DB_1_0.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/2386DB_1_0.woff') format('woff'), /* Modern Browsers */
+       url('fonts/2386DB_1_0.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'MuseoSans500';
+  src: url('fonts/2386DB_2_0.eot'); /* IE9 Compat Modes */
+  src: url('fonts/2386DB_2_0.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/2386DB_2_0.woff') format('woff'), /* Modern Browsers */
+       url('fonts/2386DB_2_0.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'MuseoSans700';
+  src: url('fonts/2386DB_0_0.eot'); /* IE9 Compat Modes */
+  src: url('fonts/2386DB_0_0.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/2386DB_0_0.woff') format('woff'), /* Modern Browsers */
+       url('fonts/2386DB_0_0.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'Museo300';
+  src: url('fonts/23859B_2_0.eot'); /* IE9 Compat Modes */
+  src: url('fonts/23859B_2_0.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/23859B_2_0.woff') format('woff'), /* Modern Browsers */
+       url('fonts/23859B_2_0.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'Museo500';
+  src: url('fonts/23859B_4_0.eot'); /* IE9 Compat Modes */
+  src: url('fonts/23859B_4_0.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/23859B_4_0.woff') format('woff'), /* Modern Browsers */
+       url('fonts/23859B_4_0.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+
+
+/*end font add*/

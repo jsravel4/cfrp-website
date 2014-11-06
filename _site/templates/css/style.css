@@ -1,0 +1,287 @@
+/*body {
+	color:#3b3b3b;
+}*/
+.top-bar {
+  background-color: gray;
+  height: 45px; }
+
+.top-bar-section li a {
+  font-family: 'MuseoSans500', Helvetica, sans-serif; }
+
+#top-menu-link {
+  display: none; }
+
+.flag {
+  width: 60px; }
+
+.flag li a {
+  padding: 0 3px; }
+
+#flag-left {
+  margin-left: 2em; }
+
+#flag-left li a {
+  padding: 0 3px; }
+
+#cfrp-logo-wide {
+  background: none;
+  /*position absolutely - this is a test to see what happens*/
+  position: absolute;
+  left: 10em; }
+
+#cfrp-logo-narrow {
+  display: none; }
+
+#cfrp-logo {
+  width: 145px;
+  height: 145px;
+  background: none; }
+
+#cfrp-name {
+  display: none; }
+
+.orbit-image {
+  background-size: cover;
+  height: 600px; }
+
+#header-image-caption-container {
+  background: url("../img/header-img-1.jpg") no-repeat center center fixed;
+  background-size: cover;
+  padding: 12em 0 0 0; }
+
+#caption-container {
+  background-color: rgba(254, 206, 60, 0.6); }
+
+.yellow-background {
+  background: rgba(254, 206, 60, 0.6); }
+
+/* Styling the links in the top-bar */
+.top-nav-link a:not(.button) {
+  font-family: 'MuseoSans500', Helvetica, sans-serif;
+  font-size: .75em;
+  text-transform: uppercase;
+  letter-spacing: 0.075em; }
+
+#go-to-app a {
+  background-color: #353535;
+  color: #fece3c;
+  font-family: 'MuseoSans700', Helvetica, sans-serif;
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em; }
+
+#french-language {
+  display: none; }
+
+#english-language {
+  display: none; }
+
+/* Styling the Case study columns on homepage */
+.home-case-study-column article h4 {
+  font-family: 'MuseoSans700', Helvetica, Sans-serif;
+  font-size: 0.75em;
+  text-transform: uppercase;
+  letter-spacing: 0.075em; }
+
+.home-case-study-column article h2 {
+  font-family: 'Museo300', Helvetica, Sans-serif;
+  font-size: 1.5em; }
+
+.home-case-study-entry {
+  margin-bottom: 2em; }
+
+/* Styling the basics on the homepage */
+.home-basics-column {
+  margin-bottom: 2em; }
+
+.home-basics-column article h4 {
+  font-family: 'MuseoSans700', Helvetica, Sans-serif;
+  font-size: 0.75em;
+  text-transform: uppercase;
+  letter-spacing: 0.075em; }
+
+.home-basics-column article h1 {
+  font-family: 'Museo300', Helvetica, Sans-serif;
+  font-size: 2.25em; }
+
+.home-basics-column article p {
+  font-family: 'Museo300', Helvetica, sans-serif;
+  font-size: 1.5em; }
+
+.home-basics-column img {
+  width: 100%;
+  margin-bottom: 1.5em; }
+
+/* Styling the orbit captions */
+.hero-captions {
+  margin: 1em 0 0 0; }
+
+.hero-captions h1 {
+  font-family: 'Museo300', Helvetica, sans-serif; }
+
+.hero-captions h3 {
+  font-family: 'Museo300', Helvetica, sans-serif; }
+
+.hero-captions h6 {
+  font-family: 'MuseoSans700', Helvetica, sans-serif;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.075em;
+  font-weight: normal; }
+
+.hero-captions p a {
+  font-family: 'MuseoSans700', Helvetica, sans-serif;
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 0.075em; }
+
+/* Styling orbit slider for mobile */
+#test-med {
+  display: none; }
+
+#test-sm {
+  display: none; }
+
+/* Styling the footer */
+#footer-wrapper {
+  background-color: #353535;
+  margin-top: 2em;
+  padding: 2em 0 2em 0; }
+
+#footer-wrapper a {
+  color: #fff; }
+
+#footer-wrapper p {
+  color: #FFF;
+  font-size: 1rem; }
+
+#search_container {
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  background-color: #FFF;
+  width: 228px;
+  height: 38px;
+  overflow: hidden;
+  background-image: url(../img/search.png);
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  margin-bottom: 20px; }
+
+#search_container input {
+  width: 180px;
+  height: 38px;
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none; }
+
+#logos .columns {
+  padding-top: 30px; }
+
+/* styling the left navigation on the project background pages */
+.content_row {
+  margin-top: 20px; }
+
+#pb-left-nav h6 {
+  font-family: 'MuseoSans700', Helvetica, sans-serif;
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 0.075em; }
+
+#pb-left-nav ul {
+  list-style: none;
+  margin-left: 0; }
+
+#pb-left-nav ul li {
+  margin: 5px 0;
+  padding: 10px 0;
+  border-bottom: 1px black solid; }
+
+#pb-left-nav ul li a {
+  color: #3b3b3b; }
+
+.current {
+  background-color: #fece3c; }
+
+/* styling the intro paragraph on the content pages */
+h3.main_content {
+  font-family: 'MuseoSans500', Helvetica, sans-serif;
+  font-size: 1.75em;
+  color: #3b3b3b;
+  margin-bottom: 1em; }
+
+.menu-icon {
+  width: auto; }
+
+/* styling the case studies page */
+.cs_orbit {
+  width: 100%;
+  height: 200px; }
+
+/* media queries */
+@media screen and (max-width: 1080px) {
+  #top-menu-link {
+    display: block; }
+
+  #cfrp-logo-container {
+    pointer-events: none;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    top: 0px;
+    left: 0px;
+    z-index: 100; }
+    #cfrp-logo-container #cfrp-logo-narrow {
+      position: absolute;
+      display: block;
+      margin-top: -20px;
+      margin-right: -20px;
+      right: 0%; }
+      #cfrp-logo-container #cfrp-logo-narrow img {
+        transform: scale(0.65);
+        -webkit-transform: scale(0.65);
+        -moz-transform: scale(0.65); }
+
+  #cfrp-logo-wide {
+    display: none; }
+
+  #cfrp-name {
+    display: block; }
+
+  .flag {
+    display: none; }
+
+  #french-language {
+    display: block; }
+
+  #english-language {
+    display: block; }
+
+  .orbit-image {
+    height: 400px; } }
+@media screen and (max-width: 480px) {
+  .orbit-container {
+    margin-bottom: 20px; }
+
+  .orbit-bullets-container {
+    display: none; }
+
+  .orbit-image {
+    height: 300px; }
+
+  .orbit-wrapper .slider-nav {
+    display: block !important; }
+
+  .hero-captions h1 {
+    font-size: 1.75rem; }
+
+  .hero-captions h3 {
+    line-height: 1.1; }
+
+  .home-basics-column article h1 {
+    font-family: 'Museo300', Helvetica, Sans-serif;
+    font-size: 1.75em; }
+
+  .home-basics-column article p {
+    font-size: 1.2em; } }
