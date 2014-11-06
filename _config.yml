@@ -7,6 +7,30 @@ url: "http://cfregisters.org"
 twitter_username: mithyperstudio
 github_username:  hyperstudio
 
-# Build settings
+# Where things are
+source:           .
+destination:      ./_site
+
+# Handling Reading
+exclude:           ["templates", "Gemfile", "Gemfile.lock"]
+
+# Conversion
 markdown: kramdown
+
+# Outputting
+# permalink: /:categories/:title/ <-- trying to get this to use lang variable
 permalink: pretty
+
+defaults:
+  -
+    scope:
+      path: _posts/en
+    values:
+      layout: _layouts/default
+      lang: en
+  -
+    scope:
+      path: _posts/fr
+    values:
+      layout: _layouts/default
+      lang: fr

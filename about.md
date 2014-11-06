@@ -1,7 +1,8 @@
 ---
+lang: en
 layout: page
-title: About
 permalink: /about/
+title: About
 ---
 
 Ceci non plus.
