@@ -5,8 +5,8 @@
     <description>Informational website for the Comédie Française Registers Project.</description>
     <link>http://cfregisters.org/</link>
     <atom:link href="http://cfregisters.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 06 Nov 2014 14:52:56 -0500</pubDate>
-    <lastBuildDate>Thu, 06 Nov 2014 14:52:56 -0500</lastBuildDate>
+    <pubDate>Thu, 06 Nov 2014 15:35:51 -0500</pubDate>
+    <lastBuildDate>Thu, 06 Nov 2014 15:35:51 -0500</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -14,9 +14,11 @@
         <description>&lt;p&gt;Article in English&lt;/p&gt;
 </description>
         <pubDate>Thu, 06 Nov 2014 00:00:00 -0500</pubDate>
-        <link>http://cfregisters.org/news/news-item/</link>
-        <guid isPermaLink="true">http://cfregisters.org/news/news-item/</guid>
+        <link>http://cfregisters.org/en/news/news-item/</link>
+        <guid isPermaLink="true">http://cfregisters.org/en/news/news-item/</guid>
         
+        
+        <category>en</category>
         
         <category>news</category>
         
@@ -27,9 +29,11 @@
         <description>&lt;p&gt;Article in French&lt;/p&gt;
 </description>
         <pubDate>Thu, 06 Nov 2014 00:00:00 -0500</pubDate>
-        <link>http://cfregisters.org/news/fr-news-item/</link>
-        <guid isPermaLink="true">http://cfregisters.org/news/fr-news-item/</guid>
+        <link>http://cfregisters.org/fr/news/fr-news-item/</link>
+        <guid isPermaLink="true">http://cfregisters.org/fr/news/fr-news-item/</guid>
         
+        
+        <category>fr</category>
         
         <category>news</category>
         
