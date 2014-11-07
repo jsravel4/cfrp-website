@@ -27,13 +27,17 @@ permalink: /:categories/:title/
 defaults:
   -
     scope:
-      path: _posts/news/en
+      path: "news/en"
     values:
-      layout: _layouts/article
-      lang: en
+      categories: "en news"
+      lang: "en"
+      layout: "post"
   -
     scope:
-      path: _posts/news/fr
+      path: "news/fr"
     values:
-      layout: _layouts/article
-      lang: fr
+      author: "mjr"
+      categories: "fr news"
+      custom_var: "test"
+      lang: "fr"
+      layout: "post"

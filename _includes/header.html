@@ -10,9 +10,9 @@
   {% endif %}
 {% endfor %}
 
-{% assign pages=site.pages | where:"id", page.id | sort: 'lang' %}
+{% assign pages=site.pages | where:"tid", page.tid | sort: 'lang' %}
 {% for tpage in pages reversed %}
-{% if tpage.id != "default-home" %}
+{% if tpage.tid != "default-home" %}
           <li class="top-nav-link {{ tpage.lang }}-language">
               <a href="{{ tpage.url }}">{{ tpage.lang }}</a>
           </li>
@@ -21,7 +21,7 @@
           <li class="top-nav-link fr-language"><a href="/fr">Fr</a></li>
 {% endif %}
 {% endfor %}
-{% assign posts=site.posts | where:"name", page.name | sort: 'lang' %}
+{% assign posts=site.posts | where:"tid", page.tid | sort: 'lang' %}
 {% for tpost in posts reversed %}
           <li class="top-nav-link {{ tpost.lang }}-language">
               <a href="{{ tpost.url }}">{{ tpost.lang }}</a>
@@ -37,7 +37,7 @@
         <!-- Left Nav Section -->
         <ul class="left">
 {% for tpage in pages reversed %}
-{% if tpage.id != "default-home" %}
+{% if tpage.tid != "default-home" %}
           <li class="flag" id="flag-{% if tpage.lang == "fr" %}left{% else %}right{% endif %}">
             <a href="{{ tpage.url }}"><img src="/img/{{tpage.lang}}-flag.png"></a>
           </li>

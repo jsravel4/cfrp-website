@@ -1,7 +1,5 @@
 ---
-categories: fr news
-name: article
-layout: article
+tid: article
 title: Article en Français
 ---
 Article in French
