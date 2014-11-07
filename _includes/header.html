@@ -12,7 +12,7 @@
 
 {% assign pages=site.pages | where:"id", page.id | sort: 'lang' %}
 {% for tpage in pages reversed %}
-{% if tpage.id == "home" %}
+{% if tpage.id != "default-home" %}
           <li class="top-nav-link {{ tpage.lang }}-language">
               <a href="{{ tpage.url }}">{{ tpage.lang }}</a>
           </li>
@@ -20,6 +20,12 @@
           <li class="top-nav-link en-language"><a href="/en">En</a></li>
           <li class="top-nav-link fr-language"><a href="/fr">Fr</a></li>
 {% endif %}
+{% endfor %}
+{% assign posts=site.posts | where:"name", page.name | sort: 'lang' %}
+{% for tpost in posts reversed %}
+          <li class="top-nav-link {{ tpost.lang }}-language">
+              <a href="{{ tpost.url }}">{{ tpost.lang }}</a>
+          </li>
 {% endfor %}
 
 {% for navitem in site.data.single-translations %}
@@ -31,7 +37,7 @@
         <!-- Left Nav Section -->
         <ul class="left">
 {% for tpage in pages reversed %}
-{% if tpage.id == "home" %}
+{% if tpage.id != "default-home" %}
           <li class="flag" id="flag-{% if tpage.lang == "fr" %}left{% else %}right{% endif %}">
             <a href="{{ tpage.url }}"><img src="/img/{{tpage.lang}}-flag.png"></a>
           </li>
@@ -43,6 +49,11 @@
             <a href="/en"><img src="/img/en-flag.png"></a>
           </li>
 {% endif %}
+{% endfor %}
+{% for tpost in posts reversed %}
+          <li class="flag" id="flag-{% if tpost.lang == "fr" %}left{% else %}right{% endif %}">
+            <a href="{{ tpost.url }}"><img src="/img/{{tpost.lang}}-flag.png"></a>
+          </li>
 {% endfor %}
         </ul>
         <a href="/{{page.lang}}" id="cfrp-logo-wide"><img src="/img/cfrp-logo-top-nav.png"></a>

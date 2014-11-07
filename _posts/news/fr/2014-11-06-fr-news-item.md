@@ -1,7 +1,7 @@
 ---
 categories: fr news
-name: article-en-francais
+name: article
+layout: article
 title: Article en Français
 ---
-
 Article in French
