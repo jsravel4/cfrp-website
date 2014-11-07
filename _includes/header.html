@@ -32,7 +32,7 @@
         <ul class="left">
 {% for tpage in pages reversed %}
 {% if tpage.id == "home" %}
-          <li class="flag" id="flag-{% if tpage.lang=="fr" %}left{% else %}right{% endif %}">
+          <li class="flag" id="flag-{% if tpage.lang == "fr" %}left{% else %}right{% endif %}">
             <a href="{{ tpage.url }}"><img src="/img/{{tpage.lang}}-flag.png"></a>
           </li>
 {% else %}
