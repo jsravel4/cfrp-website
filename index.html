@@ -1,5 +1,6 @@
 ---
 layout: default
+lang: en
 ---
 
 <div class="home">
@@ -7,6 +8,11 @@ layout: default
   <h1>Posts</h1>
 
   <ul class="posts">
+{% for navitem in site.data.translations %}
+  {% if navitem.lang == page.lang %}
+      <li><a href="{{navitem.url}}">{{navitem.title}}</a></li>
+  {% endif %}
+{% endfor %}
     {% for post in site.posts %}
       <li>
         <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
