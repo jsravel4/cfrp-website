@@ -96,11 +96,13 @@
 	letter-spacing: 0.1em;
 }
 
-#french-language {
+#french-language,
+.fr-language {
 	display:none;
 }
 
-#english-language {
+#english-language,
+.en-language {
 	display:none;
 }
 
@@ -154,7 +156,7 @@
 
 
 .hero-captions {
-	margin:1em 0 0 0;	
+	margin:1em 0 0 0;
 }
 
 .hero-captions h1 {
@@ -312,45 +314,47 @@ h3.main_content {
     top: 0px;
     left: 0px;
     z-index: 100;
-    
-    
-    
+
+
+
   	#cfrp-logo-narrow {
   	  position: absolute;
       display: block;
       margin-top: -20px;
       margin-right: -20px;
-      right: 0%; 
-      
+      right: 0%;
+
     	img {
     		transform: scale(.65);
-    		-webkit-transform: scale(.65);	
+    		-webkit-transform: scale(.65);
     		-moz-transform: scale(.65);
-    	}    
+    	}
   	}
   }
-  
+
   #cfrp-logo-wide
   {
     display: none;
   }
-	
+
 	#cfrp-name {
 		display:block;
 	}
-	
+
 	.flag {
 		display:none;
 	}
-	
-	#french-language {
+
+	#french-language,
+    .fr-language {
 		display:block;
 	}
-	
-	#english-language {
+
+	#english-language,
+    .en-language {
 		display:block;
 	}
-	
+
 	.orbit-image
 	{
     height: 400px;
@@ -359,28 +363,28 @@ h3.main_content {
 
 @media screen and (max-width: 480px) {
 	//Change the orbit on small screens
-	
+
 	.orbit-container
 	{
   	margin-bottom: 20px;
 	}
-	
+
 	.orbit-bullets-container
 	{
-    display: none;	
+    display: none;
 	}
-	
+
 	.orbit-image
 	{
   	height: 300px;
 	}
-	
-	.orbit-wrapper .slider-nav { 
 
-      display: block !important; 
+	.orbit-wrapper .slider-nav {
+
+      display: block !important;
 
   }
-  
+
   .hero-captions h1 {
   	font-size: 1.75rem;
   }
@@ -388,12 +392,12 @@ h3.main_content {
   .hero-captions h3 {
     line-height: 1.1;
   }
-  
+
   .home-basics-column article h1 {
   	font-family:'Museo300', Helvetica, Sans-serif;
   	font-size:1.75em;
   }
-  
+
   .home-basics-column article p
   {
     font-size: 1.2em;

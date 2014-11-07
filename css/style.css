@@ -70,10 +70,12 @@
   text-transform: uppercase;
   letter-spacing: 0.1em; }
 
-#french-language {
+#french-language,
+.fr-language {
   display: none; }
 
-#english-language {
+#english-language,
+.en-language {
   display: none; }
 
 /* Styling the Case study columns on homepage */
@@ -257,10 +259,12 @@ h3.main_content {
   .flag {
     display: none; }
 
-  #french-language {
+  #french-language,
+  .fr-language {
     display: block; }
 
-  #english-language {
+  #english-language,
+  .en-language {
     display: block; }
 
   .orbit-image {

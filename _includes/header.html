@@ -9,8 +9,19 @@
           <li class="top-nav-link"><a href="{{navitem.url}}">{{navitem.title}}</a></li>
   {% endif %}
 {% endfor %}
-          <li class="top-nav-link" id="french-language"><a href="#">French</a></li>
-          <li class="top-nav-link" id="english-language"><a href="#">English</a></li>
+
+{% assign pages=site.pages | where:"id", page.id | sort: 'lang' %}
+{% for tpage in pages reversed %}
+{% if tpage.id == "home" %}
+          <li class="top-nav-link {{ tpage.lang }}-language">
+              <a href="{{ tpage.url }}">{{ tpage.lang }}</a>
+          </li>
+{% else %}
+          <li class="top-nav-link en-language"><a href="/en">En</a></li>
+          <li class="top-nav-link fr-language"><a href="/fr">Fr</a></li>
+{% endif %}
+{% endfor %}
+
 {% for navitem in site.data.single-translations %}
   {% if navitem.lang == page.lang and navitem.name == "go-to-app" %}
           <li id="go-to-app"><a href="{{navitem.url}}">{{navitem.title}}</a></li>
@@ -19,12 +30,20 @@
         </ul>
         <!-- Left Nav Section -->
         <ul class="left">
+{% for tpage in pages reversed %}
+{% if tpage.id == "home" %}
+          <li class="flag" id="flag-{% if tpage.lang=="fr" %}left{% else %}right{% endif %}">
+            <a href="{{ tpage.url }}"><img src="/img/{{tpage.lang}}-flag.png"></a>
+          </li>
+{% else %}
           <li class="flag" id="flag-left">
-            <a href="#"><img src="/img/french-flag.jpg"></a>
+            <a href="/fr"><img src="/img/fr-flag.png"></a>
           </li>
           <li class="flag" id="flag-right">
-            <a href="#"><img src="/img/UK-US-flag.png"></a>
+            <a href="/en"><img src="/img/en-flag.png"></a>
           </li>
+{% endif %}
+{% endfor %}
         </ul>
         <a href="/{{page.lang}}" id="cfrp-logo-wide"><img src="/img/cfrp-logo-top-nav.png"></a>
       </section>
