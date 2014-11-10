@@ -5,9 +5,37 @@
     <description>Informational website for the Comédie Française Registers Project.</description>
     <link>http://cfregisters.org/</link>
     <atom:link href="http://cfregisters.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 07 Nov 2014 16:52:03 -0500</pubDate>
-    <lastBuildDate>Fri, 07 Nov 2014 16:52:03 -0500</lastBuildDate>
+    <pubDate>Mon, 10 Nov 2014 16:04:51 -0500</pubDate>
+    <lastBuildDate>Mon, 10 Nov 2014 16:04:51 -0500</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>Case Study en Français</title>
+        <description>Case Study in French</description>
+        <pubDate>Mon, 10 Nov 2014 00:00:00 -0500</pubDate>
+        <link>http://cfregisters.org/fr/case-studies/fr-case-study/</link>
+        <guid isPermaLink="true">http://cfregisters.org/fr/case-studies/fr-case-study/</guid>
+        
+        
+        <category>fr</category>
+        
+        <category>case-studies</category>
+        
+      </item>
+    
+      <item>
+        <title>Case Study in English</title>
+        <description>Case Study in English</description>
+        <pubDate>Mon, 10 Nov 2014 00:00:00 -0500</pubDate>
+        <link>http://cfregisters.org/en/case-studies/en-case-study/</link>
+        <guid isPermaLink="true">http://cfregisters.org/en/case-studies/en-case-study/</guid>
+        
+        
+        <category>en</category>
+        
+        <category>case-studies</category>
+        
+      </item>
     
       <item>
         <title>Article</title>

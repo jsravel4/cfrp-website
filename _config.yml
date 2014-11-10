@@ -27,17 +27,16 @@ permalink: /:categories/:title/
 defaults:
   -
     scope:
-      path: "news/en"
+      path: "en"
+      type: "posts"
     values:
-      categories: "en news"
       lang: "en"
       layout: "post"
   -
+    # This automatically works for all content in fr path
     scope:
-      path: "news/fr"
+      path: "fr"
+      type: "posts"
     values:
-      author: "mjr"
-      categories: "fr news"
-      custom_var: "test"
       lang: "fr"
       layout: "post"
