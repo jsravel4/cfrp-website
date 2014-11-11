@@ -24,7 +24,7 @@
             <div class="small-10 columns">
 {% for item in site.data.single-translations %}
   {% if item.lang == page.lang and item.name == "join-email-list" %}
-              <input type="text" placeholder="Join The Email List">
+              <input type="text" placeholder="{{item.title}}">
   {% endif %}
 {% endfor %}
             </div>
