@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" >
+<head>
+{% include head.html %}
+</head>
+    <body>
+    <!-- body content here -->
+{% include header.html %}
+
+<ul class="hero-orbit" data-orbit data-options="slide_number:false;navigation_arrows:false;timer_show_progress_bar:false;bullets:false;timer:false;swipe:false;">
+    <li>
+        <div class="orbit-image" style="background-image: url('/img/project-history-image-2.jpg');"></div>
+        <div class="orbit-caption">
+            <div class="row">
+                <div class="small-9 columns hero-captions">
+                    <h6>Project background</h6>
+                    <h1>{{ page.title }}</h1>
+                </div>
+                <div class="small-3 columns hero-captions">
+                    <div class="orbit-bullets">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
+
+<div class="row content_row">
+
+    <!--Begin left nav-->
+    <div class="small-12 large-4 columns" id="pb-left-nav">
+        <h6>Project Background</h6>
+        <ul>
+{% for navitem in site.data.project-background-navigation-translations %}
+  {% if navitem.lang == page.lang %}
+            <li><a href="{{navitem.url}}"{% if navitem.name == page.tid %} class="current"{% endif %}>{{navitem.title}}</a></li>
+  {% endif %}
+{% endfor %}
+</ul>
+</div>
+<!--End left nav-->
+
+<!--Begin main content area-->
+<div class="small-12 large-8 columns">
+<article>
+<!--h3 class="main_content">In an age before radio, movies, TV, and the internet, the public theater was the most important form of entertainment and serious debate in the West.  And in the eighteenth century, the most important public theater troupe in France, and perhaps all of Europe and its colonies, was the Parisian institution known as the Comédie-Française.  Its actors kept detailed daily records of box office receipts, expenditures, and repertory decisions.  Now, the Comédie-Française Registers Project (CFRP) makes these records available online to all who want to learn more about a major cultural institution in Enlightenment Europe.</h3>
+
+<p>Did the French prefer the comedies of Molière or the tragedies of Voltaire in the 1700s?  Was the theater a means to circulate enlightened ideals that led to the revolution at the end of the eighteenth century, or was it a royalist institution promoting tradition and conservatism in the face of inevitable change?  How hard was it to earn a living as a professional actor before 1800?  Insight into these questions, and many more, is now available via the CFRP database and its search and visualization tools.</p-->
+</article>
+</div>
+<!--End main content area-->
+
+</div>
+
+{% include footer.html %}
+    </body>
+</html>
