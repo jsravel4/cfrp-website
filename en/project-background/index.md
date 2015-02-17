@@ -1,0 +1,11 @@
+---
+lang: en
+layout: project-background
+tid: project-history
+title: Project History
+---
+The Com&eacute;die-Fran&ccedil;aise Registers Project (CFRP) is inspired by an earlier online project devoted to pre-1800 French theater, CESAR (Calendrier Électronique des Spectacles sous l&rsquo;Ancien R&eacute;gime et sous la R&eacute;volution, http://www.cesar.org.uk/). CESAR is an online repository of over 400,000 data items covering plays, playwrights, actors, performance spaces and any other information on all types of spectacle in the francophone world between 1600 and 1800.
+
+The CFRP seeks to build on the CESAR project by focusing exclusively on the rich administrative archives of the Com&eacute;die-Fran&ccedil;aise (CF), the most important theater troupe in France from its founding in 1680 until the French Revolution. The project first began to take shape in the summer of 2008 when Massachusetts Institute of Technology History Professor Jeffrey Ravel and his students, working with HyperStudio (MIT&rsquo;s digital humanities laboratory), developed an online project prototype consisting of complete receipt data from the 1773-74 and 1774-75 CF seasons.
+
+In the summer of 2010, MIT and the Com&eacute;die-Fran&ccedil;aise signed an intellectual property agreement granting MIT the right to post high-resolution digital facsimiles of the troupe&rsquo;s registers online, alongside the box office data extracted from them. At the same time, MIT and the CF agreed to partner with Professors Christian Biet at the Universit&eacute; de Paris Ouest Nanterre La D&eacute;fense, Professors Georges Forestier and Pierre Frantz at the Universit&eacute; de Paris-Sorbonne, and their students. In 2012, this trans-Atlantic collaboration received major funding from the French government&rsquo;s Agence nationale de la recherche and the French Minist&egrave;re de la Culture, as well as the Florence Gould Foundation in the United States. This support, along with ongoing seed funds from the Institut universitaire de France, MIT, and Harvard University&rsquo;s Romance Languages and Literatures Department, allowed the team to create virtual reconstructions of the troupe&rsquo;s administrative registers, and begin digitizing data from almost 35,000 nightly performances at the CF between 1680 and 1793. The result is the project you are now consulting online.
