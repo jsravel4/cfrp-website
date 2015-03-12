@@ -1,6 +1,6 @@
 ---
 lang: fr
-layout: page
+layout: project-background
 tid: the-data
 title: Introduction to the Database
 ---
