@@ -1,5 +1,5 @@
 ---
-lang: fr
+lang: en
 layout: the-data
 tid: the-data
 title: Introduction to the Database

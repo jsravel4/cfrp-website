@@ -1,6 +1,6 @@
 ---
-lang: en
-layout: project-background
+lang: fr
+layout: the-data
 tid: flip-books
 title: Introduction to the Com&eacute;die-Fran&ccedil;aise Register Facsimiles
 ---
