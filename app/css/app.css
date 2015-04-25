@@ -1,0 +1,24 @@
+.loading {
+  opacity: 0.4;
+}
+.loading + #spinner {
+  position: absolute;
+  top: 45%; left: 45%;
+  width: 100px;height: 100px;
+  -webkit-animation: sweep 1s infinite linear;
+  border-radius:50px;
+  border-bottom:3px solid orange;
+}
+@-webkit-keyframes sweep { to { -webkit-transform: rotate(360deg); } }
+
+#report_panel {
+  margin: 5px;
+  position: relative;
+  float: left;
+  width: 480px;
+}
+
+#report_panel .scroll {
+  height: 512px;
+  overflow:auto;
+}

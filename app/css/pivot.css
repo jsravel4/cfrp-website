@@ -1,0 +1,21 @@
+.pivot {
+  font-size: 11px;
+}
+
+.pivot table, th, td {
+  border-collapse: collapse;
+}
+
+.pivot td {
+  border: 1px solid black;
+  padding: 3px;
+}
+
+.pivot tr td:last-child {
+  text-align: right;
+}
+
+.pivot .refinable:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}

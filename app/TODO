@@ -1,0 +1,31 @@
+TODO
+====
+
+- full code review
+- cardinality of date is wrong
+
+- fix css for pivot (see green lis)              DONE
+- layout with small CFRP stamp on right
+
+- detect history changes (back button)
+- bin list for rows + cols + agg                 DONE
+- + / - for bin list                             DONE
+- pulldown to select categories                  DONE
+- subscript play data fields
+- drag and drop to reorder categories
+- nice CSS styling for table
+
+- loading signal
+- order weekdays logically
+- sorting results by measure
+
+- calendar selection shown in filters
+
+- scroll gesture on calendar
+- compact calendar configuration
+- calendar selection via opacity
+- click & drag set set calendar selection
+- highlight current register page
+- multiple calendar selections?
+
+- pivot columns

@@ -1,0 +1,11 @@
+.register {
+  font: 10px sans-serif;
+}
+
+.register .background {
+  fill: white; 
+}
+
+.register .loupe:not(.active) {
+  visibility: hidden;
+}

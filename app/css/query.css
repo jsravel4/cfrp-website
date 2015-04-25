@@ -1,0 +1,87 @@
+.query {
+  position: relative;
+  width: 100%;
+}
+
+.query ul {
+  list-style-type: none;
+  margin-left: 0;
+}
+
+.query button:after {
+  font-size: 0.5rem;
+  content:' \25bc';
+}
+
+.query button,
+.query .grouping li {
+  margin: 4px;
+  display: inline-block;
+  float: left;
+  padding: 5px 10px 5px 10px;
+  background: #fece3c;
+  border-radius: 25px;
+  line-height: 1;
+}
+
+.query .grouping li:after {
+  font-size: 0.5rem;
+  content: ' \2715';
+  vertical-align: super;
+}
+
+.query button,
+.query .grouping li,
+.query .dropdown li {
+  font-size: 0.75rem;
+  color: white;
+  cursor: pointer;
+}
+
+.query .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.query .dropdown ul {
+  position: absolute;
+  left: 10px;
+  top: 0;
+  margin-top: 1.6em;
+  padding: 0;
+  background: #fece3c;
+  z-index: 1;
+  clear: none;
+  float: left;
+  visibility: hidden;
+}
+
+.query .dropdown.active ul {
+  visibility: visible;
+}
+
+.query .dropdown ul li {
+  padding: 4px;
+}
+
+.query .dropdown ul li:hover {
+  background: #f5b901;
+}
+
+/* Specific to MacOS Chrome
+   remove unsightly focus borders on dropdowns */
+.query .dropdown *:focus {
+  outline: none !important;  
+}
+
+.query .filters {
+  clear: both;
+  margin: 10px;
+  font-size: 0.75rem;
+  border-bottom: 1px dotted gray;
+}
+
+.query .filters .value:hover {
+  text-decoration: line-through;
+  cursor: pointer;
+}

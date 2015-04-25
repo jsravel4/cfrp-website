@@ -1,0 +1,32 @@
+.calendar {
+  font: 10px sans-serif;
+}
+
+.calendar rect.day.selected {
+  stroke: red;
+  stroke-width: 2px;
+}
+
+.calendar .season_rug {
+  stroke: #ccc;
+}
+
+.calendar .brush .extent {
+  stroke: #fff;
+  fill-opacity: .125;
+  shape-rendering: crispEdges;
+}
+
+.calendar .brush .resize {
+  display: none;
+}
+
+.calendar .day {
+  stroke: #ccc;
+}
+
+.calendar .month {
+  fill: none;
+  stroke: black;
+  stroke-width: 1.5px;
+}
