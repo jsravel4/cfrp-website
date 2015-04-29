@@ -1,6 +1,6 @@
 "lang","name","url","title"
-"en","go-to-app","http://hyperstudio.mit.edu","Go to the App"
-"fr","go-to-app","http://hyperstudio.mit.edu","Accédez à la base"
+"en","go-to-app","/app","Go to the App"
+"fr","go-to-app","/app","Accédez à la base"
 "en","contact","","contact"
 "fr","contact","","contacts"
 "en","join-email-list","","Join the Email List"
