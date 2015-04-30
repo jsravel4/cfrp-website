@@ -2,30 +2,33 @@ TODO
 ====
 
 - full code review
-- cardinality of date is wrong
+- cardinality of date is wrong?
 
+- back button not working reliably
+- calendar selection shown in toolbox & url
+
+- click & drag to set calendar selection
+- highlight current register page
+
+- loading signal                                 DONE
+- make sure filters are being applied            DONE
+- pivot table & calendar not connected           DONE
 - fix css for pivot (see green lis)              DONE
-- layout with small CFRP stamp on right
-
-- detect history changes (back button)
+- layout with small CFRP stamp on right          DONE
 - bin list for rows + cols + agg                 DONE
 - + / - for bin list                             DONE
 - pulldown to select categories                  DONE
-- subscript play data fields
 - drag and drop to reorder categories
 - nice CSS styling for table
 
-- loading signal
+- labels for calendar months
+- subscript play data fields
 - order weekdays logically
 - sorting results by measure
 
-- calendar selection shown in filters
-
 - scroll gesture on calendar
-- compact calendar configuration
 - calendar selection via opacity
-- click & drag set set calendar selection
-- highlight current register page
 - multiple calendar selections?
 
+- compact calendar configuration
 - pivot columns

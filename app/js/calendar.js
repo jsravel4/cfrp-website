@@ -33,6 +33,8 @@ mdat.visualization.calendar = function() {
     selection.each(function(d, i) {
       var namespace = "calendar_" + uid++;
 
+      checkpoint("Creating " + namespace);
+
       var date = cfrp.dimension(function(d) { return d.date; }),
           aggregateByDate = date.group(d3.time.day),
           aggregateBySeason = date.group(d3.time.year);
@@ -72,7 +74,8 @@ mdat.visualization.calendar = function() {
           .attr("x", 4)
           .attr("y", function(d) { return y(d); })
           .attr("width", cellSize)
-          .attr("height", y.rangeBand());
+          .attr("height", y.rangeBand())
+          .attr("fill", "white");
 
       context.append("g")
           .attr("class", "y brush")
@@ -111,7 +114,8 @@ mdat.visualization.calendar = function() {
           .attr("width", cellSize)
           .attr("height", cellSize)
           .attr("x", function(d) { return week(d) * cellSize; })
-          .attr("y", function(d) { return day(d) * cellSize; });
+          .attr("y", function(d) { return day(d) * cellSize; })
+          .attr("fill", "white");
 
       rect.on("click", select);
 
@@ -135,9 +139,10 @@ mdat.visualization.calendar = function() {
         }
       });
 
-      update();
+      checkpoint("Done creating " + namespace);
 
-      cfrp.on("change." + namespace, update);
+      cfrp.on("change." + namespace, mdat.spinner_callback(update, root, "Updated calendar"));
+//      cfrp.on("refine." + namespace, update_state);
 
       function move(i) {
         var old = sel_extent;
@@ -165,7 +170,6 @@ mdat.visualization.calendar = function() {
       }
 
       function draw_selected() {
-        console.log(JSON.stringify(sel_extent));
         rect.classed("selected", function(p) {
           switch (sel_extent.length) {
             case 0: return false;
@@ -175,7 +179,6 @@ mdat.visualization.calendar = function() {
         });
       }
 
-      // TODO... better solution to manage recursive events
       var recursive = false;
       function update_filter() {
         function nudge(d) {
@@ -185,21 +188,21 @@ mdat.visualization.calendar = function() {
         }
 
         switch (sel_extent.length) {
-          case 0: date.filterAll(); break;
-          case 1: date.filterExact(sel_extent[0]); break;
-          case 2: date.filterRange(nudge(sel_extent)); break;
+          case 0: date.filterAll();
+                  break;
+          case 1: date.filterExact(sel_extent[0]);
+                  break;
+          case 2: date.filterRange(nudge(sel_extent));
+                  break;
         }
+
         recursive = true;
-        cfrp.refine();
+        cfrp.change();
         recursive = false;
       }
 
       function update() {
         if (recursive) { return; }
-
-        var start = new Date(),
-            middle,
-            finish;
 
         var agg = aggregates[cfrp.preferred_aggregate] || aggregates["sum(receipts)"];
 
@@ -229,7 +232,6 @@ mdat.visualization.calendar = function() {
           return (dsum && dsum.value.final() > 0) ? contextColor(dsum.value.final()) : "white";
         });
 
-        middle = new Date();
         rect.attr("fill", function(d) {
           var dsum = focusData.get(d);
           return (dsum && dsum.value.final() > 0) ? focusColor(dsum.value.final()) : "white";
@@ -238,8 +240,8 @@ mdat.visualization.calendar = function() {
               var dsum = focusData.get(d);
               return format(d) + (dsum ? ": L. " + commasFormatter(dsum.value.final()) : ""); });
 
-        finish = new Date();
-        console.log("calendar: quantize in " + (middle - start) + "ms, render in " + (finish - middle) + "ms");
+        root.classed("loading", false);
+        checkpoint("Done with calendar");
       }
 
       function monthPath(t0) {

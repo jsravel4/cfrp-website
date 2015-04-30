@@ -1,5 +1,8 @@
 mdat.visualization.query = function() {
   
+  var dimensions = [],
+      aggregates = [];
+
   var uid = 0,
       cfrp = undefined;
 
@@ -7,103 +10,107 @@ mdat.visualization.query = function() {
     selection.each(function(d, i) {
       var namespace = "query_" + uid++;
 
-      var dimension_names = d3.keys(cfrp.defs.dimensions),
-          aggregate_names = d3.keys(cfrp.defs.aggregates);
-
       var root = d3.select(this)
         .classed("query", true);
 
       root.append("ul")
         .classed("grouping", true);
 
-      var dimensions = root.append("div")
+      var dimensions_div = root.append("div")
          .attr("class", "dimensions dropdown");
 
-      dimensions.append("button")
+      dimensions_div.append("button")
         .classed("add-grouping", true)
         .on("click", function() {
-          dimensions.classed("active", function(d, i) {
+          dimensions_div.classed("active", function(d, i) {
             return !d3.select(this).classed("active"); 
           });
-          aggregates.classed("active", false);
+          aggregates_div.classed("active", false);
         });
 
-      dimensions.append("ul")
+      dimensions_div.append("ul")
         .selectAll("li")
-         .data(dimension_names)
+         .data(dimensions)
           .enter().append("li")
           .html(function(d) { return d; })
          .on("click", function(d) { 
-          dimensions.classed("active", false);
-          cfrp.cur_query.rows.push(d);
-          cfrp.refine();
+           var query = cfrp.cur_query();
+           dimensions_div.classed("active", false);
+           query.rows.push(d);
+           cfrp.refine(query);
+           console.log("new row: " + JSON.stringify(query));
+           cfrp.change();
          });
 
-      var aggregates = root.append("div")
+      var aggregates_div = root.append("div")
          .attr("class", "aggregates dropdown");
 
-      aggregates.append("button")
+      aggregates_div.append("button")
         .classed("aggregate", true)
         .on("click", function() {
-          aggregates.classed("active", function(d, i) {
+          aggregates_div.classed("active", function(d, i) {
             return !d3.select(this).classed("active"); 
           });
-          dimensions.classed("active", false);
+          dimensions_div.classed("active", false);
         });
 
-      aggregates.append("ul")
+      aggregates_div.append("ul")
          .selectAll("li")
-          .data(aggregate_names)
+          .data(aggregates)
            .enter().append("li")
            .html(function(d) { return d; })
           .on("click", function(d) {
-            aggregates.classed("active", false);
-            cfrp.cur_query.agg = d;
-            cfrp.refine();
+            var query = cfrp.cur_query();
+            aggregates_div.classed("active", false);
+            query.agg = d;
+            cfrp.refine(query);
+            console.log("set agg: " + JSON.stringify(query));
+            cfrp.change();
           });
 
       root.append("ul")
         .classed("filters", true);
 
-      cfrp.on("change." + namespace, update);
-
-      update();
+      cfrp.on("change." + namespace, mdat.spinner_callback(update, root, "Updated query"));
 
       function update() {
         // currently grouped categories
+        var query = cfrp.cur_query();
 
         var groupings = root.select(".grouping")
           .selectAll("li")
-          .data(cfrp.cur_query.rows);
+          .data(query.rows);
 
         groupings.exit().remove();
         groupings.enter().append("li");
 
         groupings.html(function(d) { return d; })
           .on("click", function(d) {
-            var i = cfrp.cur_query.rows.indexOf(d);
-            if (i > -1) { 
-              cfrp.cur_query.rows.splice(i, 1);
-            }
-            cfrp.refine();
+            var i = query.rows.indexOf(d);
+            if (i > -1) { query.rows.splice(i, 1); }
+            cfrp.refine(query);
+            console.log("removed a row: " + JSON.stringify(query));
+            cfrp.change();
           });
 
         // current aggregate
 
         var agg = root.select(".aggregate")
-          .html(cfrp.cur_query.agg);
+          .html(query.agg);
 
         // current filters
 
         var filters = root.select(".filters")
           .selectAll("li")
-          .data(d3.entries(cfrp.cur_query.filter));
+          .data(d3.entries(query.filter));
 
         filters.exit().remove();
         var filters_enter = filters.enter().append("li")
           .on("click", function(d) {
-            delete cfrp.cur_query.filter[d.key];
-            cfrp.refine();
+            delete query.filter[d.key];
+            cfrp.refine(query);
+            console.log("deleted a filter: " + JSON.stringify(query));
+            cfrp.change();
           });
         filters_enter.append("span").html(function(d) { return d.key + "&nbsp;=&nbsp;"; });
         filters_enter.append("span").attr("class", "value").html(function(d) { return d.value; });
@@ -115,7 +122,19 @@ mdat.visualization.query = function() {
     if (!arguments.length) return cfrp;
     cfrp = value;
     return chart;
-  }
+  };
+
+  chart.dimensions = function(keys) {
+    if (!arguments.length) return dimensions;
+    dimensions = keys;
+    return chart;
+  };
+
+  chart.aggregates = function(keys) {
+    if (!arguments.length) return aggregates;
+    aggregates = keys;
+    return chart;
+  };
 
   return chart;
 

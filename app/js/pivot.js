@@ -4,22 +4,13 @@
 
 mdat.visualization.pivot_table = function() {
 
+  var dimensions = {},
+      aggregates = {},
+      formats = {};
+
   var uid = 0,
       cfrp = undefined;
 
-  //
-  // Formatting dimension & aggregate values
-  //
-
-  var formats = {
-    Day:   d3.time.format("%a %d %b %Y"),
-    Decade: d3.time.format("%Y"),
-    'sum(receipts)': d3.format(",.2f"),
-    'avg(receipts/day)': d3.format(",.2f"),
-    'sum(sold)': d3.format(","),
-    'avg(sold/day)': d3.format(",.2f"),
-    'avg(price)': d3.format(",.2f")
-  };
 
   function chart(selection) {
     // TODO.... remove to a data provider interface
@@ -39,27 +30,23 @@ mdat.visualization.pivot_table = function() {
       var tbody = table.append("tbody");
 
       // listen for changes & initial update
-      cfrp.on("change." + namespace, update);
-
-      update();
+      cfrp.on("refine." + namespace, update_filters);
+      cfrp.on("change." + namespace, mdat.spinner_callback(update, root, "Updated pivot"));
 
       //
       // update display when query changes
       //
 
-      var recursive = false;
       function update() {
-
-        // don't do recursive updates
-        if (recursive) { return; }
-
         // run report and convert to html table format
-        var tree = { values : report(cfrp.cur_query, dummy_dim.top(Infinity)) },
-            table = tableize(tree, cfrp.cur_query.rows);
+        var query = cfrp.cur_query(),
+            data = dummy_dim.top(Infinity),
+            tree = report(query, data),
+            table = tableize(tree, query.rows);
 
         // pivot table proper
         var th = thead.selectAll("th")
-          .data(cfrp.cur_query.rows.concat([cfrp.cur_query.agg]));
+          .data(query.rows.concat([query.agg]));
 
         // table headers
         th.exit().remove();
@@ -83,17 +70,51 @@ mdat.visualization.pivot_table = function() {
         td.html(function(v) { return v.value; })
           .classed("refinable", function(d) { return d.category && d.value; })
           .on("click", function(d) {
-            var idx = cfrp.cur_query.rows.indexOf(d.category);
-            cfrp.cur_query.filter[d.category] = d.value;
-            if (idx > -1) { cfrp.cur_query.rows.splice(idx, 1); }
-            cfrp.refine();
+            query.filter[d.category] = d.value;
+            cfrp.refine(query);
+            console.log("filtered: " + JSON.stringify(query));
+            cfrp.change();
+/* Uncomment to remove to stop grouping on categories as they are filtered.
+              var idx = q.rows.indexOf(d.category);
+              if (idx > -1) { q.rows.splice(idx, 1); }
+*/
           });
+      }
+
+
+      //
+      // Update indexed dimensions to match the given query.
+      //
+      // Excess dimensions are removed only when they reach the collection threshold.
+      //
+
+      var filter_dimensions = {};
+      function update_filters(filter) {
+        // construct a complete list of past + present filter dimensions
+        var query = cfrp.cur_query(),
+            filter_keys = d3.set(d3.keys(query.filter));
+
+        d3.keys(filter_dimensions).forEach(function(k) { filter_keys.add(k); });
+
+        // update crossfilter for each
+        filter_keys.forEach(function(k) {
+          if (query.filter[k]) {
+            if (!filter_dimensions[k]) {
+              console.log("creating filter dimension: " + k);
+              filter_dimensions[k] = cfrp.dimension(dimensions[k]);
+            }
+            console.log("refining " + k + " = " + query.filter[k]);
+            filter_dimensions[k].filterExact(query.filter[k]);
+          } else {
+            console.log("clearing dimension: " + k);
+            filter_dimensions[k].filterAll();
+          }
+        });
       }
 
       //
       // calculate pivot table values: filter, grouping, aggregates
       //
-
 
       function report(query, data) {
         var nest = d3.nest();
@@ -102,13 +123,13 @@ mdat.visualization.pivot_table = function() {
 
         // grouping
         query.rows.forEach(function(g) {
-          nest = nest.key(function(v) { return fmt(g)(cfrp.defs.dimensions[g](v)); })
+          nest = nest.key(function(v) { return fmt(g)(dimensions[g](v)); })
                      .sortKeys(d3.ascending);
         });
 
         // aggregation
         if (query.agg) {
-          nest = nest.rollup(function(v) { return fmt(query.agg)(cfrp.defs.aggregates[query.agg](v)); });
+          nest = nest.rollup(function(v) { return fmt(query.agg)(aggregates[query.agg](v)); });
         }
 
         data = nest.entries(data);
@@ -129,8 +150,8 @@ mdat.visualization.pivot_table = function() {
       function tableize(tree, categories) {
         var result = [];
 
-        if (tree) {
-          recurse([], tree, -1);
+        if (tree.length > 0) {
+          recurse([], { values: tree }, -1);
         }
 
         return result;
@@ -164,6 +185,24 @@ mdat.visualization.pivot_table = function() {
   chart.datapoint = function(value) {
     if (!arguments.length) return cfrp;
     cfrp = value;
+    return chart;
+  };
+
+  chart.dimension = function(key, fn) {
+    if (!arguments.length) return dimensions;
+    dimensions[key] = fn;
+    return chart;
+  };
+
+  chart.aggregate = function(key, fn) {
+    if (!arguments.length) return aggregates;
+    aggregates[key] = fn;
+    return chart;
+  };
+
+  chart.format = function(key, fn) {
+    if (!arguments.length) return formats;
+    formats[key] = fn;
     return chart;
   };
 

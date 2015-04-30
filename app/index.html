@@ -16,22 +16,22 @@ title: Base des Données CFRP
 <script src="js/mdat.js"></script>  <!-- just for namespace -->
 <script src="js/router.js"></script>
 <script src="js/query.js"></script>
+<script src="js/pivot.js"></script>
 <script src="js/calendar.js"></script>
 <script src="js/register.js"></script>
-<script src="js/pivot.js"></script>
 <link rel="stylesheet" href="css/app.css">
 <link rel="stylesheet" href="css/query.css">
 <link rel="stylesheet" href="css/pivot.css">
 <link rel="stylesheet" href="css/calendar.css">
 <link rel="stylesheet" href="css/register.css">
 </head>
-<body>
+<body class="setup">
 <!-- body content here -->
 {% include app-header.html %}
 <div id="query_panel"></div>
 <div id="report_panel"></div>
-<svg width="475" height="512"><g id="calendar_panel"></g></svg>
-<svg width="365" height="512"><g id="register_panel"></g></svg>
+<svg id="calendar_panel"></svg>
+<svg id="register_panel"></svg>
 <div id="spinner"></div>
   <script>
 
@@ -82,6 +82,11 @@ title: Base des Données CFRP
           if (!playbill_idx[d.date]) { playbill_idx[d.date] = []; }
         });
 
+        function pb_attr(d, v) {
+          var pb = cfrp.playbill_idx[d.date][0];
+          return pb ? (pb[v] || "...") : "...";
+        }
+
         checkpoint("Postprocessed data");
 
         // crossfilter
@@ -97,13 +102,6 @@ title: Base des Données CFRP
         d3.rebind(cfrp, datapoint_dispatch, "on", "refine", "dispatch");
         d3.rebind(cfrp, datapoint_dispatch, "on", "change", "dispatch");
 
-        // declare the available dimensions & aggregates
-
-        cfrp.defs = {
-          dimensions: dimensions(cfrp),
-          aggregates: aggregates(cfrp)
-        }
-
         //
         // state
         //
@@ -114,13 +112,75 @@ title: Base des Données CFRP
             agg: 'sum(receipts)'
           };
 
-        mdat.router.install(cfrp, window.location.href, default_query);
+        //
+        // listen for changes in the model (internal events) or the url (external events)
+        //
 
-        // initialize components
+        cfrp.cur_query = function() {
+          return mdat.router.parse_url(window.location.href) || default_query;
+        }
 
-        d3.select("#query_panel")
-          .call(mdat.visualization.query()
-                  .datapoint(cfrp));
+        cfrp.on("refine.mdat", function(query) {
+          var url = mdat.router.url(query);
+          history.pushState(null, "", url);
+        });
+
+        window.onpopstate = function(event) {
+          var query = cfrp.cur_query();
+          cfrp.refine(query);
+          cfrp.change();
+        }
+
+        //
+        // initialize pivot table
+        //
+
+        var pivot = mdat.visualization.pivot_table()
+          .datapoint(cfrp)
+          .dimension('Decade', function(d) { return decade(d.date); })
+          .dimension('Season',  function(d) { return season(d.date); })
+          .dimension('Month', function(d) { return monthFormat(d.date); })
+          .dimension('Weekday', function(d) { return weekdayFormat(d.date); })
+          .dimension('Day',   function(d) { return d.date; })
+          .dimension('Section', function(d) { return d.section; })
+          .dimension('Author', function(d) { return pb_attr(d, 'author'); })
+          .dimension('Title',  function(d) { return pb_attr(d, 'title'); })
+          .dimension('Genre',  function(d) { return pb_attr(d, 'genre'); })
+          .dimension('Acts',   function(d) { return pb_attr(d, 'acts'); })
+          .dimension('Prose Verse', function(d) { return pb_attr(d, 'prose_vers'); })
+          .dimension('Signatory', function(d) { return pb_attr(d, 'signatory'); })
+  //              .dimension('Prologue', function(d) { return pb_attr(d, 'prologue'); })
+  //              .dimension('MDM', function(d) { return pb_attr(d, 'musique_danse_machine'); })
+  //              .dimension('Play Date': function(d) { return pb_attr(d, 'date_de_creation'); }),
+  //              .dimension('Free Access': function(d) { return pb_attr(d, 'free_access'); }),
+  //              .dimension('First Run': function(d) { return pb_attr(d, 'first_run'); }),
+  //              .dimension('Reprise', function(d) { return pb_attr(d, 'reprise'); })
+  //              .dimension('New Actor': function(d) { return pb_attr(d, 'newactor'); }),
+  //              .dimension('Debut', function(d) { return pb_attr(d, 'debut'); })
+  //              .dimension('ExAttendance', function(d) { return pb_attr(d, 'ex_attendance'); })
+  //              .dimension('ExRepresentation', function(d) { return pb_attr(d, 'ex_representation'); })
+  //              .dimension('ExPlace', function(d) { return pb_attr(d) 'ex_place'); }
+          .aggregate('count(date)', function(v) { return cardinality(v, function(d) { return d.date; }); })
+          .aggregate('sum(receipts)', function(v) { return sum(v, function(d) { return d.price * d.sold; }) })
+          .aggregate('avg(receipts/day)', function(v) {
+            return sum(v, function(d) { return d.price * d.sold; }) / cardinality(v, function(d) { return d.date; })
+          })
+          .aggregate('sum(sold)', function(v) { return sum(v, function(d) { return d.sold; }) })
+          .aggregate('avg(sold/day)', function(v) { return sum(v, function(d) { return d.sold; }) / cardinality(v, function(d) { return d.date; }) })
+          .format('Day', d3.time.format("%a %d %b %Y"))
+          .format('Decade', d3.time.format("%Y"))
+          .format('sum(receipts)', d3.format(",.2f"))
+          .format('avg(receipts/day)', d3.format(",.2f"))
+          .format('sum(sold)', d3.format(","))
+          .format('avg(sold/day)', d3.format(",.2f"))
+          .format('avg(price)', d3.format(").2f"));
+
+        d3.select("#report_panel")
+          .call(pivot);
+
+        //
+        // initialize visualization components
+        //
 
         d3.select("#calendar_panel")
           .call(mdat.visualization.calendar()
@@ -130,12 +190,58 @@ title: Base des Données CFRP
           .call(mdat.visualization.register()
                   .datapoint(cfrp));
 
-        d3.select("#report_panel")
-          .call(mdat.visualization.pivot_table()
-                  .datapoint(cfrp));
+        d3.select("#query_panel")
+          .call(mdat.visualization.query()
+                  .datapoint(cfrp)
+                  .dimensions(d3.keys(pivot.dimension()).concat(['Date']))    // TODO. simplify
+                  .aggregates(d3.keys(pivot.aggregate()))
+        );
 
+        //
+        // fire initial update
+        //
+
+        cfrp.refine(cfrp.cur_query());
+        cfrp.change();
+
+        d3.select("body")
+          .classed("setup", false);
       });
 
+    //
+    // Utility functions for accessing data
+    //
+
+    function decade(date) {
+      date = d3.time.year(date);
+      date.setFullYear(Math.floor(date.getFullYear() / 10) * 10);
+      return date;
+    };
+
+    function season(date) {
+      var year = date.getFullYear(),
+          rounded = new Date(year, 4, 1);
+      if (date - rounded >= 0) { return year + "-" + (year+1); }
+      else { return (year-1) + "-" + year; }
+    };
+
+    var weekdayFormat = d3.time.format("%A"),
+        monthFormat = d3.time.format("%B");
+
+    function sum(vs, f) {
+      return vs.map(f).reduce(function(p, d) { return p + d; }, 0.0);
+    }
+
+    function cardinality(v, f) {
+      var o = Object.create(null);
+      for(var i=0; i<v.length; i++) {
+        var val = f ? f(v[i]) : v[i];
+        if(val && !o[val]) { o[val] = true; }
+      }
+      var i = 0;
+      for(var val in o) { i = i + 1; }
+      return i;
+    }
 
     //
     // convert from parsed CSV strings to native data format
@@ -170,101 +276,6 @@ title: Base des Données CFRP
       return d;
     }
 
-  //
-  // Dimensions
-  //
-
-  function dimensions(cfrp) {
-
-    var weekdayFormat = d3.time.format("%A"),
-        monthFormat = d3.time.format("%B");
-
-    function decade(date) {
-      date = d3.time.year(date);
-      date.setFullYear(Math.floor(date.getFullYear() / 10) * 10);
-      return date;
-    };
-
-    function season(date) {
-      var year = date.getFullYear(),
-          rounded = new Date(year, 4, 1);
-      if (date - rounded >= 0) { return year + "-" + (year+1); }
-      else { return (year-1) + "-" + year; }
-    };
-
-    function pb_attr(d, v) {
-      var pb = cfrp.playbill_idx[d.date][0];
-      return pb ? (pb[v] || "...") : "...";
-    }
-
-    return {
-      Decade: function(d) { return decade(d.date); },
-      Season:  function(d) { return season(d.date); },
-      Month: function(d) { return monthFormat(d.date); },
-      Weekday: function(d) { return weekdayFormat(d.date); },
-      Day:   function(d) { return d.date; },
-
-      Section: function(d) { return d.section; },
-
-      Author: function(d) { return pb_attr(d, 'author'); },
-      Title:  function(d) { return pb_attr(d, 'title'); },
-      Genre:  function(d) { return pb_attr(d, 'genre'); },
-      Acts:   function(d) { return pb_attr(d, 'acts'); },
-      'Prose Verse': function(d) { return pb_attr(d, 'prose_vers'); },
-  //          Prologue: function(d) { return pb_attr(d, 'prologue'); },
-  //          MDM: function(d) { return pb_attr(d, 'musique_danse_machine'); },
-  //          'Play Date': function(d) { return pb_attr(d, 'date_de_creation'); },
-      Signatory: function(d) { return pb_attr(d, 'signatory'); },
-  //          'Free Access': function(d) { return pb_attr(d, 'free_access'); },
-  //          'First Run': function(d) { return pb_attr(d, 'first_run'); },
-  //          Reprise: function(d) { return pb_attr(d, 'reprise'); },
-  //          'New Actor': function(d) { return pb_attr(d, 'newactor'); },
-  //          Debut: function(d) { return pb_attr(d, 'debut'); },
-  //          ExAttendance: function(d) { return pb_attr(d, 'ex_attendance'); },
-  //          ExRepresentation: function(d) { return pb_attr(d, 'ex_representation'); },
-  //          ExPlace: function(d) { return pb_attr(d, 'ex_place'); }
-    };
-  }
-
-  //
-  // Aggregates
-  //
-
-  function aggregates(cfrp) {
-
-    function sum(vs, f) {
-      return vs.map(f).reduce(function(p, d) { return p + d; }, 0.0);
-    }
-
-    function cardinality(v, f) {
-      var o = Object.create(null);
-      for(var i=0; i<v.length; i++) {
-        var val = f ? f(v[i]) : v[i];
-        if(val && !o[val]) { o[val] = true; }
-      }
-      var i = 0;
-      for(var val in o) { i = i + 1; }
-      return i;
-    }
-
-    return {
-      'count(date)': function(v) {
-        return cardinality(v, cfrp.defs.dimensions['Day']);
-      },
-      'sum(receipts)': function(v) {
-        return sum(v, function(d) { return d.price * d.sold; });
-      },
-      'avg(receipts/day)': function(v) {
-        return sum(v, function(d) { return d.price * d.sold; }) / cardinality(v, cfrp.defs.dimensions['Day']);
-      },
-      'sum(sold)': function(v) {
-        return sum(v, function(d) { return d.sold; });
-      },
-      'avg(sold/day)': function(v) {
-        return sum(v, function(d) { return d.sold; }) / cardinality(v, cfrp.defs.dimensions['Day']);
-      }
-    };
-  }
   </script>
 {% include footer.html %}
 </body>

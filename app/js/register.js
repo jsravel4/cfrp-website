@@ -38,12 +38,11 @@ mdat.visualization.register = function() {
 
       var date = cfrp.dimension(function(d) { return d.date; });
 
-      update();
-
       cfrp.on("change." + namespace, update);
 
       function update() {
 
+        root.classed("loading", true);
         var sel_registers = date.bottom(1);
 
         // TODO.  SVG <image> 'onload' events seem quite unreliable, so for now we use the low-tech approach:
@@ -80,6 +79,8 @@ mdat.visualization.register = function() {
               image_file = playbill[0].image_file;
           return image_url(image_file);
         });
+
+        root.classed("loading", false);
 
         function loupeMove() {
           var pos = d3.mouse(image[0][0]),
