@@ -1,14 +1,13 @@
 TODO
 ====
 
-- full code review
-- cardinality of date is wrong?
+- not loading register page at beginning         DONE
 
-- back button not working reliably
 - calendar selection shown in toolbox & url
+- back button not working reliably
 
-- click & drag to set calendar selection
-- highlight current register page
+- click & drag to set calendar selection         DONE
+- highlight current register page                DONE
 
 - loading signal                                 DONE
 - make sure filters are being applied            DONE
@@ -18,6 +17,7 @@ TODO
 - bin list for rows + cols + agg                 DONE
 - + / - for bin list                             DONE
 - pulldown to select categories                  DONE
+
 - drag and drop to reorder categories
 - nice CSS styling for table
 

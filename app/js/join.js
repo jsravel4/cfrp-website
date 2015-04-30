@@ -1,3 +1,11 @@
+/*
+* Utility functions for relational join
+*
+* Copyright (c) 2015 MIT Hyperstudio
+* Christopher York, 04/2015
+*
+*/
+
 // 2 Implementations of relational join.
 //   Eventually this functionality should be moved into a dataframe API
 //

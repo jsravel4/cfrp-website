@@ -29,10 +29,12 @@ title: Base des Données CFRP
 <!-- body content here -->
 {% include app-header.html %}
 <div id="query_panel"></div>
-<div id="report_panel"></div>
-<svg id="calendar_panel"></svg>
-<svg id="register_panel"></svg>
-<div id="spinner"></div>
+<div id="slider">
+  <div id="report_panel"></div>
+  <svg id="calendar_panel"></svg>
+  <svg id="register_panel"></svg>
+  <div id="spinner"></div>
+</div>
   <script>
 
     //
@@ -53,10 +55,12 @@ title: Base des Données CFRP
     // Load and process dataset
     //
 
+    var basename = "http://christopheryork.github.io/";  // TODO.  rehost data
+
     queue()
-      .defer(d3.tsv, "data/cfrp-sales.tsv")
-      .defer(d3.tsv, "data/cfrp-performances.tsv")
-      .defer(d3.tsv, "data/cfrp-plays.tsv")
+      .defer(d3.tsv, basename + "data/cfrp-sales.tsv")
+      .defer(d3.tsv, basename + "data/cfrp-performances.tsv")
+      .defer(d3.tsv, basename + "data/cfrp-plays.tsv")
       .await(function(error, sales, performances, plays) {
         if (error) return console.error(error);
 
@@ -165,8 +169,8 @@ title: Base des Données CFRP
           .aggregate('avg(receipts/day)', function(v) {
             return sum(v, function(d) { return d.price * d.sold; }) / cardinality(v, function(d) { return d.date; })
           })
-          .aggregate('sum(sold)', function(v) { return sum(v, function(d) { return d.sold; }) })
-          .aggregate('avg(sold/day)', function(v) { return sum(v, function(d) { return d.sold; }) / cardinality(v, function(d) { return d.date; }) })
+//          .aggregate('sum(sold)', function(v) { return sum(v, function(d) { return d.sold; }) })
+//          .aggregate('avg(sold/day)', function(v) { return sum(v, function(d) { return d.sold; }) / cardinality(v, function(d) { return d.date; }) })
           .format('Day', d3.time.format("%a %d %b %Y"))
           .format('Decade', d3.time.format("%Y"))
           .format('sum(receipts)', d3.format(",.2f"))
@@ -182,27 +186,43 @@ title: Base des Données CFRP
         // initialize visualization components
         //
 
+        var calendar = mdat.visualization.calendar()
+                         .datapoint(cfrp),
+            register = mdat.visualization.register()
+                         .datapoint(cfrp),
+            query = mdat.visualization.query()
+                      .datapoint(cfrp)
+                      .dimensions(d3.keys(pivot.dimension()).concat(['Date']))    // TODO. simplify
+                      .aggregates(d3.keys(pivot.aggregate()));
+
         d3.select("#calendar_panel")
-          .call(mdat.visualization.calendar()
-                  .datapoint(cfrp));
+          .call(calendar);
 
         d3.select("#register_panel")
-          .call(mdat.visualization.register()
-                  .datapoint(cfrp));
+          .call(register);
 
         d3.select("#query_panel")
-          .call(mdat.visualization.query()
-                  .datapoint(cfrp)
-                  .dimensions(d3.keys(pivot.dimension()).concat(['Date']))    // TODO. simplify
-                  .aggregates(d3.keys(pivot.aggregate()))
-        );
+          .call(query);
 
         //
-        // fire initial update
+        // inter-component communication, not mirrored in URLs
+        //
+
+        calendar.on("preview", function(date) {
+          register.preview(date);
+        });
+        // TODO. remove & find a proper initialisation order
+        register.preview(d3.time.format("%Y-%m-%d").parse("1773-04-19"));
+
+        //
+        // fire initial update to parse urls
         //
 
         cfrp.refine(cfrp.cur_query());
         cfrp.change();
+
+
+        // remove loading spinner
 
         d3.select("body")
           .classed("setup", false);

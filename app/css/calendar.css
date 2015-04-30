@@ -2,6 +2,10 @@
   font: 10px sans-serif;
 }
 
+.calendar rect.day.preview {
+  fill: red;
+}
+
 .calendar rect.day.selected {
   stroke: red;
   stroke-width: 2px;

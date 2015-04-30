@@ -1,6 +1,10 @@
-//
-// Pivot table UI 
-//
+/*
+* MDAT Pivot table component
+*
+* Copyright (c) 2015 MIT Hyperstudio
+* Christopher York, 04/2015
+*
+*/
 
 mdat.visualization.pivot_table = function() {
 
@@ -89,7 +93,7 @@ mdat.visualization.pivot_table = function() {
       //
 
       var filter_dimensions = {};
-      function update_filters(filter) {
+      function update_filters() {
         // construct a complete list of past + present filter dimensions
         var query = cfrp.cur_query(),
             filter_keys = d3.set(d3.keys(query.filter));

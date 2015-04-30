@@ -22,6 +22,14 @@ body.setup #spinner {
   width: 30px; height: 30px;
 }
 
+/* to be replaced by carousel when time comes */
+#slider {
+  width: 1350px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+
 #report_panel {
   margin: 5px;
   position: relative;

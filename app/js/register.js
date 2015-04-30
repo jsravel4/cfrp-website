@@ -1,6 +1,10 @@
-//
-// browse data relating to a specific day's performances and sales
-//
+/*
+* MDAT Register image component
+*
+* Copyright (c) 2015 MIT Hyperstudio
+* Christopher York, 04/2015
+*
+*/
 
 mdat.visualization.register = function() {
 
@@ -10,10 +14,11 @@ mdat.visualization.register = function() {
       height = 512,
       loupeRadius = width * 0.475,
       loupeMagnification = 1.6,
-      cfrp = undefined,
       uid = 0;
 
-  var format = d3.time.format("%a %e %b %Y");
+  var cfrp = undefined,
+      preview = format.parse('1680-04-30'),
+      dispatch = d3.dispatch("update");
 
   function image_url(image_file) {
     var re = /M119_02_R(\d+)_(\d+)([rv])?.jpg/;
@@ -36,61 +41,47 @@ mdat.visualization.register = function() {
         .append("circle")
           .attr("r", loupeRadius);
 
-      var date = cfrp.dimension(function(d) { return d.date; });
+      var page = root.append("g")
+         .classed("page", true);
 
-      cfrp.on("change." + namespace, update);
+      // TODO.  SVG <image> 'onload' events seem quite unreliable, so for now we use the low-tech approach:
+      //        render a loading icon which SVG's painter model then covers up with the image
+
+      var image = page.append("image")
+          .attr("class", "main")
+          .attr("width", width)
+          .attr("height", height)
+          .on("mousemove", loupeMove);
+
+      var loupe = page.append("g")
+          .attr("clip-path", "url(#" + namespace + "_clip)")
+       .append("image")
+          .attr("class", "loupe")
+          .attr("width", width * loupeMagnification)
+          .attr("height", height * loupeMagnification)
+       .on("mouseout", function() { console.log("loupe exiting"); d3.select(this).classed("active", false); })
+       .on("mousemove", loupeMove);
+
+      dispatch.on("update." + namespace, update);
 
       function update() {
+        page.selectAll("image")
+          .attr("xlink:href", function() {
+            var pb = cfrp.playbill_idx[preview];
+            if (pb) {
+              return image_url(pb[0].image_file);
+            }
+          });
+      }
 
-        root.classed("loading", true);
-        var sel_registers = date.bottom(1);
-
-        // TODO.  SVG <image> 'onload' events seem quite unreliable, so for now we use the low-tech approach:
-        //        render a loading icon which SVG's painter model then covers up with the image
-
-        var page = root.selectAll(".page")
-             .data(sel_registers, function(d) { return d.date; });
-
-        page.exit().remove();
-
-        var g = page.enter().append("g")
-            .attr("class", "page");
-
-        g.append("text")
-            .text(function(d) { return format(d.date); });
-
-        var image = g.append("image")
-            .attr("class", "main")
-            .attr("width", width)
-            .attr("height", height)
-            .on("mousemove", loupeMove);
-
-        var loupe = g.append("g")
-            .attr("clip-path", "url(#" + namespace + "_clip)")
-         .append("image")
-            .attr("class", "loupe")
-            .attr("width", width * loupeMagnification)
-            .attr("height", height * loupeMagnification)
-         .on("mouseout", function() { console.log("exiting"); d3.select(this).classed("active", false); })
-         .on("mousemove", loupeMove);
-
-        page.selectAll("image").attr("xlink:href", function(d) {
-          var playbill   = cfrp.playbill_idx[d.date],
-              image_file = playbill[0].image_file;
-          return image_url(image_file);
-        });
-
-        root.classed("loading", false);
-
-        function loupeMove() {
-          var pos = d3.mouse(image[0][0]),
-              loupePos = [ pos[0] * (1 - loupeMagnification), pos[1] * (1 - loupeMagnification) ];
-          loupeClip.attr("cx", pos[0])
-                   .attr("cy", pos[1]);
-          g.select(".loupe")
-                   .classed("active", true)
-                   .attr("transform", "translate(" + loupePos.join(',') + ")");
-        }
+      function loupeMove() {
+        var pos = d3.mouse(image[0][0]),
+            loupePos = [ pos[0] * (1 - loupeMagnification), pos[1] * (1 - loupeMagnification) ];
+        loupeClip.attr("cx", pos[0])
+                 .attr("cy", pos[1]);
+        page.select(".loupe")
+                 .classed("active", true)
+                 .attr("transform", "translate(" + loupePos.join(',') + ")");
       }
     });
   }
@@ -112,6 +103,13 @@ mdat.visualization.register = function() {
     height = value;
     return chart;
   };
+
+  chart.preview = function(value) {
+    if (!arguments.length) return preview;
+    preview = value;
+    dispatch.update();
+    return chart;
+  }
 
   return chart;
  };

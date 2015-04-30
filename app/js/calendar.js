@@ -1,3 +1,11 @@
+/*
+* MDAT Calendar component
+*
+* Copyright (c) 2015 MIT Hyperstudio
+* Christopher York, 04/2015
+*
+*/
+
 mdat.visualization.calendar = function() {
 
   var cellSize = 8,
@@ -5,10 +13,10 @@ mdat.visualization.calendar = function() {
       width = 52 * cellSize + 15 + 40,
       height = 8 * seasons_visible * cellSize,
 //      height = "100%",// 8 * cellSize * (1794 - 1680),    // TODO.  calculate domain
-      uid = 0,
-      sel_extent = [];
+      uid = 0;
 
-  var cfrp = undefined;
+  var cfrp = undefined,
+      dispatch = d3.dispatch("preview");
 
   var day = d3.time.format("%w");
       week = function(d) {
@@ -22,18 +30,21 @@ mdat.visualization.calendar = function() {
       commasFormatter = d3.format(",.0f");
 
   var aggregates = {
-      'count(date)':       reduceDistinct(function(d) { return d.date; }),
-      'sum(receipts)':     reduceSum(function(d) { return d.price * d.sold; }),
-      'avg(receipts/day)': reduceSum(function(d) { return d.price * d.sold; }),
-      'sum(sold)':         reduceSum(function(d) { return d.sold; }),
-      'avg(sold/day)':     reduceSum(function(d) { return d.sold; })
+      'count(date)':       mdat.utils.reduceDistinct(function(d) { return d.date; }),
+      'sum(receipts)':     mdat.utils.reduceSum(function(d) { return d.price * d.sold; }),
+      'avg(receipts/day)': mdat.utils.reduceSum(function(d) { return d.price * d.sold; }),
+      'sum(sold)':         mdat.utils.reduceSum(function(d) { return d.sold; }),
+      'avg(sold/day)':     mdat.utils.reduceSum(function(d) { return d.sold; })
     };
 
   function chart(selection) {
     selection.each(function(d, i) {
+      var sel_extent = [],
+          preview = null;
+
       var namespace = "calendar_" + uid++;
 
-      checkpoint("Creating " + namespace);
+      checkpoint();
 
       var date = cfrp.dimension(function(d) { return d.date; }),
           aggregateByDate = date.group(d3.time.day),
@@ -50,7 +61,7 @@ mdat.visualization.calendar = function() {
           .y(y)
           .extent([y(all_seasons[0]), y(all_seasons[seasons_visible])])
           .clamp(true)
-          .on("brush", brushed);
+          .on("brush", context_brushed);
 
       var root = d3.select(this)
           .classed("calendar", true);
@@ -91,7 +102,6 @@ mdat.visualization.calendar = function() {
           .attr("class", "info")
           .attr("transform", "translate(0,0)");
 
-      // TODO.  get seasons range from data
       var seasons = focusinfo.selectAll("season")
           .data(all_seasons)
         .enter().append("g")
@@ -110,14 +120,22 @@ mdat.visualization.calendar = function() {
       var rect = seasons.selectAll(".day")
           .data(function(d) { return d3.time.days(new Date(d, 3, 1), new Date(d + 1, 3, 1)); })
         .enter().append("rect")
-          .attr("class", "day")
+          .classed("day", true)
           .attr("width", cellSize)
           .attr("height", cellSize)
           .attr("x", function(d) { return week(d) * cellSize; })
           .attr("y", function(d) { return day(d) * cellSize; })
           .attr("fill", "white");
 
-      rect.on("click", select);
+      rect.on("dblclick.calendar", function(d) {
+        if(sel_extent.length > 0) {
+          sel_extent = [];
+          draw_selected();
+          update_filter();
+        }
+      });
+
+      rect.on("mousedown.calendar", context_brushstart);
 
       rect.append("title")
           .text(format);
@@ -128,46 +146,14 @@ mdat.visualization.calendar = function() {
           .attr("class", "month")
           .attr("d", monthPath);
 
-      // Allow the arrow keys to change the displayed page.
-      window.focus();
-      d3.select(window).on("keydown", function() {
-        switch (d3.event.keyCode) {
-          case 37:
-          case 38: move(-1); break;
-          case 39:
-          case 40: move(1); break;
-        }
-      });
+      // Initial values for selection & preview
+//      sel_extent = [];
+      preview = date.bottom(1)[0].date;
 
       checkpoint("Done creating " + namespace);
 
       cfrp.on("change." + namespace, mdat.spinner_callback(update, root, "Updated calendar"));
-//      cfrp.on("refine." + namespace, update_state);
-
-      function move(i) {
-        var old = sel_extent;
-        var fn = function(d) { return d3.time.day.offset(d, i); };
-        sel_extent = sel_extent.map(fn);
-
-        draw_selected();
-        update_filter();
-      }
-
-      function select(d) {
-        var dist = sel_extent.map(function(p) { return Math.abs(p - d); }),
-            ndx = dist.indexOf(d3.min(dist));
-
-        if (dist.some(function(p) { return p === 0.0; })) { sel_extent = []; }
-        else if (ndx >= 0 && sel_extent.length > 1)       { sel_extent[ndx] = d; }
-        else { sel_extent.push(d); }
-
-        // TODO. don't ask me why sel_extent.sort() doesn't work...
-        //       if crossfilter receives a filterRange out of order, it goes crazy (permanently)
-        if (sel_extent.length > 1 && sel_extent[0] > sel_extent[1]) { sel_extent = sel_extent.reverse(); }
-
-        draw_selected();
-        update_filter();
-      }
+  //      cfrp.on("refine." + namespace, update_state);
 
       function draw_selected() {
         rect.classed("selected", function(p) {
@@ -232,13 +218,18 @@ mdat.visualization.calendar = function() {
           return (dsum && dsum.value.final() > 0) ? contextColor(dsum.value.final()) : "white";
         });
 
+        rect.classed("preview", function(d) {
+          return preview && (d.getTime() == preview.getTime());
+        });
         rect.attr("fill", function(d) {
           var dsum = focusData.get(d);
           return (dsum && dsum.value.final() > 0) ? focusColor(dsum.value.final()) : "white";
-        }).select("title")
+        });
+        rect.select("title")
             .text(function(d) {
               var dsum = focusData.get(d);
-              return format(d) + (dsum ? ": L. " + commasFormatter(dsum.value.final()) : ""); });
+              return format(d) + (dsum ? ": L. " + commasFormatter(dsum.value.final()) : ""); 
+            });
 
         root.classed("loading", false);
         checkpoint("Done with calendar");
@@ -255,7 +246,7 @@ mdat.visualization.calendar = function() {
             + "H" + (w0 + 1) * cellSize + "Z";
       }
 
-      function brushed() {
+      function context_brushed() {
         d3.event.sourceEvent.stopPropagation();
         var proportion = brush.extent()[0] / height,
             scrollHeight = cellSize * 8 * all_seasons.length;
@@ -268,59 +259,49 @@ mdat.visualization.calendar = function() {
         return s1.slice(i);
       }
 
+      function context_brushstart() {
+        var startRect = d3.select(this),
+            startDate = d3.select(d3.event.target).datum();
+        d3.event.preventDefault();
+
+        rect.on("mousemove.calendar", context_brushmove).on("mouseup.calendar", context_brushend);
+
+        function context_brushmove() {
+          var endDate = d3.select(d3.event.target).datum();
+          d3.event.preventDefault();
+          if (startDate < endDate) {
+            sel_extent = [startDate, endDate];
+          } else if (startDate.getTime() !== endDate.getTime()) {
+            sel_extent = [endDate, startDate];
+          }
+          draw_selected();
+        }
+
+        function context_brushend() {
+          var endDate = d3.select(d3.event.target).datum();
+          rect.on("mousemove.calendar", null).on("mouseup.calendar", null);
+
+          // In all cases, set preview to beginning of date range
+          rect.classed("preview", false);
+          startRect.classed("preview", true);
+          preview = startDate;
+          dispatch.preview(preview);
+
+          // For the drag gesture, also run the query
+          if (startDate.getTime() !== endDate.getTime()) {
+            // register the new brush extent and emit events
+            update_filter();
+          }
+        }
+      }
     });
-  }
-
-  function reduceDistinct(fn) {
-    return {
-      add: function (p, d) {
-        var val = fn(d);
-        if (val in p.counts)
-          p.counts[val]++;
-        else
-          p.counts[val] = 1;
-        return p;
-      },
-      remove: function (p, d) {
-        var val = fn(d);
-        p.counts[val]--;
-        if (p.counts[val] === 0)
-          delete p.counts[val];
-        return p;
-      },
-      init: function () {
-        var p = {};
-        p.counts = {};
-        p.final = function() { return Object.keys(p.counts).length; };
-        return p;
-      }
-    };
-  }
-
-  function reduceSum(fn) {
-    return {
-      add: function(p, v) {
-        p.sum += fn(v);
-        return p;
-      },
-      remove: function(p, v) {
-        p.sum -= fn(v);
-        return p;
-      },
-      init: function() {
-        var p = {};
-        p.sum = 0;
-        p.final = function () { return Math.max(0, d3.round(p.sum, 0)); };
-        return p;
-      }
-    };
   }
 
   chart.datapoint = function(value) {
     if (!arguments.length) return cfrp;
     cfrp = value;
     return chart;
-  }
+  };
 
   chart.width = function(value) {
     if (!arguments.length) return width;
@@ -334,5 +315,5 @@ mdat.visualization.calendar = function() {
     return chart;
   };
 
-  return chart;
+  return d3.rebind(chart, dispatch, "on");
 };

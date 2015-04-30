@@ -7,5 +7,3 @@ Gemfile
 Gemfile.lock
 node_modules
 package.json
-
-app/data

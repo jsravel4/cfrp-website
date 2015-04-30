@@ -1,5 +1,11 @@
-//
-// Routing
+/*
+* MDAT Routing and history
+*
+* Copyright (c) 2015 MIT Hyperstudio
+* Christopher York, 04/2015
+*
+*/
+
 //
 // N.B. this URL scheme will change!
 //
@@ -26,9 +32,9 @@ mdat.router.parse_url = function(url) {
       if (v = p.match(/^agg=(.+)$/))          { if (defs.aggregates[v[1]]) { query.agg = v[1]; } }
       if (v = p.match(/^filter\.(.+)=(.+)$/)) { if (defs.dimensions[v[1]]) { query.filter[v[1]] = v[2]; } }
       */
-      if (v = p.match(/^row=(.+)$/))          { query.rows.push(v[1]); }
-      if (v = p.match(/^agg=(.+)$/))          { query.agg = v[1]; }
-      if (v = p.match(/^filter\.(.+)=(.+)$/)) { query.filter[v[1]] = v[2]; }
+      if (v = p.match(/^row=(.+)$/))                    { query.rows.push(v[1]); }
+      if (v = p.match(/^agg=(.+)$/))                    { query.agg = v[1]; }
+      if (v = p.match(/^filter\.(.+)=(.+)$/))           { query.filter[v[1]] = v[2]; }
     });
   }
 
