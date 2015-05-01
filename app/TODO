@@ -32,3 +32,9 @@ TODO
 
 - compact calendar configuration
 - pivot columns
+
+FIXES
+=====
+- boolean categories not filtering properly
+- filter values containing '&' truncated
+- check URL keys against dimensions & aggs

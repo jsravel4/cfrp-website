@@ -153,17 +153,17 @@ title: Base des Données CFRP
           .dimension('Acts',   function(d) { return pb_attr(d, 'acts'); })
           .dimension('Prose Verse', function(d) { return pb_attr(d, 'prose_vers'); })
           .dimension('Signatory', function(d) { return pb_attr(d, 'signatory'); })
-  //              .dimension('Prologue', function(d) { return pb_attr(d, 'prologue'); })
-  //              .dimension('MDM', function(d) { return pb_attr(d, 'musique_danse_machine'); })
-  //              .dimension('Play Date': function(d) { return pb_attr(d, 'date_de_creation'); }),
-  //              .dimension('Free Access': function(d) { return pb_attr(d, 'free_access'); }),
-  //              .dimension('First Run': function(d) { return pb_attr(d, 'first_run'); }),
-  //              .dimension('Reprise', function(d) { return pb_attr(d, 'reprise'); })
-  //              .dimension('New Actor': function(d) { return pb_attr(d, 'newactor'); }),
-  //              .dimension('Debut', function(d) { return pb_attr(d, 'debut'); })
-  //              .dimension('ExAttendance', function(d) { return pb_attr(d, 'ex_attendance'); })
-  //              .dimension('ExRepresentation', function(d) { return pb_attr(d, 'ex_representation'); })
-  //              .dimension('ExPlace', function(d) { return pb_attr(d) 'ex_place'); }
+//          .dimension('Prologue', function(d) { return pb_attr(d, 'prologue'); })
+//          .dimension('MDM', function(d) { return pb_attr(d, 'musique_danse_machine'); })
+//          .dimension('Play Date', function(d) { return pb_attr(d, 'date_de_creation'); })
+//          .dimension('Free Access', function(d) { return pb_attr(d, 'free_access'); })
+//          .dimension('First Run', function(d) { return pb_attr(d, 'first_run'); })
+//          .dimension('Reprise', function(d) { return pb_attr(d, 'reprise'); })
+//          .dimension('New Actor', function(d) { return pb_attr(d, 'newactor'); })
+//          .dimension('Debut', function(d) { return pb_attr(d, 'debut'); })
+//          .dimension('ExAttendance', function(d) { return pb_attr(d, 'ex_attendance'); })
+//          .dimension('ExRepresentation', function(d) { return pb_attr(d, 'ex_representation'); })
+//          .dimension('ExPlace', function(d) { return pb_attr(d, 'ex_place'); })
           .aggregate('count(date)', function(v) { return cardinality(v, function(d) { return d.date; }); })
           .aggregate('sum(receipts)', function(v) { return sum(v, function(d) { return d.price * d.sold; }) })
           .aggregate('avg(receipts/day)', function(v) {
@@ -192,7 +192,7 @@ title: Base des Données CFRP
                          .datapoint(cfrp),
             query = mdat.visualization.query()
                       .datapoint(cfrp)
-                      .dimensions(d3.keys(pivot.dimension()).concat(['Date']))    // TODO. simplify
+                      .dimensions(d3.keys(pivot.dimension()))
                       .aggregates(d3.keys(pivot.aggregate()));
 
         d3.select("#calendar_panel")

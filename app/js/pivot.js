@@ -195,12 +195,14 @@ mdat.visualization.pivot_table = function() {
   chart.dimension = function(key, fn) {
     if (!arguments.length) return dimensions;
     dimensions[key] = fn;
+    console.log("Registered dimension: " + key);
     return chart;
   };
 
   chart.aggregate = function(key, fn) {
     if (!arguments.length) return aggregates;
     aggregates[key] = fn;
+    console.log("Registered aggregate: " + key);
     return chart;
   };
 
