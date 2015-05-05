@@ -51,6 +51,24 @@ title: Base des Données CFRP
 
     checkpoint("Starting");
 
+    // localization
+
+    var fr_FR_spec = {
+          decimal: ",",
+          thousands: ".",
+          grouping: [3],
+          currency: ["", " €"],
+          dateTime: "%A, le %e %B %Y, %X",
+          date: "%d/%m/%Y",
+          time: "%H:%M:%S",
+          periods: ["AM", "PM"], // unused
+          days: ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"],
+          shortDays: ["dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."],
+          months: ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"],
+          shortMonths: ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."]
+        },
+        fr_FR = d3.locale(fr_FR_spec);
+
     //
     // Load and process dataset
     //
@@ -83,11 +101,19 @@ title: Base des Données CFRP
         sales = sales.map(type_sales);
 
         sales.forEach(function(d) {
-          if (!playbill_idx[d.date]) { playbill_idx[d.date] = []; }
+          if (!playbill_idx[d.date]) {
+            var dateFormat = d3.time.format("%Y-%m-%d");
+            console.log("WARNING  " + dateFormat(d.date) + " has no playbill");
+            playbill_idx[d.date] = [];
+          }
         });
 
         function pb_attr(d, v) {
           var pb = cfrp.playbill_idx[d.date][0];
+          if (!pb) {
+            var dateFormat = d3.time.format("%Y-%m-%d");
+            console.log("WARNING  " + dateFormat(d.date) + " has no playbill");
+          }
           return pb ? (pb[v] || "...") : "...";
         }
 
@@ -112,8 +138,8 @@ title: Base des Données CFRP
 
         var default_query = {
             filter: {},
-            rows: [ 'Author', 'Title' ],
-            agg: 'sum(receipts)'
+            rows: [ 'auteur', 'pièce' ],
+            agg: 'somme(recette)'
           };
 
         //
@@ -141,18 +167,20 @@ title: Base des Données CFRP
 
         var pivot = mdat.visualization.pivot_table()
           .datapoint(cfrp)
-          .dimension('Decade', function(d) { return decade(d.date); })
-          .dimension('Season',  function(d) { return season(d.date); })
-          .dimension('Month', function(d) { return monthFormat(d.date); })
-          .dimension('Weekday', function(d) { return weekdayFormat(d.date); })
-          .dimension('Day',   function(d) { return d.date; })
-          .dimension('Section', function(d) { return d.section; })
-          .dimension('Author', function(d) { return pb_attr(d, 'author'); })
-          .dimension('Title',  function(d) { return pb_attr(d, 'title'); })
-          .dimension('Genre',  function(d) { return pb_attr(d, 'genre'); })
-          .dimension('Acts',   function(d) { return pb_attr(d, 'acts'); })
-          .dimension('Prose Verse', function(d) { return pb_attr(d, 'prose_vers'); })
-          .dimension('Signatory', function(d) { return pb_attr(d, 'signatory'); })
+          .dimension('décennie', function(d) { return decade(d.date); })
+          .dimension('saison',  function(d) { return season(d.date); })
+          .dimension('mois', function(d) { return month(d.date); })
+            .format('mois', function(i) { return fr_FR_spec.months[+i]; })
+          .dimension('jour de la semaine', function(d) { return weekday(d.date); })
+            .format('jour de la semaine', function(i) { return fr_FR_spec.days[+i]; })
+//          .dimension('jour',   function(d) { return d.date; })
+          .dimension('place', function(d) { return d.section; })
+          .dimension('auteur', function(d) { return pb_attr(d, 'author'); })
+          .dimension('pièce',  function(d) { return pb_attr(d, 'title'); })
+          .dimension('genre',  function(d) { return pb_attr(d, 'genre'); })
+          .dimension('acts',   function(d) { return pb_attr(d, 'acts'); })
+          .dimension('pros/vers', function(d) { return pb_attr(d, 'prose_vers'); })
+          .dimension('signatoire', function(d) { return pb_attr(d, 'signatory'); })
 //          .dimension('Prologue', function(d) { return pb_attr(d, 'prologue'); })
 //          .dimension('MDM', function(d) { return pb_attr(d, 'musique_danse_machine'); })
 //          .dimension('Play Date', function(d) { return pb_attr(d, 'date_de_creation'); })
@@ -164,20 +192,20 @@ title: Base des Données CFRP
 //          .dimension('ExAttendance', function(d) { return pb_attr(d, 'ex_attendance'); })
 //          .dimension('ExRepresentation', function(d) { return pb_attr(d, 'ex_representation'); })
 //          .dimension('ExPlace', function(d) { return pb_attr(d, 'ex_place'); })
-          .aggregate('count(date)', function(v) { return cardinality(v, function(d) { return d.date; }); })
-          .aggregate('sum(receipts)', function(v) { return sum(v, function(d) { return d.price * d.sold; }) })
-          .aggregate('avg(receipts/day)', function(v) {
+          .aggregate('représentations(jours)', function(v) { return cardinality(v, function(d) { return d.date; }); })
+          .aggregate('somme(recette)', function(v) { return sum(v, function(d) { return d.price * d.sold; }) })
+          .aggregate('moyenne(recette/jour)', function(v) {
             return sum(v, function(d) { return d.price * d.sold; }) / cardinality(v, function(d) { return d.date; })
           })
 //          .aggregate('sum(sold)', function(v) { return sum(v, function(d) { return d.sold; }) })
-//          .aggregate('avg(sold/day)', function(v) { return sum(v, function(d) { return d.sold; }) / cardinality(v, function(d) { return d.date; }) })
-          .format('Day', d3.time.format("%a %d %b %Y"))
-          .format('Decade', d3.time.format("%Y"))
-          .format('sum(receipts)', d3.format(",.2f"))
-          .format('avg(receipts/day)', d3.format(",.2f"))
-          .format('sum(sold)', d3.format(","))
-          .format('avg(sold/day)', d3.format(",.2f"))
-          .format('avg(price)', d3.format(").2f"));
+//          .aggregate('moyenne(sold/day)', function(v) { return sum(v, function(d) { return d.sold; }) / cardinality(v, function(d) { return d.date; }) })
+//          .format('jour', fr_FR.timeFormat("%a %d %b %Y"))
+//          .format('décennie', fr_FR.timeFormat("%Y"))
+          .format('somme(recette)', fr_FR.numberFormat(",.2f"))
+          .format('moyenne(recette/jour)', fr_FR.numberFormat(",.2f"))
+//          .format('sum(sold)', fr_FR.numberFormat(","))
+//          .format('moyenne(sold/day)', fr_FR.numberFormat(",.2f"))
+//          .format('moyenne(price)', fr_FR.numberFormat(").2f"));
 
         d3.select("#report_panel")
           .call(pivot);
@@ -212,7 +240,7 @@ title: Base des Données CFRP
           register.preview(date);
         });
         // TODO. remove & find a proper initialisation order
-        register.preview(d3.time.format("%Y-%m-%d").parse("1773-04-19"));
+        register.preview(fr_FR.timeFormat("%Y-%m-%d").parse("1773-04-19"));
 
         //
         // fire initial update to parse urls
@@ -233,9 +261,7 @@ title: Base des Données CFRP
     //
 
     function decade(date) {
-      date = d3.time.year(date);
-      date.setFullYear(Math.floor(date.getFullYear() / 10) * 10);
-      return date;
+      return Math.floor(date.getFullYear() / 10) * 10;
     };
 
     function season(date) {
@@ -245,8 +271,9 @@ title: Base des Données CFRP
       else { return (year-1) + "-" + year; }
     };
 
-    var weekdayFormat = d3.time.format("%A"),
-        monthFormat = d3.time.format("%B");
+    // TODO.  emits 0-padded strings because d3 nest requires them - not optimal
+    var month = d3.time.format("%m"),
+        weekday = d3.time.format("%w");
 
     function sum(vs, f) {
       return vs.map(f).reduce(function(p, d) { return p + d; }, 0.0);
@@ -267,7 +294,7 @@ title: Base des Données CFRP
     // convert from parsed CSV strings to native data format
     //
 
-    var dateFormat = d3.time.format("%Y-%m-%d");
+    var dateFormat = fr_FR.timeFormat("%Y-%m-%d");
 
     function type_playbill(d) {
       d.date = dateFormat.parse(d.date);

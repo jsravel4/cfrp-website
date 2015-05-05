@@ -44,13 +44,14 @@ mdat.visualization.pivot_table = function() {
       function update() {
         // run report and convert to html table format
         var query = cfrp.cur_query(),
+            table_cols = query.rows.concat([query.agg]),
             data = dummy_dim.top(Infinity),
             tree = report(query, data),
-            table = tableize(tree, query.rows);
+            table = tableize(tree, table_cols);
 
         // pivot table proper
         var th = thead.selectAll("th")
-          .data(query.rows.concat([query.agg]));
+          .data(table_cols);
 
         // table headers
         th.exit().remove();
@@ -117,8 +118,17 @@ mdat.visualization.pivot_table = function() {
       }
 
       //
+      // utility functions
+      //
+
+      function fmt(g) {
+        return formats[g] || function(v) { return v; };
+      }
+
+      //
       // calculate pivot table values: filter, grouping, aggregates
       //
+
 
       function report(query, data) {
         var nest = d3.nest();
@@ -127,22 +137,18 @@ mdat.visualization.pivot_table = function() {
 
         // grouping
         query.rows.forEach(function(g) {
-          nest = nest.key(function(v) { return fmt(g)(dimensions[g](v)); })
+          nest = nest.key(function(v) { return dimensions[g](v); })
                      .sortKeys(d3.ascending);
         });
 
         // aggregation
         if (query.agg) {
-          nest = nest.rollup(function(v) { return fmt(query.agg)(aggregates[query.agg](v)); });
+          nest = nest.rollup(function(v) { return aggregates[query.agg](v); });
         }
 
         data = nest.entries(data);
 
         return data;
-
-        function fmt(g) {
-          return formats[g] || function(v) { return v; };
-        }
       }
 
       //
@@ -164,13 +170,17 @@ mdat.visualization.pivot_table = function() {
           if (Array.isArray(d.values)) {
             var head = d.values[0],
                 tail = d.values.slice(1,d.length);
-            if (d.key) {  
-              h = h.concat( [ { category: categories[i], value: d.key, span: leaves(d) } ]);
+            if (d.key) {
+              h = h.concat( [ { category: categories[i],
+                                value: fmt(categories[i])(d.key),
+                                span: leaves(d) } ]);
             }
             recurse(h, head, i+1);
             tail.forEach(function(d) { recurse([], d, i+1); });
           } else {
-            h = h.concat( [ { category: categories[i], value: d.key }, { value: d.values } ]);
+            h = h.concat( [ { category: categories[i],
+                              value: fmt(categories[i])(d.key) },
+                            { value: fmt(categories[i+1])(d.values) } ]);
             result.push(h);
           }
         }
@@ -209,6 +219,9 @@ mdat.visualization.pivot_table = function() {
   chart.format = function(key, fn) {
     if (!arguments.length) return formats;
     formats[key] = fn;
+    if (!dimensions[key] && !aggregates[key]) {
+      console.log("WARNING  Format for unknown category: " + key);
+    }
     return chart;
   };
 
