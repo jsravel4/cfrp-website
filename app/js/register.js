@@ -20,13 +20,17 @@ mdat.visualization.register = function() {
       preview = format.parse('1680-04-30'),
       dispatch = d3.dispatch("update");
 
-  function image_url(image_file) {
-    var re = /M119_02_R(\d+)_(\d+)([rv])?.jpg/;
-    if (image_file) {
-      /* TODO. not clear when URLs have extra one (e.g. M1119_02...) */
-      image_file = image_file.replace(re, "http://hyperstudio.mit.edu/cfrp/flip_books/R$1/M119_02_R$1/M119_02_R$1_$2.jpg");
-    }
-    return image_file;
+  function image_url(playbill) {
+    /*
+      TODO. saved for later...
+      var re = /M119_02_R(\d+)_(\d+)([rv])?.jpg/;
+    */
+    var fmt = d3.format("03d"),
+        vol = fmt(playbill.image_volume),
+        img = fmt(playbill.image_page);
+    return "http://hyperstudio.mit.edu/cfrp/flip_books/R" + vol +
+           "/M119_02_R" + vol +
+           "/M119_02_R" + vol + "_" + img + ".jpg";
   }
 
   function chart(selection) {
@@ -69,7 +73,7 @@ mdat.visualization.register = function() {
           .attr("xlink:href", function() {
             var pb = cfrp.playbill_idx[preview];
             if (pb) {
-              return image_url(pb[0].image_file);
+              return image_url(pb[0]);
             }
           });
       }
