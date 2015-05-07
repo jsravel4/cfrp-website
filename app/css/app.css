@@ -34,7 +34,7 @@ body.setup #spinner {
 
 /* to be replaced by carousel when time comes */
 #slider {
-  width: 1350px;
+  width:100%;
   overflow-x: scroll;
   overflow-y: hidden;
 }
@@ -42,17 +42,19 @@ body.setup #spinner {
 
 #report_panel {
   margin: 5px;
-  position: relative;
   float: left;
-  width: 480px;
+  margin-right: -500px;
+  width: 100%;
 }
 
 #report_panel .scroll {
   height: 512px;
+  margin-right: 520px;
   overflow:auto;
 }
 
 #calendar_panel {
+  float: left;
   width: 475px;
   height: 512px;
 }
