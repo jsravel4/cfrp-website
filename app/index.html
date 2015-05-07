@@ -148,7 +148,10 @@ title: Base des Données CFRP
         //
 
         cfrp.cur_query = function() {
-          return mdat.router.parse_url(window.location.href) || default_query;
+          var dim_names = pivot.dimension(),
+              agg_names = pivot.aggregate();
+
+          return mdat.router.parse_url(window.location.href, dim_names, agg_names, default_query);
         }
 
         cfrp.on("refine.mdat", function(query) {

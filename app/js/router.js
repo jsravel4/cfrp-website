@@ -17,24 +17,18 @@ mdat.router = {};
 // Parse a given url, returning a query object or null
 //
 
-mdat.router.parse_url = function(url) {
+mdat.router.parse_url = function(url, dims, aggs, default_query) {
   var i = url.indexOf('?'),
       params = decodeURI(url.substring(i+1)).split('&'),
-      query = null;
+      query = default_query;
 
   if (i > -1) {
-    query = { rows: [], agg: 'sum(receipts)', filter: {} };
+    query = { rows: [], agg: default_query.agg, filter: {} };
     params.forEach(function(p) {
       var v;
-      // TODO.  check that values are valid
-      /*
-      if (v = p.match(/^row=(.+)$/))          { if (defs.dimensions[v[1]]) { query.rows.push(v[1]); } }
-      if (v = p.match(/^agg=(.+)$/))          { if (defs.aggregates[v[1]]) { query.agg = v[1]; } }
-      if (v = p.match(/^filter\.(.+)=(.+)$/)) { if (defs.dimensions[v[1]]) { query.filter[v[1]] = v[2]; } }
-      */
-      if (v = p.match(/^row=(.+)$/))                    { query.rows.push(v[1]); }
-      if (v = p.match(/^agg=(.+)$/))                    { query.agg = v[1]; }
-      if (v = p.match(/^filter\.(.+)=(.+)$/))           { query.filter[v[1]] = v[2]; }
+      if (v = p.match(/^row=(.+)$/))          { if (dims[v[1]]) { query.rows.push(v[1]); } }
+      if (v = p.match(/^agg=(.+)$/))          { if (aggs[v[1]]) { query.agg = v[1]; } }
+      if (v = p.match(/^filter\.(.+)=(.+)$/)) { if (dims[v[1]]) { query.filter[v[1]] = v[2]; } }
     });
   }
 
