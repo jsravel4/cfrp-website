@@ -9,7 +9,8 @@
 mdat.visualization.query = function() {
   
   var dimensions = [],
-      aggregates = [];
+      aggregates = [],
+      formats = {};
 
   var uid = 0,
       cfrp = undefined;
@@ -81,6 +82,10 @@ mdat.visualization.query = function() {
 
       cfrp.on("change." + namespace, mdat.spinner_callback(update, root, "Updated query"));
 
+      function fmt(g) {
+        return formats[g] || function(v) { return v; };
+      }
+
       function update() {
         // currently grouped categories
         var query = cfrp.cur_query();
@@ -121,7 +126,9 @@ mdat.visualization.query = function() {
             cfrp.change();
           });
         filters_enter.append("span").html(function(d) { return d.key + "&nbsp;=&nbsp;"; });
-        filters_enter.append("span").attr("class", "value").html(function(d) { return d.value; });
+        filters_enter.append("span").attr("class", "value").html(function(d) {
+          return fmt(d.key)(d.value);
+        });
       }
     });
   }
@@ -143,6 +150,12 @@ mdat.visualization.query = function() {
     aggregates = keys;
     return chart;
   };
+
+  chart.formats = function(map) {
+    if (!arguments.length) return formats;
+    formats = map;
+    return chart;
+  }
 
   return chart;
 

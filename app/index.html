@@ -227,7 +227,8 @@ title: Base des Données CFRP
             query = mdat.visualization.query()
                       .datapoint(cfrp)
                       .dimensions(d3.keys(pivot.dimension()))
-                      .aggregates(d3.keys(pivot.aggregate()));
+                      .aggregates(d3.keys(pivot.aggregate()))
+                      .formats(pivot.format());
 
         d3.select("#calendar_panel")
           .call(calendar);

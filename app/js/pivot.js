@@ -75,7 +75,7 @@ mdat.visualization.pivot_table = function() {
         td.html(function(v) { return v.value; })
           .classed("refinable", function(d) { return d.category && d.value; })
           .on("click", function(d) {
-            query.filter[d.category] = d.value;
+            query.filter[d.category] = d.raw;
             cfrp.refine(query);
             console.log("filtered: " + JSON.stringify(query));
             cfrp.change();
@@ -173,14 +173,17 @@ mdat.visualization.pivot_table = function() {
             if (d.key) {
               h = h.concat( [ { category: categories[i],
                                 value: fmt(categories[i])(d.key),
+                                raw: d.key,
                                 span: leaves(d) } ]);
             }
             recurse(h, head, i+1);
             tail.forEach(function(d) { recurse([], d, i+1); });
           } else {
             h = h.concat( [ { category: categories[i],
-                              value: fmt(categories[i])(d.key) },
-                            { value: fmt(categories[i+1])(d.values) } ]);
+                              value: fmt(categories[i])(d.key),
+                              raw: d.key },
+                            { value: fmt(categories[i+1])(d.values),
+                              raw: d.values } ]);
             result.push(h);
           }
         }
