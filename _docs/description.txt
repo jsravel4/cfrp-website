@@ -1,0 +1,12 @@
+﻿Description du projet RCF // 2500 mots
+Le programme RCF s’intéresse à un corpus d’exception : les registres manuscrits de la Comédie-Française en tant que patrimoine théâtral des XVIIe et XVIIIe siècles.
+
+La Comédie-Française est en effet le seul théâtre au monde à avoir conservé de manière si complète, ses archives administratives, et pour ce qui nous intéresse, ses archives d’Ancien Régime. Ces archives représentent un patrimoine unique et précieux, difficile à exploiter en l’état puisqu’il s’agit d’une source d’accès restreint (manuscrits conservés à la Bibliothèque-Musée de la Comédie-Française) et imposante en volume – ce qui pose un problème de traitement qualitatif et quantitatif. Grâce à l’apport des outils technologiques innovants, les contraintes liées à l’analyse globale, mais aussi rapprochée de cette archive ont pu être soulevées. 
+
+Avec comme principaux objectifs la numérisation, l’analyse statistique et l’exploitation scientifique des données contenues dans les registres journaliers de la Comédie-Française pour la période 1680-1793, le programme RCF permet de valoriser cette source patrimoniale unique et de la réactualiser en regard des potentialités nouvelles,  celle de la visualisation et du traitement statistique. Plus précisément, le programme RCF a été pensé en deux volets : 
+
+- un volet technologique qui comprend la numérisation des registres en fac simile, le développement d’outils de visualisation et de traitement statistique innovants qui ont permis de créer une base de données analytique interrogeable à l’infini par les usagers ;
+- un volet de valorisation et de recherche qui fournit des exemples d’exploitation scientifique de ces données à travers des projets de recherche, des manifestations pédagogiques et culturelles, des publications et des études de cas que l’actuel site répercute dans ses différentes sections.
+
+L’accessibilité et la mise au jour des registres de la Comédie-Française - grâce à la politique de valorisation qui les accompagne et aux possibilités offertes par les nouvelles technologies – doit ainsi permettre d’élargir et d'accélérer considérablement la maîtrise et la diffusion des connaissances en histoire du théâtre. Le programme RCF s’inscrit dans une démarche d’ouverture, de partage et de collaboration et participe à ouvrir de nouvelles perspectives méthodologiques, techniques et heuristiques tant pour la recherche en Sciences humaines et sociales que pour celle des laboratoires en lien avec les Digitals Humanities. 
+									Rédigé par SH //22.01.15

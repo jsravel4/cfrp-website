@@ -1,0 +1,29 @@
+﻿CFRP Web Site
+
+
+Introduction to the Comédie-Française Register Facsimiles
+
+
+The Comédie-Française Registers Project (CFRP) database is comprised of data extracted from the daily box office receipt registers of the Comédie-Française theater troupe from 1680 to 1793.  In addition to the database and the data analysis tools provided on this site, we also make available high resolution digital facsimiles of the original seventeenth and eighteenth-century folio registers, which are conserved at the Bibliothèque-Musée de la  Comédie-Française, located in the Palais Royal in the heart of Paris.  [http://www.comedie-francaise.fr/la-comedie-francaise-aujourdhui.php?id=507]  Links to each season’s receipt register can be found below, with the exception of the 1739-1740 season; this register disappeared long ago from the troupe’s archives.  Some of the data analysis tools also allow users to link to individual register facsimile pages.
+
+In addition to the receipt registers, users will find links below to other Comédie-Française registers that contain daily expenditure information, and lists of the troupe’s actors who performed each night.  The expenditure and casting registers are not as extensive as the receipt registers, in part because in some seasons the troupe recorded expenditure and casting information in the receipt registers.  For those seasons, users should search the corresponding receipt registers for the missing data, although there are some years for which neither expenditure nor casting data is available.  In the future, we may add the expenditure and casting data to the receipts database currently accessible online.
+
+Finally, we provide links to high resolution digital facsimiles of selected administrative registers maintained by the troupe from 1680 to 1793.  These registers record the proceedings of the troupe’s administrative committee, and other records of official deliberations and exchanges with the royal government.  Users intrigued by this material may wish to visit the Bibliothèque-Musée de la Comédie-Française to see what other relevant materials are available in the troupe’s archive.
+
+
+***
+Le programme numérique Registres de la Comédie-Française (RCF) comprend non seulement une base de données et des outils d’interrogation et de visualisation construite à partir des registres journaliers de la Comédie-Française de 1680 à 1793, il rend également accessible ses archives grâce à une numérisation en haute résolution disponible sur le site (link). Chaque saison sur lesquelles nous avons travaillé – à l’exception de la saison 1739-1740, aujourd’hui perdue – peut ainsi être consultée afin d’approfondir les recherches ou vérifier certains détails.
+
+Cet important travail éditorial est enrichi par quatre autres séries d’archives qui viennent compléter celle des registres journaliers : 
+
+- Double des registres journaliers (I-link) // grâce à cette numérisation mise à disposition des usagers, des informations complémentaires qualitatives permettront d’enrichir les analyses statistiques issues de la collection choisie.
+
+- Registres des feux (link) // des saisons 1765 à 1793, il est possible de consulter le détail des distributions pour chaque soirée. Notez qu’avant 1765, la distribution se trouve aléatoirement au verso du registre journalier des recettes. 
+
+- Registres des dépenses journalières (link) // disponibles à partir de 1757 jusqu’en 1792, ces registres sont aujourd’hui numérisés et accessibles aux usagers pour les années 1757 à 1760. C’est à cette période que l’on observe une transition dans la constitution du registre journalier qui comprend jusqu’à cette date les recettes et les dépenses pour chaque chambrée. Nous envisageons de rendre disponible l’intégralité de ce fonds dans les années à venir. 
+
+- Registres d’Assemblées (link) // procès-verbaux des réunions d’assemblées de la troupe, ces feuillets fournissent de diverses et de précieuses informations sur l’histoire de la programmation, de la distribution et des finances de l’institution. La numérisation actuelle portent sur l’ensemble de la période (1680-1793).
+
+Veuillez noter que d’autres séries d’archives sont aujourd’hui disponibles et conservées à la Bibliothèque Musée de la Comédie-Française. Nous prévoyons rendre progressivement disponibles une partie des précieux manuscrits. 
+
+Je peux fournir la liste de toutes les archives de la Bibliothèque Musée sous la forme d’un tableau, ce serait pratique me semble-t-il.

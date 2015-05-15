@@ -4,17 +4,19 @@ layout: the-data
 tid: the-data
 title: Introduction to the Database
 ---
-The database at the heart of the Com&eacute;die-Française Registers Project derives from the daily box office attendance records kept assiduously by the troupe from its founding in 1680 to the Revolution, and beyond. High resolution virtual reproductions of these records can be found here [link to flipbooks index page]. The troupe maintained detailed receipt records because the Crown insisted that the actors donate a portion of each evening’s proceeds to charities, to mollify the French Catholic critics of the stage&rsquo;s &ldquo;sinfulness.&rdquo; In addition, the members of the troupe split the remaining revenue among themselves according to seniority within the troupe. A detailed accounting was necessary to maintain harmony among the players themselves.
+Introduction générale à la base de données
 
-The troupe played in four different venues between 1680 and 1793, when the actors split into royalist and republican factions and the data in our database ends. The search and visualization tools we have created allow you to compare ticket sales and box office receipts in three fundamental categories across our entire time span: the parterre, or orchestra; the first loges; and total sales and attendance. But because the seating options in each venue differed substantially, it is not possible to compare all seating categories across the 113 seasons for which we possess tickets sales information.
+La base de données ici présentée constitue le cœur du programme RCF. Dès la fondation de la Comédie-Française en 1680, les membres de la troupe tiennent une comptabilité régulière des recettes et dépenses de chaque jour de representation, reportée dans des registres “saisonniers” – sous l’Ancien Régime, la saison théâtrale débutait le lundi suivant celui de Pâques pour se terminer la veille des Rameaux. Cette documentation administrative contient initialement des détails au sujet des pièces représentées, des recettes, des dépenses et, dans certains cas, de la distribution. Ces informations occupent à l’origine une fonction doublement pragmatique : d’une part, les registres contiennent systématiquement une note sur les parts données aux pauvres et témoignent du fait que la troupe remplit ses obligations de charité chrétienne. D’autre part, la transparence des recettes sert de fondement à la division des parts d’acteurs et, dans le cas des créations, des auteurs et protègent ainsi les malentendus au sein du corps des comédiens. 
+De 1680 à 1793, ces registres journaliers vont subir diverses transformations. L’une des raisons principales qui explique ces modifications relève du fait qu’entre 1680 et 1793, la troupe va déménager à trois reprises dans différentes salles : 
 
-We therefore offer you the option to study more detailed ticket sales and attendance patterns within the four periods that correspond to the troupe&rsquo;s occupancy of the four following venues:
+- 1680-1689: Théâtre Guénégaud
+- 1689-1770: Théâtre de la rue des Fosses St-Germain
+- 1770-1782: Salle des machines, Palais des Tuileries
+- 1782-1793: Théâtre Odéon
 
-* 1680-1689: Th&eacute;âtre Gu&eacute;n&eacute;gaud
-* 1689-1770: Th&eacute;âtre de la rue des Fosses St-Germain
-* 1770-1782: Salle des machines, Palais des thuil&eacute;ries
-* 1782-1793: Th&eacute;âtre Od&eacute;on
+Ces déménagements successifs ont une incidence directe sur l’élaboration de la base de données qui, rappelons-le, porte actuellement sur le relevé et l’analyse des recettes uniquement. En effet, les registres de la Comédie-Française s’adaptent, au fil du temps, à la configuration de chaque nouvelle sale, et donc aux changements de la jauge et du tarif des places. Sur l’ensemble de la période, l’on peut uniquement distinguer deux grandes catégories de place, le parterre et les loges, qui sont présentes dans tous les théâtres.  Or, pour une étude statistique détaillée, la seule option valide est de tenir compte des variations de places et de prix des billets à l’unité ou en fonction des catégories de place (ex : les loges). Pour cela, notre base de données a été divisée en fonction des 4 salles de théâtre. 
 
-For more detailed descriptions of each space, complemented by contemporary engravings of the playhouses, visit [link; also make each of the four theaters above link to the appropriate page that describes it]. For details about the editorial principles followed to create the database, see [link]. For information on the information technology underlying the database and the applications we have created to query it, see [link].
+Pour des détails architecturaux et des précisions sur l’histoire des places et des tarifs, voir les pages suivantes : 
+Pour une introduction critique détaillée à la base de données, voir la page suivante : lien 
+Pour l’ensemble des détails technologiques et techniques au sujet de la création de la base de données, voir les pages suivantes : lien 
 
-The troupe also kept detailed records of their daily expenditures, as well as cast lists for each performance. Registers recording information in these two categories, as well as a selection of more general administrative records, may also be accessed on our index register page [link]. These records are less complete than the daily receipts registers. At a future date, we hope to add expense and casting data to the box receipts database presented here.
