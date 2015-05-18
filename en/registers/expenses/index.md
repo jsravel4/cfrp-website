@@ -2,7 +2,7 @@
 lang: en
 layout: registers
 tid: expenses
-title: Dépenses
+title: Expense registers
 ---
 
 <ul style="float:left;">
