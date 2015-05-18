@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CFRP</title>
-    <description>Informational website for the Comédie Française Registers Project.</description>
+    <description>Informational website for the Comédie-Française Registers Project.</description>
     <link>http://cfregisters.org/</link>
     <atom:link href="http://cfregisters.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 18 May 2015 11:01:21 -0400</pubDate>
-    <lastBuildDate>Mon, 18 May 2015 11:01:21 -0400</lastBuildDate>
+    <pubDate>Mon, 18 May 2015 11:26:39 -0400</pubDate>
+    <lastBuildDate>Mon, 18 May 2015 11:26:39 -0400</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
