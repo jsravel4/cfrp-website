@@ -1,10 +1,13 @@
   <!--BEGIN FOOTER-->
   <div id="footer-wrapper">
+  {% comment %} 
     <div class="row">
       <div class="small-12 medium-9 columns">
         <div id="search_container">
           <input type="text">
         </div>
+  }
+  }
 {% for navitem in site.data.footer-navigation-translations %}
   {% if navitem.lang == page.lang %}
         <p><a href="{{navitem.url}}">{{navitem.title}}</a></p>
@@ -35,6 +38,7 @@
         </form>
       </div>
     </div>
+    {% endcomment %}
     <div class="row" id="logos">
       <div class="small-12 columns show-for-large">
         <img src="/img/footer_logos_8up.png" alt="footer_logos_8up" width="1043" height="86">
