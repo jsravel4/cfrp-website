@@ -2,15 +2,15 @@
 lang: en
 layout: registers
 tid: duplicate
-title: Double des Registres Journaliers
+title: Duplicate daily receipt registers
 ---
 
 <ul style="float:left;">
 <li><a href="http://hyperstudio.mit.edu/cfrp/flip_books/R19/index.html" target="bookreader">R19</a> 1687-1688</li>
 <li><a href="http://hyperstudio.mit.edu/cfrp/flip_books/R21/index.html" target="bookreader">R21</a> 1688-1689</li>
-<li><a href="http://hyperstudio.mit.edu/cfrp/flip_books/R24/index.html" target="bookreader">R24</a></div>
+<li><a href="http://hyperstudio.mit.edu/cfrp/flip_books/R24/index.html" target="bookreader">R24</a></li>
 <li>1689-1690</li>
-<li><a href="http://hyperstudio.mit.edu/cfrp/flip_books/R26/index.html" target="bookreader">R26</a></div>
+<li><a href="http://hyperstudio.mit.edu/cfrp/flip_books/R26/index.html" target="bookreader">R26</a></li>
 <li>1690-1691</li>
 <li><a href="http://hyperstudio.mit.edu/cfrp/flip_books/R28/index.html" target="bookreader">R28</a> 1691-1692</li>
 <li><a href="http://hyperstudio.mit.edu/cfrp/flip_books/R30/index.html" target="bookreader">R30</a> 1692-1693</li>

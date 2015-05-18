@@ -1,11 +1,11 @@
 ---
-lang: fr
+lang: en
 layout: registers
 tid: expenses
 title: Dépenses
 ---
 
-<ul>
+<ul style="float:left;">
   <li><a href="R120_1/index.html" target="bookreader">R120_1</a> 1757-1758</li>
   <li><a href="R120_2/index.html" target="bookreader">R120_2</a> 1758-1759</li>
   <li><a href="R120_3/index.html" target="bookreader">R120_3</a> 1759-1760</li>
@@ -19,7 +19,10 @@ title: Dépenses
   <li><a href="R120_11/index.html" target="bookreader">R120_11</a> 1764-1765</li>
   <li><a href="R120_12/index.html" target="bookreader">R120_12</a> 1765-1766</li>
   <li><a href="R120_13/index.html" target="bookreader">R120_13</a> 1766-1767</li>
-  <li><a href="R120_14/index.html" target="bookreader">R120_14</a> 1767-1768</li>
+ </ul>
+
+<ul style="float:left;">
+ <li><a href="R120_14/index.html" target="bookreader">R120_14</a> 1767-1768</li>
   <li><a href="R120_15/index.html" target="bookreader">R120_15</a> 1768-1769</li>
   <li><a href="R120_16/index.html" target="bookreader">R120_16</a> 1769-1770</li>
   <li><a href="R120_17/index.html" target="bookreader">R120_17</a> 1770-1771</li>

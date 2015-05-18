@@ -5,7 +5,7 @@ tid: casting
 title: Casting
 ---
 
-<ul>
+<ul style="float:left;">
   <li><a href="R130_1/index.html" target="bookreader">R130_1</a> 1765-1767</li>
   <li><a href="R130_2/index.html" target="bookreader">R130_2</a> 1767-1768</li>
   <li><a href="R130_3/index.html" target="bookreader">R130_3</a> 1768-1770</li>
@@ -17,7 +17,10 @@ title: Casting
   <li><a href="R130_9/index.html" target="bookreader">R130_9</a> 1776-1777</li>
   <li><a href="R130_10/index.html" target="bookreader">R130_10</a> 1777-1779</li>
   <li><a href="R130_11/index.html" target="bookreader">R130_11</a> 1779-1780</li>
-  <li><a href="R130_12/index.html" target="bookreader">R130_12</a> 1780-1781</li>
+ </ul>
+
+<ul style="float:left;">
+ <li><a href="R130_12/index.html" target="bookreader">R130_12</a> 1780-1781</li>
   <li><a href="R130_13/index.html" target="bookreader">R130_13</a> 1781-1782</li>
   <li><a href="R130_14/index.html" target="bookreader">R130_14</a> 1782-1784</li>
   <li><a href="R130_15/index.html" target="bookreader">R130_15</a> 1784-1785</li>

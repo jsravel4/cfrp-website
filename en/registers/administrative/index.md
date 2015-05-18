@@ -35,9 +35,6 @@ title: Administrative
 <li><a href="R52_0_1706/index.html" target="bookreader">R52_0_1706</a> 1706</li>
 <li><a href="R52_1/index.html" target="bookreader">R52_1</a> 1706-1707</li>
 <li><a href="R52_2/index.html" target="bookreader">R52_2</a> 1709-1712</li>
-</ul>
-
-<ul style="float:left;">
 <li><a href="R52_3/index.html" target="bookreader">R52_3</a> 1712-1714</li>
 <li><a href="R52_4/index.html" target="bookreader">R52_4</a> 1714-1716</li>
 <li><a href="R52_5/index.html" target="bookreader">R52_5</a> 1716-1719</li>
@@ -46,6 +43,9 @@ title: Administrative
 <li><a href="R52_8/index.html" target="bookreader">R52_8</a> 1723-1725</li>
 <li><a href="R52_9/index.html" target="bookreader">R52_9</a> 1725-1726</li>
 <li><a href="R52_10/index.html" target="bookreader">R52_10</a> 1726-1728</li>
+</ul>
+
+<ul style="float:left;">
 <li><a href="R52_11/index.html" target="bookreader">R52_11</a> 1728-1729</li>
 <li><a href="R52_12/index.html" target="bookreader">R52_12</a> 1729-1730</li>
 <li><a href="R52_13/index.html" target="bookreader">R52_13</a> 1730-1733</li>
