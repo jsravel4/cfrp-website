@@ -2,7 +2,7 @@
 lang: fr
 layout: registers
 tid: administrative
-title: Administratives
+title: Registres d’Assemblées
 ---
 
 <ul style="float:left;">

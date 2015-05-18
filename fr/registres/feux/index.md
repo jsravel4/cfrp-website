@@ -2,7 +2,7 @@
 lang: fr
 layout: registers
 tid: casting
-title: Feux
+title: Registres des feux
 ---
 
 <ul style="float:left;">

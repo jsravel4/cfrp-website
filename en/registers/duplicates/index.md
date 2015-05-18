@@ -2,7 +2,7 @@
 lang: en
 layout: registers
 tid: duplicate
-title: Duplicates
+title: Double des Registres Journaliers
 ---
 
 <ul style="float:left;">
