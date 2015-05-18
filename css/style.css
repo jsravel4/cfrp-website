@@ -44,6 +44,9 @@
   background-size: cover;
   height: 600px; }
 
+.orbit-timer {
+  display: none; }
+
 #header-image-caption-container {
   background: url("../img/header-img-1.jpg") no-repeat center center fixed;
   background-size: cover;
@@ -294,3 +297,5 @@ h3.main_content {
 
   .home-basics-column article p {
     font-size: 1.2em; } }
+
+/*# sourceMappingURL=style.css.map */
