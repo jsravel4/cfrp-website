@@ -1,7 +1,7 @@
 ---
 lang: en
-layout: the-data
-tid: flip-books
+layout: registers
+tid: registers
 title: Introduction to the Com&eacute;die-Fran&ccedil;aise Register Facsimiles
 ---
 The Com&eacute;die-Fran&ccedil;aise Registers Project (CFRP) database is comprised of data extracted from the daily box office receipt registers of the Com&eacute;die-Fran&ccedil;aise theater troupe from 1680 to 1793. In addition to the database and the data analysis tools provided on this site, we also make available high resolution digital facsimiles of the original seventeenth and eighteenth-century folio registers, which are conserved at the [Biblioth&egrave;que-Mus&eacute;e de la Com&eacute;die-Fran&ccedil;aise](http://www.comedie-francaise.fr/la-comedie-francaise-aujourdhui.php?id=507), located in the Palais Royal in the heart of Paris. Links to each season&rsquo;s receipt register can be found below, with the exception of the 1739-1740 season; this register disappeared long ago from the troupe&rsquo;s archives. Some of the data analysis tools also allow users to link to individual register facsimile pages.
