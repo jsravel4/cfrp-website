@@ -7,9 +7,11 @@ title: Introduction to the Database
 
 We currently offer two tools to access the database.
 
-1. [Faceted Browser](#link). This tool allows users introductory access to the database. Here you can explore data about authors, plays, genres, and selected ticket categories by season or by day of the week. By clicking on the camera icons on the left of the screen, you can also open up register pages in a new window.
+1. [Faceted Browser](http://app.cfregisters.org/registers).
+This tool allows users introductory access to the database. Here you can explore data about authors, plays, genres, and selected ticket categories by season or by day of the week. By clicking on the camera icons on the left of the screen, you can also open up register pages in a new window.
 
-1. [Pivot Browser](#link). This tool allows users more advanced access to the database. Here you can build more sophisticated queries which will display in tabular format. The results in turn are linked to a calendrical visualisation.
+2. [Pivot Browser](/app).
+This tool allows users more advanced access to the database. Here you can build more sophisticated queries which will display in tabular format. The results in turn are linked to a calendrical visualisation.
 
 The database at the heart of the Com&eacute;die-Française Registers Project derives from the daily box office attendance records kept assiduously by the troupe from its founding in 1680 to the Revolution, and beyond. High resolution virtual reproductions of these records can be found here [link to flipbooks index page]. The troupe maintained detailed receipt records because the Crown insisted that the actors donate a portion of each evening’s proceeds to charities, to mollify the French Catholic critics of the stage&rsquo;s &ldquo;sinfulness.&rdquo; In addition, the members of the troupe split the remaining revenue among themselves according to seniority within the troupe. A detailed accounting was necessary to maintain harmony among the players themselves.
 

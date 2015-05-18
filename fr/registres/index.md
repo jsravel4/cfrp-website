@@ -4,7 +4,7 @@ layout: registers
 tid: registers
 title: Introduction to the Com&eacute;die-Fran&ccedil;aise Register Facsimiles
 ---
-Le programme numérique Registres de la Comédie-Française (RCF) comprend non seulement une base de données et des outils d’interrogation et de visualisation construite à partir des registres journaliers de la Comédie-Française de 1680 à 1793, il rend également accessible ses archives grâce à une numérisation en haute résolution disponible sur le site (link). Chaque saison sur lesquelles nous avons travaillé – à l’exception de la saison 1739-1740, aujourd’hui perdue – peut ainsi être consultée afin d’approfondir les recherches ou vérifier certains détails.
+Le programme numérique Registres de la Comédie-Française (RCF) comprend non seulement une base de données et des outils d’interrogation et de visualisation construite à partir des registres journaliers de la Comédie-Française de 1680 à 1793, il rend également accessible ses archives grâce à une numérisation en haute résolution disponible [sur le site](/fr/registres/recettes/). Chaque saison sur lesquelles nous avons travaillé – à l’exception de la saison 1739-1740, aujourd’hui perdue – peut ainsi être consultée afin d’approfondir les recherches ou vérifier certains détails.
 
 Cet important travail éditorial est enrichi par quatre autres séries d’archives qui viennent compléter celle des registres journaliers : 
 

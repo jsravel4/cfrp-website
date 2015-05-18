@@ -6,109 +6,111 @@
 </head>
     <body>
     <!-- body content here -->
-{% include header.html %}
+    {% include header.html %}
 
-<ul class="hero-orbit" data-orbit data-options="slide_number:false;swipe:false;">
-    <li>
-        <div class="orbit-image" style="background-image: url('/img/header-img-1.jpg');"></div>
-        <div class="orbit-caption">
-            <div class="row">
-                <div class="medium-9 columns hero-captions">
-                    <h6>About the Project</h6>
-                    <h1>The Facsimiles</h1>
-                    <h3>A complete record of who, what, where... and how much</h3>
-                    <p><a>Read More</a></p>
+    <ul class="hero-orbit" data-orbit data-options="slide_number: false; animation: slide;timer_speed: 6000; pause_on_hover: false; next_on_click: true; animation_speed: 500;navigation_arrows: true;">
+        <li>
+            <div class="orbit-image" style="background-image: url('/img/project-history-image-2.jpg');"></div>
+            <div class="orbit-caption">
+                <div class="row">
+                    <div class="medium-9 columns hero-captions">
+                        <h6>Le context du project</h6>
+                        <h1>Historique du Projet</h1>
+                        <h3>L'équipe, le travail, et l'avenir</h3>
+                        <p><a href="/en/">En savoir plus &raquo;</a></p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </li>
-    <li class="active">
-        <div class="orbit-image" style="background-image: url('/img/header-img-1.jpg');"></div>
-        <div class="orbit-caption">
-            <div class="row">
-                <div class="medium-9 columns hero-captions">
-                    <h6>About the Project</h6>
-                    <h1>The Facsimiles</h1>
-                    <h3>A complete record of who, what, where... and how much</h3>
-                    <p><a>Read More</a></p>
+        </li>
+        <li class="active">
+            <div class="orbit-image" style="background-image: url('/img/header-img-1.jpg');"></div>
+            <div class="orbit-caption">
+                <div class="row">
+                    <div class="medium-9 columns hero-captions">
+                        <h6>L'archive</h6>
+                        <h1>Les Registres</h1>
+                        <h3>Images en haute résolution des pages des registres</h3>
+                        <p><a href="/fr/registres">Feuilleter &raquo;</a></p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </li>
-    <li>
-        <div class="orbit-image" style="background-image: url('/img/header-img-1.jpg');"></div>
-        <div class="orbit-caption">
-            <div class="row">
-                <div class="medium-9 columns hero-captions">
-                    <h6>About the Project</h6>
-                    <h1>The Facsimiles</h1>
-                    <h3>A complete record of who, what, where... and how much</h3>
-                    <p><a>Read More</a></p>
+        </li>
+        <li>
+            <div class="orbit-image" style="background-image: url('/img/pivot-browser.png');"></div>
+            <div class="orbit-caption">
+                <div class="row">
+                    <div class="medium-9 columns hero-captions">
+                        <h6>Les Outils</h6>
+                        <h1>La base de données</h1>
+                        <h3>Approfondir vos connaissances</h3>
+                        <p><a href="/fr/ouvrages/">Démarrer une nouvelle recherche &raquo;</a></p>
+                    </div>
                 </div>
             </div>
+        </li>
+    </ul>
+    <div class="row">
+    
+        {% comment %}
+        <!--Begin left case study column-->
+        <div class="small-12 medium-3 columns">
+            <section class="home-case-study-column">
+
+                <article class="home-case-study-entry">
+                    <h4>Case study</h4>
+                    <h2>Changing patterns of public taste and cultural consumption</h2>
+                    <h4><a href="#">Read more</a></h4>
+                </article>
+
+                <article class="home-case-study-entry">
+                    <h4>Case study</h4>
+                    <h2>Changing patterns of public taste and cultural consumption</h2>
+                    <h4><a href="#">Read more</a></h4>
+                </article>
+
+            </section>
         </div>
-    </li>
-</ul>
+        <!--End left case study column-->
+        {% endcomment %}
 
-<div class="row">
+        <!--Begin center "about" column-->
+        <div class="small-12 medium-8 columns">
+            <section class="home-basics-column">
+                <article class="home-basics-entry">
+                    <h4>About this project</h4>
+                    
+                    
+                    {{ content }}
+                    <h4><a href="#">Read more</a>
+                </article>
+            </section>
+        </div>
+        <!--End center "about" column-->
 
-    <!--Begin left case study column-->
-    <div class="small-12 medium-3 columns">
-        <section class="home-case-study-column">
+        <!--Begin right case study column-->
+        <div class="small-12 medium-4 columns">
+            <section class="home-case-study-column">
 
-            <article class="home-case-study-entry">
-                <h4>Case study</h4>
-                <h2>Changing patterns of public taste and cultural consumption</h2>
-                <h4><a href="#">Read more</a></h4>
-            </article>
+                <article class="home-case-study-entry">
+                    <h4>Case study</h4>
+                    <img src="/img/frontpiece3.jpg">
+                    <h2>Changing patterns of public taste and cultural consumption</h2>
+                    <h4><a href="#">Read more</a></h4>
+                </article>
 
-            <article class="home-case-study-entry">
-                <h4>Case study</h4>
-                <h2>Changing patterns of public taste and cultural consumption</h2>
-                <h4><a href="#">Read more</a></h4>
-            </article>
+                <article class="home-case-study-entry">
+                    <h4>Case study</h4>
+                    <h2>Changing patterns of public taste and cultural consumption</h2>
+                    <h4><a href="#">Read more</a></h4>
+                </article>
 
-        </section>
+            </section>
+        </div>
+        <!--end right case study column-->
+
     </div>
-    <!--End left case study column-->
+    
 
-    <!--Begin center "about" column-->
-    <div class="small-12 medium-6 columns">
-        <section class="home-basics-column">
-            <article class="home-basics-entry">
-                <h4>About this project</h4>
-                <img src="/img/frontpiece3.jpg">
-                <!--h1>The Basics of the Comedie-Francaise Register Project</h1-->
-                {{ content }}
-                <h4><a href="#">Read more</a>
-            </article>
-        </section>
-    </div>
-    <!--End center "about" column-->
-
-    <!--Begin right case study column-->
-    <div class="small-12 medium-3 columns">
-        <section class="home-case-study-column">
-
-            <article class="home-case-study-entry">
-                <h4>Case study</h4>
-                <h2>Changing patterns of public taste and cultural consumption</h2>
-                <h4><a href="#">Read more</a></h4>
-            </article>
-
-            <article class="home-case-study-entry">
-                <h4>Case study</h4>
-                <h2>Changing patterns of public taste and cultural consumption</h2>
-                <h4><a href="#">Read more</a></h4>
-            </article>
-
-        </section>
-    </div>
-    <!--end right case study column-->
-
-</div>
-
-{% include footer.html %}
-
+    {% include footer.html %}
     </body>
 </html>
