@@ -2,9 +2,15 @@
 lang: fr
 layout: the-data
 tid: the-data
-title: Introduction to the Database
+title: Introduction générale à la base de données
 ---
-Introduction générale à la base de données
+
+Nous proposons en ce moment deux outils pour acceder à la base de données
+
+1. [Faceted Browser](http://app.cfregisters.org/registers).
+Cet outil permet aux utilisateurs un accèss de debut a la base. Ici vous pouvez explorer des donnees qui releve des auteurs, des genres, et des categories de billet par saison ou par jour de la semaine. En cliquant sur l'icon d'appareil photo a la gauche de l'ecran, vous pouvez aussi voir une page de régistre dans une nouvelle fenêtre.
+
+2. [Pivot Browser](/app). Cet outil permet aux utilisateurs un accèss un peu plus avancé à la base de données. Ici vous pouvez construire des recherches plus sophistiquées dont les resultats se presentent en forme tabulaire. Les resultats sont par la suite visualisé en forme de calendrier.
 
 La base de données ici présentée constitue le cœur du programme RCF. Dès la fondation de la Comédie-Française en 1680, les membres de la troupe tiennent une comptabilité régulière des recettes et dépenses de chaque jour de representation, reportée dans des registres “saisonniers” – sous l’Ancien Régime, la saison théâtrale débutait le lundi suivant celui de Pâques pour se terminer la veille des Rameaux. Cette documentation administrative contient initialement des détails au sujet des pièces représentées, des recettes, des dépenses et, dans certains cas, de la distribution. Ces informations occupent à l’origine une fonction doublement pragmatique : d’une part, les registres contiennent systématiquement une note sur les parts données aux pauvres et témoignent du fait que la troupe remplit ses obligations de charité chrétienne. D’autre part, la transparence des recettes sert de fondement à la division des parts d’acteurs et, dans le cas des créations, des auteurs et protègent ainsi les malentendus au sein du corps des comédiens. 
 De 1680 à 1793, ces registres journaliers vont subir diverses transformations. L’une des raisons principales qui explique ces modifications relève du fait qu’entre 1680 et 1793, la troupe va déménager à trois reprises dans différentes salles : 

@@ -298,4 +298,10 @@ h3.main_content {
   .home-basics-column article p {
     font-size: 1.2em; } }
 
+
+  article ul {
+    margin-left: 20px;
+    padding-left: 20px;
+  }
+
 /*# sourceMappingURL=style.css.map */
