@@ -1,8 +1,8 @@
 ---
-lang: en
+lang: fr
 layout: project-background
-tid: about-comedie-francais
-title: About Comedie Francais
+tid: about-the-comédie-française
+title: Sur la Comédie-Française
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod

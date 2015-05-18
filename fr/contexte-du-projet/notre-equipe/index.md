@@ -1,7 +1,7 @@
 ---
 lang: fr
 layout: project-background
-tid: notre-equipe
+tid: the-team
 title: Notre Equipe
 ---
 - Christian Biet, professeur, Paris-Ouest Nanterre La Défense
