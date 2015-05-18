@@ -23,7 +23,7 @@ De 1680 à 1793, ces registres journaliers vont subir diverses transformations. 
 
 Ces déménagements successifs ont une incidence directe sur l’élaboration de la base de données qui, rappelons-le, porte actuellement sur le relevé et l’analyse des recettes uniquement. En effet, les registres de la Comédie-Française s’adaptent, au fil du temps, à la configuration de chaque nouvelle sale, et donc aux changements de la jauge et du tarif des places. Sur l’ensemble de la période, l’on peut uniquement distinguer deux grandes catégories de place, le parterre et les loges, qui sont présentes dans tous les théâtres.  Or, pour une étude statistique détaillée, la seule option valide est de tenir compte des variations de places et de prix des billets à l’unité ou en fonction des catégories de place (ex : les loges). Pour cela, notre base de données a été divisée en fonction des 4 salles de théâtre. 
 
-Pour des détails architecturaux et des précisions sur l’histoire des places et des tarifs, voir les pages suivantes : 
-Pour une introduction critique détaillée à la base de données, voir la page suivante : lien 
-Pour l’ensemble des détails technologiques et techniques au sujet de la création de la base de données, voir les pages suivantes : lien 
+<!-- Pour des détails architecturaux et des précisions sur l’histoire des places et des tarifs, voir les pages suivantes: -->
+Pour une introduction critique détaillée à la base de données, [voir la page suivante](/fr/ouvrages)
+Pour l’ensemble des détails technologiques et techniques au sujet de la création de la base de données, [voir les pages suivantes](/fr/ouvrages/)
 
