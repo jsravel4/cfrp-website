@@ -34,7 +34,7 @@ title: The Team
 - Oriane Morvan, Data entry
 - Silvia Spanu Femder, Data entry
 
-**Informaticiens**
+**Software**
 
 - Dave Della Costa, Web Applications Developer, MIT HyperStudio
 - Kurt Fendt, Executive Director, MIT HyperStudio
