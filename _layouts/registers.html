@@ -10,11 +10,11 @@
 
 <ul class="hero-orbit" data-orbit data-options="slide_number:false;navigation_arrows:false;timer_show_progress_bar:false;bullets:false;timer:false;swipe:false;">
     <li>
-        <div class="orbit-image" style="background-image: url('/img/pivot-browser.png');"></div>
+        <div class="orbit-image" style="background-image: url('/img/header-img-1.jpg');"></div>
         <div class="orbit-caption">
             <div class="row">
                 <div class="small-9 columns hero-captions">
-                    <h6>Access the Data</h6>
+                    <h6>Registers</h6>
                     <h1>{{ page.title }}</h1>
                 </div>
                 <div class="small-3 columns hero-captions">
@@ -30,9 +30,9 @@
 
     <!--Begin left nav-->
     <div class="small-12 large-4 columns" id="pb-left-nav">
-        <h6>Access the Data</h6>
+        <h6>Registers</h6>
         <ul>
-{% for navitem in site.data.the-data-navigation-translations %}
+{% for navitem in site.data.registers-navigation-translations %}
   {% if navitem.lang == page.lang %}
             <li><a href="{{navitem.url}}"{% if navitem.name == page.tid %} class="current"{% endif %}>{{navitem.title}}</a></li>
   {% endif %}

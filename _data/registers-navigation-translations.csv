@@ -1,0 +1,15 @@
+"lang","name","url","title"
+"en","registers","/en/registers","Introduction to the registers"
+"fr","registers","/fr/registres","Introduction aux registres"
+"en","receipts","/en/registers/receipts","Receipt registers"
+"fr","receipts","/fr/registres/recettes","Registres de recettes"
+"en","casting","/en/registers/casting","Casting registers"
+"fr","casting","/fr/registres/feux","Registres des feux"
+"en","expenses","/en/registers/expenses","Expense registers"
+"fr","expenses","/fr/registres/depenses","Registres des dépenses"
+"en","administrative","/en/registers/administrative","Administrative registers"
+"fr","administrative","/fr/registres/administratives","Registres d’assemblées"
+"en","duplicate","/en/registers/duplicate","Duplicate daily receipt registers"
+"fr","duplicate","/fr/registres/doubles","Double des registres journaliers"
+
+ 

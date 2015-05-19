@@ -1,7 +1,7 @@
 ---
 lang: fr
 layout: project-background
-tid: about-the-comédie-française
+tid: about-the-comedie-francaise
 title: Sur la Comédie-Française
 ---
 
