@@ -13,7 +13,11 @@ Cet outil permet aux utilisateurs un accèss de debut a la base. Ici vous pouvez
 2. [Pivot Browser](/app). 
 Cet outil permet aux utilisateurs un accèss un peu plus avancé à la base de données. Ici vous pouvez construire des recherches plus sophistiquées dont les resultats se presentent en forme tabulaire. Les resultats sont par la suite visualisé en forme de calendrier.
 
+3. <a href="http://api.cfregisters.org/" target="_blank">HTTP API</a>.
+Cet outil est pour les developpeurs. Il offre acces a une copie complete des donnees dans un format standard. Une demande OPTIONS a [http://api.cfregisters.org/](http://api.cfregisters.org/) fournie les point de terminaison; Une demande OPTIONS a chaque point de terminaison fournie sa structure. Encore de la documentation est disponible [ici](https://github.com/begriffs/postgrest/wiki/Routing).
+
 La base de données ici présentée constitue le cœur du programme RCF. Dès la fondation de la Comédie-Française en 1680, les membres de la troupe tiennent une comptabilité régulière des recettes et dépenses de chaque jour de representation, reportée dans des registres “saisonniers” – sous l’Ancien Régime, la saison théâtrale débutait le lundi suivant celui de Pâques pour se terminer la veille des Rameaux. Cette documentation administrative contient initialement des détails au sujet des pièces représentées, des recettes, des dépenses et, dans certains cas, de la distribution. Ces informations occupent à l’origine une fonction doublement pragmatique : d’une part, les registres contiennent systématiquement une note sur les parts données aux pauvres et témoignent du fait que la troupe remplit ses obligations de charité chrétienne. D’autre part, la transparence des recettes sert de fondement à la division des parts d’acteurs et, dans le cas des créations, des auteurs et protègent ainsi les malentendus au sein du corps des comédiens. 
+
 De 1680 à 1793, ces registres journaliers vont subir diverses transformations. L’une des raisons principales qui explique ces modifications relève du fait qu’entre 1680 et 1793, la troupe va déménager à trois reprises dans différentes salles : 
 
 - 1680-1689: Théâtre Guénégaud

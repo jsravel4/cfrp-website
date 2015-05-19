@@ -5,13 +5,16 @@ tid: the-data
 title: Introduction to the Database
 ---
 
-We currently offer two tools to access the database.
+We currently offer three tools to access the database.
 
-1. [Faceted Browser](http://app.cfregisters.org/registers).
+1. <a href="http://app.cfregisters.org/registers" target="_blank">Faceted Browser</a>.
 This tool allows users introductory access to the database. Here you can explore data about authors, plays, genres, and selected ticket categories by season or by day of the week. By clicking on the camera icons on the left of the screen, you can also open up register pages in a new window.
 
 2. [Pivot Browser](/app).
 This tool allows users more advanced access to the database. Here you can build more sophisticated queries which will display in tabular format. The results in turn are linked to a calendrical visualisation.
+
+3. <a href="http://api.cfregisters.org/" target="_blank">HTTP API</a>.
+This tool is for programmers. It offers full access to a complete copy of the compiled data in a standard format. An OPTIONS request to [http://api.cfregisters.org/](http://api.cfregisters.org/) returns available endpoints; an OPTIONS request to any endpoint returns its structure. Further documentation on query format is available [here](https://github.com/begriffs/postgrest/wiki/Routing).
 
 The database at the heart of the Com&eacute;die-Française Registers Project derives from the daily box office attendance records kept assiduously by the troupe from its founding in 1680 to the Revolution, and beyond. High resolution virtual reproductions of these records can be found here [link to flipbooks index page]. The troupe maintained detailed receipt records because the Crown insisted that the actors donate a portion of each evening’s proceeds to charities, to mollify the French Catholic critics of the stage&rsquo;s &ldquo;sinfulness.&rdquo; In addition, the members of the troupe split the remaining revenue among themselves according to seniority within the troupe. A detailed accounting was necessary to maintain harmony among the players themselves.
 

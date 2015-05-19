@@ -5,3 +5,5 @@
 "fr","app","/app","Pivot Browser"
 "en","facets","http://app.cfregisters.org/registers","Faceted Browser"
 "fr","facets","http://app.cfregisters.org/registers","Faceted Browser"
+"en","api","http://api.cfregisters.org/","HTTP API"
+"fr","api","http://api.cfregisters.org/","HTTP API"
