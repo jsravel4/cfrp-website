@@ -12,7 +12,7 @@
 
 {% assign pages=site.pages | where:"tid", page.tid | sort: 'lang' %}
 {% for tpage in pages reversed %}
-{% if tpage.tid != "default-home" %}
+{% if tpage.tid!="default-home" %}
           <li class="top-nav-link {{ tpage.lang }}-language">
               <a href="{{ tpage.url }}">{{ tpage.lang }}</a>
           </li>
