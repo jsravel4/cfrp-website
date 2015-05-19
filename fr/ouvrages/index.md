@@ -5,7 +5,7 @@ tid: the-data
 title: Introduction générale à la base de données
 ---
 
-Nous proposons en ce moment deux outils pour acceder à la base de données
+Nous proposons en ce moment trois outils pour acceder à la base de données.
 
 1. [Faceted Browser](http://app.cfregisters.org/registers).
 Cet outil permet aux utilisateurs un accèss de debut a la base. Ici vous pouvez explorer des donnees qui releve des auteurs, des genres, et des categories de billet par saison ou par jour de la semaine. En cliquant sur l'icon d'appareil photo a la gauche de l'ecran, vous pouvez aussi voir une page de régistre dans une nouvelle fenêtre.
