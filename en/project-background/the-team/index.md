@@ -5,6 +5,8 @@ tid: the-team
 title: The Team
 ---
 
+**Chercheurs Principaux**
+
 - Christian Biet, professeur, Paris-Ouest Nanterre La Défense
 - Georges Forestier, professeur, Paris-Sorbonne
 - Pierre Frantz, professeur, Paris-Sorbonne
@@ -34,10 +36,11 @@ title: The Team
 
 **Informaticiens**
 
+- Dave Della Costa, HyperStudio
 - Kurt Fendt, directeur d’HyperStudio
 - Jamie M. Folsom, HyperStudio
 - Christopher York, HyperStudio
-- Dave Della Costa, HyperStudio
+- Belinda Yung, HyperStudio
 
 **Documentalistes**
 
