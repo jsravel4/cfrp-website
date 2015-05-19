@@ -158,6 +158,10 @@
 
 /* Styling the orbit captions */
 
+.hero-orbit { /* Added to fix FOUC */
+    margin-left:0;
+    margin-bottom:0;
+}
 
 .hero-captions {
 	margin:1em 0 0 0;
