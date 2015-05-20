@@ -2,7 +2,7 @@
 lang: fr
 layout: project-background
 tid: about-the-participants
-title: Sur Les Participants
+title: Sur les Participants au Projet
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
