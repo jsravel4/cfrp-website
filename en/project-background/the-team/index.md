@@ -21,6 +21,7 @@ title: The Team
 
 **Data Entry and Verification Team**
 
+- Marie Burks, Data entry
 - Damien Chardonnet-Darmaillacq, Expert
 - Sybile Chevallier-Micki, Verifier
 - Rosaline Deslauriers, Verifier
@@ -32,7 +33,9 @@ title: The Team
 - Ludivine Rey, Verifier
 - Grégoire Menu, Verifier
 - Oriane Morvan, Data entry
+- Gabriel Ravel, Data entry
 - Silvia Spanu Femder, Data entry
+- Tess Wise, Data entry
 
 **Software**
 
