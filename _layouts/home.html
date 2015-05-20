@@ -9,48 +9,26 @@
     {% include header.html %}
 
     <ul class="hero-orbit" data-orbit data-options="slide_number: false; animation: slide;timer_speed: 6000; pause_on_hover: false; next_on_click: true; animation_speed: 500;navigation_arrows: true;">
+{% for slide in site.data.home-slideshow %}
+  {% if slide.lang == page.lang %}
         <li>
-            <div class="orbit-image" style="background-image: url('/img/project-history-image-2.jpg');"></div>
+            <div class="orbit-image" style="background-image: url('{{slide.background-image}}');"></div>
             <div class="orbit-caption">
                 <div class="row">
                     <div class="medium-9 columns hero-captions">
-                        <h6>Le context du project</h6>
-                        <h1>Historique du Projet</h1>
-                        <h3>L'équipe, le travail, et l'avenir</h3>
-                        <p><a href="/en/">En savoir plus &raquo;</a></p>
+                        <h6>{{slide.small-heading}}</h6>
+                        <h1>{{slide.large-heading}}</h1>
+                        <h3>{{slide.caption}}</h3>
+                        <p><a href="{{slide.link-destination}}">{{slide.link-text}} &raquo;</a></p>
                     </div>
                 </div>
             </div>
         </li>
-        <li class="active">
-            <div class="orbit-image" style="background-image: url('/img/header-img-1.jpg');"></div>
-            <div class="orbit-caption">
-                <div class="row">
-                    <div class="medium-9 columns hero-captions">
-                        <h6>L'archive</h6>
-                        <h1>Les Registres</h1>
-                        <h3>Images en haute résolution des pages des registres</h3>
-                        <p><a href="/fr/registres">Feuilleter &raquo;</a></p>
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="orbit-image" style="background-image: url('/img/pivot-browser.png');"></div>
-            <div class="orbit-caption">
-                <div class="row">
-                    <div class="medium-9 columns hero-captions">
-                        <h6>Les Outils</h6>
-                        <h1>La base de données</h1>
-                        <h3>Approfondir vos connaissances</h3>
-                        <p><a href="/fr/ouvrages/">Démarrer une nouvelle recherche &raquo;</a></p>
-                    </div>
-                </div>
-            </div>
-        </li>
+  {% endif %}
+{% endfor %}
     </ul>
     <div class="row">
-    
+
         {% comment %}
         <!--Begin left case study column-->
         <div class="small-12 medium-3 columns">
@@ -78,8 +56,8 @@
             <section class="home-basics-column">
                 <article class="home-basics-entry">
                     <h4>About this project</h4>
-                    
-                    
+
+
                     {{ content }}
                     <h4><a href="#">Read more</a>
                 </article>
@@ -90,26 +68,23 @@
         <!--Begin right case study column-->
         <div class="small-12 medium-4 columns">
             <section class="home-case-study-column">
-
+{% for casestudy in site.data.home-case-studies %}
+  {% if casestudy.lang == page.lang %}
                 <article class="home-case-study-entry">
                     <h4>Case study</h4>
-                    <img src="/img/frontpiece3.jpg">
-                    <h2>Changing patterns of public taste and cultural consumption</h2>
-                    <h4><a href="#">Read more</a></h4>
+                    {% if casestudy.image!='' %}<img src="{{casestudy.image}}">{% endif %}
+                    <h2>{{casestudy.heading}}</h2>
+                    <h4><a href="{{casestudy.link-destination}}">Read more</a></h4>
                 </article>
-
-                <article class="home-case-study-entry">
-                    <h4>Case study</h4>
-                    <h2>Changing patterns of public taste and cultural consumption</h2>
-                    <h4><a href="#">Read more</a></h4>
-                </article>
+  {% endif %}
+{% endfor %}
 
             </section>
         </div>
         <!--end right case study column-->
 
     </div>
-    
+
 
     {% include footer.html %}
     </body>
