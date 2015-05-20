@@ -29,6 +29,12 @@
 {% endfor %}
 
 {% for navitem in site.data.single-translations %}
+  {% if navitem.lang == page.lang and navitem.name == "registers" %}
+          <li id="registers-link"><a href="{{navitem.url}}">{{navitem.title}}</a></li>
+  {% endif %}
+{% endfor %}
+
+{% for navitem in site.data.single-translations %}
   {% if navitem.lang == page.lang and navitem.name == "go-to-app" %}
           <li id="go-to-app"><a href="{{navitem.url}}">{{navitem.title}}</a></li>
   {% endif %}

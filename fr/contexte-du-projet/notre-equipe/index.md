@@ -21,6 +21,7 @@ title: Notre Equipe
 
 **Équipe de compilateurs et de vérificateurs**
 
+- Marie Burks, compilatrice
 - Damien Chardonnet-Darmaillacq, expert
 - Sybile Chevallier-Micki, vérificatrice
 - Rosaline Deslauriers, vérificatrice
@@ -32,7 +33,9 @@ title: Notre Equipe
 - Ludivine Rey, vérificatrice
 - Grégoire Menu, vérificateur
 - Oriane Morvan, compilatrice
+- Gabriel Ravel, compilateur
 - Silvia Spanu Femder, compilatrice
+- Tess Wise, compilatrice
 
 **Informaticiens**
 

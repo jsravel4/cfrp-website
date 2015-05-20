@@ -8,7 +8,7 @@ Le programme numérique Registres de la Comédie-Française (RCF) comprend non s
 
 Cet important travail éditorial est enrichi par quatre autres séries d’archives qui viennent compléter celle des registres journaliers : 
 
-- [Double des registres journaliers](/fr/registres/doubles/) // grâce à cette numérisation mise à disposition des usagers, des informations complémentaires qualitatives permettront d’enrichir les analyses statistiques issues de la collection choisie.
+- [Double des registers des recettes](/fr/registres/doubles/) // grâce à cette numérisation mise à disposition des usagers, des informations complémentaires qualitatives permettront d’enrichir les analyses statistiques issues de la collection choisie.
 
 - [Registres des feux](/fr/registres/feux/) // des saisons 1765 à 1793, il est possible de consulter le détail des distributions pour chaque soirée. Notez qu’avant 1765, la distribution se trouve aléatoirement au verso du registre journalier des recettes. 
 
