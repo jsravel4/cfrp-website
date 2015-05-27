@@ -2,3 +2,5 @@ _site
 .DS_Store
 _site/feed.xml
 .sass-cache
+cfrp-umbrella.sublime-project
+cfrp-umbrella.sublime-workspace
