@@ -1,8 +1,8 @@
 ---
-lang: fr
+lang: en
 layout: resources
 tid: resources
-title: Ressources
+title: Resources
 active_nav: resources
 ---
 

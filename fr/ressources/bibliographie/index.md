@@ -1,8 +1,8 @@
 ---
 lang: fr
 layout: resources
-tid: resources
-title: Ressources
+tid: bibliography
+title: Bibliographie
 active_nav: resources
 ---
 

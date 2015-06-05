@@ -221,7 +221,8 @@
 .current {
   background-color: #fece3c; }
 
-article h3 {
+article h3,
+article h4 {
   font-family: 'Museo300', Helvetica, Sans-serif; }
 
 /* styling the intro paragraph on the content pages */

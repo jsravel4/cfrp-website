@@ -14,7 +14,7 @@
         <div class="orbit-caption">
             <div class="row">
                 <div class="small-9 columns hero-captions">
-                    {% comment %}<h6>{% for item in site.data.single-translations %}{% if item.lang == page.lang and item.name == "project-background" %}{{item.title}}{% endif %}{% endfor %}</h6>{% endcomment %}
+                    <h6>{% for item in site.data.single-translations %}{% if item.lang == page.lang and item.name == "resources" %}{{item.title}}{% endif %}{% endfor %}</h6>
                     <h1>{{ page.title }}</h1>
                 </div>
                 <div class="small-3 columns hero-captions">
@@ -28,24 +28,23 @@
 
 <div class="row content_row">
 
-{% comment %}
-<!--Begin left nav-->
+    <!--Begin left nav-->
     <div class="small-12 large-4 columns" id="pb-left-nav">
-    </div>
+        <h6>{% for item in site.data.single-translations %}{% if item.lang == page.lang and item.name == "resources" %}{{item.title}}{% endif %}{% endfor %}</h6>
+        <ul>
+{% for navitem in site.data.resources-navigation-translations %}
+  {% if navitem.lang == page.lang %}
+            <li><a href="{{navitem.url}}"{% if navitem.name == page.tid %} class="current"{% endif %}>{{navitem.title}}</a></li>
+  {% endif %}
+{% endfor %}
+</ul>
+</div>
 <!--End left nav-->
-{% endcomment %}
 
 <!--Begin main content area-->
 <div class="small-12 large-8 columns">
 <article>
-    {%comment%}<header class="post-header">
-    <h2>{{ page.title }}</h2>
-    </header>{%endcomment%}
-
-    <article class="post-content">
-    <p>{{ page.date }}</p>
-    {{ content }}
-    </article>
+{{ content }}
 </article>
 </div>
 <!--End main content area-->

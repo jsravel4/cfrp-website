@@ -1,8 +1,8 @@
 ---
-lang: fr
+lang: en
 layout: resources
-tid: resources
-title: Ressources
+tid: scholarship
+title: Scholarship
 active_nav: resources
 ---
 
