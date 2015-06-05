@@ -3,6 +3,7 @@ lang: en
 layout: project-background
 tid: about-the-comedie-francaise
 title: About The Comédie Française
+active_nav: project-background
 ---
 
 The Comédie-Française was founded by a decree of Louis XIV on August 8, 1680 to merge the only two Parisian acting troupes of the time, the troupe of the Guénégaud Theatre and that of the Hôtel de Bourgogne. On the death of Molière in 1673, the troupe at the Guénégaud had been formed by a merger of the Théâtre du Marais and the Troupe de Molière.[2] Thus the Comédie-Française may be said to have an unbroken tradition reaching back to the days of Molière, and to have had theatre connections for more than a century previous to the death of the great dramatist in 1673.[1] In 1680, the repertoire consisted of the collection of theatrical works by Molière and Jean Racine, along with a few works by Pierre Corneille, Paul Scarron and Jean Rotrou. Two years after the amalgamation of the dramatic companies, they received a royal grant of £12,000 per year; and seven years later they took as their name their present designation of “players of the Comédie Française.”[1]

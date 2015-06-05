@@ -3,6 +3,7 @@ lang: en
 layout: project-background
 tid: the-team
 title: The Team
+active_nav: project-background
 ---
 
 **Principal Investigators**

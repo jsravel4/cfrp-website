@@ -11,3 +11,8 @@
   <link rel="stylesheet" href="/css/style.css">
 
   <script src="/js/vendor/modernizr.js"></script>
+
+{% assign pages=site.pages | where:"tid", page.tid | where:"lang", "en" %}
+{% for tpage in pages %}
+  <link rel="canonical" href="{{ site.url }}{{ tpage.url }}"/>
+{% endfor %}

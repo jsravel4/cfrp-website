@@ -3,6 +3,7 @@ lang: fr
 layout: project-background
 tid: the-team
 title: Notre Equipe
+active_nav: project-background
 ---
 
 **Chercheurs Principaux**

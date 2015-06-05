@@ -8,6 +8,9 @@
 .top-bar-section li a {
   font-family: 'MuseoSans500', Helvetica, sans-serif; }
 
+.top-bar li.here a {
+  color: #FECE3C; }
+
 #top-menu-link {
   display: none; }
 
@@ -218,6 +221,9 @@
 .current {
   background-color: #fece3c; }
 
+article h3 {
+  font-family: 'Museo300', Helvetica, Sans-serif; }
+
 /* styling the intro paragraph on the content pages */
 h3.main_content {
   font-family: 'MuseoSans500', Helvetica, sans-serif;
@@ -302,11 +308,5 @@ h3.main_content {
 
   .home-basics-column article p {
     font-size: 1.2em; } }
-
-
-  article ul {
-    margin-left: 20px;
-    padding-left: 20px;
-  }
 
 /*# sourceMappingURL=style.css.map */

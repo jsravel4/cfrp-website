@@ -3,6 +3,7 @@ lang: en
 layout: project-background
 tid: project-history
 title: Project History
+active_nav: project-background
 ---
 The Com&eacute;die-Fran&ccedil;aise Registers Project (CFRP) is inspired by an earlier online project devoted to pre-1800 French theater, CESAR (Calendrier Électronique des Spectacles sous l&rsquo;Ancien R&eacute;gime et sous la R&eacute;volution, [http://www.cesar.org.uk/](http://www.cesar.org.uk/)). CESAR is an online repository of over 400,000 data items covering plays, playwrights, actors, performance spaces and any other information on all types of spectacle in the francophone world between 1600 and 1800.
 

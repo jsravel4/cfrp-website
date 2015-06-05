@@ -6,21 +6,22 @@
           <li id="top-menu-link" class="top-nav-link"><a href="#">Menu</a></li>
 {% for navitem in site.data.navigation-translations %}
   {% if navitem.lang == page.lang %}
-          <li class="top-nav-link"><a href="{{navitem.url}}">{{navitem.title}}</a></li>
+          <li class="top-nav-link{% if page.active_nav == navitem.name %} here{% endif %}"><a href="{{navitem.url}}">{{navitem.title}}</a></li>
   {% endif %}
 {% endfor %}
 
 {% assign pages=site.pages | where:"tid", page.tid | sort: 'lang' %}
-{% for tpage in pages reversed %}
+
 {% if tpage.tid!="default-home" %}
+{% for tpage in pages reversed %}
           <li class="top-nav-link {{ tpage.lang }}-language">
               <a href="{{ tpage.url }}">{{ tpage.lang }}</a>
           </li>
+{% endfor %}
 {% else %}
           <li class="top-nav-link en-language"><a href="/en">En</a></li>
           <li class="top-nav-link fr-language"><a href="/fr">Fr</a></li>
 {% endif %}
-{% endfor %}
 {% assign posts=site.posts | where:"tid", page.tid | sort: 'lang' %}
 {% for tpost in posts reversed %}
           <li class="top-nav-link {{ tpost.lang }}-language">

@@ -3,6 +3,7 @@ lang: fr
 layout: project-background
 tid: about-the-comedie-francaise
 title: Sur la Comédie-Française
+active_nav: project-background
 ---
 
 La Comédie-Française est fondée par ordonnance royale de Louis XIV le 21 octobre 1680 pour fusionner les deux seules troupes parisiennes de l'époque, la troupe de l'Hôtel Guénégaud et celle de l'Hôtel de Bourgogne. Le 25 août, les comédiens s'étaient déjà réunis pour donner leur première représentation commune, composée de Phèdre (Racine) et des Carrosses d'Orléans (La Chapelle). L'acte royal leur accorde le monopole de jouer à Paris, que les Comédiens-Français défendront jalousement au cours du xviiie siècle, notamment contre les Comédiens-Italiens.
