@@ -28,18 +28,18 @@ active_nav: project-background
 - Rosaline Deslauriers, v&eacute;rificatrice
 - Sarah Di Bella, compilatrice
 - Laure Gareil, compilatrice
+- Kristina Johnson, compilatrice
+- Meghan Kenney, compilatrice
 - J&eacute;r&eacute;mie Korta, compilateur
 - Amanda Khan, compilatrice
 - Agnès Lamy, experte
+- Antoine Nasr, compilateur
 - [Ludivine Rey](http://obvil.paris-sorbonne.fr/obvil/annuaire/ludivine-rey), v&eacute;rificatrice
 - Gr&eacute;goire Menu, v&eacute;rificateur
 - Oriane Morvan, compilatrice
 - Gabriel Ravel, compilateur
 - Silvia Spanu Femder, compilatrice
 - [Tess Wise](http://people.fas.harvard.edu/~wise/Personal%20Website/Home/Home.html), compilatrice
-- Kristina Johnson, compilatrice
-- Meghan Kenney, compilatrice
-- Antoine Nasr, compilateur
 
 **Informaticiens**
 

@@ -28,18 +28,18 @@ active_nav: project-background
 - Rosaline Deslauriers, Verifier
 - Sarah Di Bella, Data entry
 - Laure Gareil, Data entry
+- Kristina Johnson, Data entry
+- Meghan Kenney, Data entry
 - J&eacute;r&eacute;mie Korta, Data entry
 - Amanda Khan, Data entry
 - Agnès Lamy, Expert
+- Antoine Nasr, Data entry
 - [Ludivine Rey](http://obvil.paris-sorbonne.fr/obvil/annuaire/ludivine-rey), Verifier
 - Gr&eacute;goire Menu, Verifier
 - Oriane Morvan, Data entry
 - Gabriel Ravel, Data entry
 - Silvia Spanu Femder, Data entry
 - [Tess Wise](http://people.fas.harvard.edu/~wise/Personal%20Website/Home/Home.html), Data entry
-- Kristina Johnson, Data entry
-- Meghan Kenney, Data entry
-- Antoine Nasr, Data entry
 
 **Software**
 
