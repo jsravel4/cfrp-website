@@ -6,16 +6,10 @@ title: Sur les Participants au Projet
 active_nav: project-background
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Le Projet des Registres de la Com&eacute;die-Fran&ccedil;aise est le produit d&rsquo;un partenariat entre [la Bibiloth&egrave;que-Mus&eacute;e de la Com&eacute;die-Fran&ccedil;aise](http://www.comedie-francaise.fr/la-comedie-francaise-aujourdhui.php?id=507) sous la direction de Mme Agathe Sanjuan, et des enseignants et leurs &eacute;tudiants dans quatre universit&eacute;s en France et aux Etats-unis.
 
 - CF
-- Nanterre
-- HAR
-- Sorbonne
-- MIT
-- Harvard
+- [Universit&eacute; Paris Ouest Nanterre-La D&eacute;fense](https://www.u-paris10.fr/)
+- [Universit&eacute; Paris-Sorbonne](http://www.paris-sorbonne.fr/)
+- [Massachusetts Institute of Technology](http://web.mit.edu/)
+- [Harvard University](http://www.harvard.edu/)
