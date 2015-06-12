@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" >
+<head>
+{% include head.html %}
+</head>
+    <body>
+    <!-- body content here -->
+{% include header.html %}
+
+<div class="row content_row">
+
+    <!--Begin left nav-->
+    {% comment %}<div class="small-12 large-4 columns" id="pb-left-nav">
+        <h6>{% for item in site.data.single-translations %}{% if item.lang == page.lang and item.name == "go-to-app" %}{{item.title}}{% endif %}{% endfor %}</h6>
+        <ul>
+{% for navitem in site.data.the-data-navigation-translations %}
+  {% if navitem.lang == page.lang %}
+            <li><a href="{{navitem.url}}"{% if navitem.name == page.tid %} class="current"{% endif %}>{{navitem.title}}</a></li>
+  {% endif %}
+{% endfor %}
+        </ul>
+    </div>{% endcomment %}
+<!--End left nav-->
+
+<!--Begin main content area-->
+<div class="small-12 large-8 columns">
+<article>
+    <h1>{{ page.title }}
+        {{ content }}
+</article>
+</div>
+<!--End main content area-->
+
+</div>
+
+{% include footer.html %}
+    </body>
+</html>
