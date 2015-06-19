@@ -1,0 +1,68 @@
+  <div class="fixed">
+    <nav class="top-bar" data-topbar>
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <li id="top-menu-link" class="top-nav-link"><a href="#">Menu</a></li>
+{% for navitem in site.data.navigation-translations %}
+  {% if navitem.lang == page.lang %}
+          <li class="top-nav-link{% if page.active_nav == navitem.name %} here{% endif %}"><a href="{{navitem.url}}">{{navitem.title}}</a></li>
+  {% endif %}
+{% endfor %}
+
+{% assign pages=site.pages | where:"tid", page.tid | sort: 'lang' %}
+
+{% if tpage.tid!="default-home" %}
+{% for tpage in pages reversed %}
+          <li class="top-nav-link {{ tpage.lang }}-language">
+              <a href="{{ tpage.url }}">{{ tpage.lang }}</a>
+          </li>
+{% endfor %}
+{% else %}
+          <li class="top-nav-link en-language"><a href="/en">En</a></li>
+          <li class="top-nav-link fr-language"><a href="/fr">Fr</a></li>
+{% endif %}
+{% assign posts=site.posts | where:"tid", page.tid | sort: 'lang' %}
+{% for tpost in posts reversed %}
+          <li class="top-nav-link {{ tpost.lang }}-language">
+              <a href="{{ tpost.url }}">{{ tpost.lang }}</a>
+          </li>
+{% endfor %}
+
+{% for navitem in site.data.single-translations %}
+  {% if navitem.lang == page.lang and navitem.name == "registers" %}
+          <li id="registers-link"><a href="{{navitem.url}}">{{navitem.title}}</a></li>
+  {% endif %}
+{% endfor %}
+
+{% for navitem in site.data.single-translations %}
+  {% if navitem.lang == page.lang and navitem.name == "go-to-app" %}
+          <li id="go-to-app"><a href="{{navitem.url}}">{{navitem.title}}</a></li>
+  {% endif %}
+{% endfor %}
+        </ul>
+        <!-- Left Nav Section -->
+        <ul class="left">
+{% for tpage in pages reversed %}
+{% if tpage.tid != "default-home" %}
+          <li class="flag" id="flag-{% if tpage.lang == "fr" %}left{% else %}right{% endif %}">
+            <a href="{{ tpage.url }}"><img src="/img/{{tpage.lang}}-flag.png"></a>
+          </li>
+{% else %}
+          <li class="flag" id="flag-left">
+            <a href="/fr"><img src="/img/fr-flag.png"></a>
+          </li>
+          <li class="flag" id="flag-right">
+            <a href="/en"><img src="/img/en-flag.png"></a>
+          </li>
+{% endif %}
+{% endfor %}
+{% for tpost in posts reversed %}
+          <li class="flag" id="flag-{% if tpost.lang == "fr" %}left{% else %}right{% endif %}">
+            <a href="{{ tpost.url }}"><img src="/img/{{tpost.lang}}-flag.png"></a>
+          </li>
+{% endfor %}
+        </ul>
+      </section>
+    </nav>
+  </div>

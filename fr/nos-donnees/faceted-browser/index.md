@@ -1,7 +1,7 @@
 ---
-lang: en
+lang: fr
 layout: iframe
-tid: the-registers-app
-title: The Registers (App)
+tid: faceted-browser-app
+title: Faceted Browser
 app_url: http://app.cfregisters.org/registers
 ---
