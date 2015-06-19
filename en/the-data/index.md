@@ -23,7 +23,7 @@ The troupe played in four different venues between 1680 and 1793, when the actor
 We therefore offer you the option to study more detailed ticket sales and attendance patterns within the four periods that correspond to the troupe&rsquo;s occupancy of the four following venues:
 
 * 1680-1689: Th&eacute;âtre Gu&eacute;n&eacute;gaud
-* 1689-1770: Th&eacute;âtre de la rue des Fosses St-Germain
+* 1689-1770: [Th&eacute;&acirc;tre de la rue des Fosses St-Germain](/en/the-data/theater-venues/salle-de-la-rue-des-fosses-saint-germain-des-pres)
 * 1770-1782: Salle des machines, Palais des thuil&eacute;ries
 * 1782-1793: Th&eacute;âtre Od&eacute;on
 

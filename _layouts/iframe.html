@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" >
+<head>
+{% include head.html %}
+</head>
+    <body>
+    <!-- body content here -->
+{% include header.html %}
+
+<iframe src="{{ page.app_url }}" style="height: 100%; width: 100%;"></iframe>
+
+{% include iframe-footer.html %}
+    </body>
+</html>
