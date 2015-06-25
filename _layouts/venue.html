@@ -39,9 +39,16 @@
         <script type="text/javascript" src="/fancybox/jquery.fancybox.pack.js"></script>
         <script>
             $(document).ready(function() {
+
                 $('.fancybox').fancybox({
-                    fitToView: false
-                });
+                    fitToView: false,
+
+                    helpers: {
+                        overlay: {
+                            locked: false
+                        }
+                    }
+                })
             });
         </script>
     </body>
