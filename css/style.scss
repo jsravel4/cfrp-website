@@ -103,6 +103,9 @@
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
 }
+#go-to-app {
+    border-left: 1px $topbar-bg solid;
+}
 
 #french-language,
 .fr-language {

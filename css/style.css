@@ -76,6 +76,9 @@
   text-transform: uppercase;
   letter-spacing: 0.1em; }
 
+#go-to-app {
+  border-left: 1px gray solid; }
+
 #french-language,
 .fr-language {
   display: none; }
