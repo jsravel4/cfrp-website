@@ -1,5 +1,5 @@
 /*body {
-	color:#3b3b3b;
+color:#3b3b3b;
 }*/
 .top-bar {
   background-color: gray;
@@ -235,6 +235,11 @@ h3.main_content {
   font-size: 1.75em;
   color: #3b3b3b;
   margin-bottom: 1em; }
+
+article p.caption {
+  font-family: sans-serif;
+  font-size: 14px;
+  margin-top: -1em; }
 
 .menu-icon {
   width: auto; }
