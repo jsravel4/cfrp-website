@@ -197,7 +197,6 @@
 	letter-spacing: 0.075em;
 }
 
-
 /* Styling orbit slider for mobile */
 
 #test-med {
@@ -340,6 +339,10 @@ h3.main_content {
     display: block;
   }
 
+#go-to-app {
+    border-left: none;
+}
+
   #cfrp-logo-container
   {
     pointer-events: none;
@@ -350,8 +353,6 @@ h3.main_content {
     top: 0px;
     left: 0px;
     z-index: 100;
-
-
 
   	#cfrp-logo-narrow {
   	  position: absolute;

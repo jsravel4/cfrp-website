@@ -258,6 +258,9 @@ h3.main_content {
   #top-menu-link {
     display: block; }
 
+  #go-to-app {
+    border-left: none; }
+
   #cfrp-logo-container {
     pointer-events: none;
     display: block;
