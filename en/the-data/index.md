@@ -24,7 +24,7 @@ We therefore offer you the option to study more detailed ticket sales and attend
 
 * 1680-1689: Th&eacute;âtre Gu&eacute;n&eacute;gaud
 * 1689-1770: [Th&eacute;&acirc;tre de la rue des Fosses St-Germain](/en/the-data/theater-venues/salle-de-la-rue-des-fosses-saint-germain-des-pres)
-* 1770-1782: Salle des machines, Palais des thuil&eacute;ries
+* 1770-1782: [Salle des machines, Palais des thuil&eacute;ries](/en/the-data/theater-venues/salle-des-machines-palais-des-tuileries)
 * 1782-1793: Th&eacute;âtre Od&eacute;on
 
 For more detailed descriptions of each space, complemented by contemporary engravings of the playhouses, visit [link; also make each of the four theaters above link to the appropriate page that describes it]. For details about the editorial principles followed to create the database, see [link]. For information on the information technology underlying the database and the applications we have created to query it, see [link].
