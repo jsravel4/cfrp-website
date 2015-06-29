@@ -1,6 +1,6 @@
 ---
 lang: fr
-layout: the-data
+layout: map
 tid: theater-venues
 title: Salles de la Com&eacute;die-Fran&ccedil;aise, 1680-1793
 active_nav: the-data
