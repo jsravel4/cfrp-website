@@ -9,7 +9,7 @@ The troupe played in four different venues between 1680 and 1793, when the actor
 
 * 1680-1689: [H&ocirc;tel Gu&eacute;n&eacute;gaud](/fr/nos-donnees/salles-de-la-comedie-francaise/hotel-guenegaud)
 * 1689-1770: [Salle de la rue des Foss&eacute;s-Saint-Germain-des-Pr&egrave;s](/fr/nos-donnees/salles-de-la-comedie-francaise/salle-de-la-rue-des-fosses-saint-germain-des-pres)
-* 1770-1782: [Salle des Machines, Palais des Thuileries](/fr/nos-donnees/salles-de-la-comedie-francaise/salle-des-machines-palais-des-tuileries)
+* 1770-1782: [Salle des Machines, Palais des Tuileries](/fr/nos-donnees/salles-de-la-comedie-francaise/salle-des-machines-palais-des-tuileries)
 * 1782-1793: [Th&eacute;&acirc;tre de l&rsquo;Od&eacute;on](/fr/nos-donnees/salles-de-la-comedie-francaise/theatre-de-l-odeon)
 
 The [faceted browser](/fr/nos-donnees/faceted-browser) allows you to compare ticket sales and box office receipts in three fundamental categories across our entire time span: the parterre, or orchestra; the first loges; and total nightly receipts. But because the seating options in each venue differed substantially, it is not possible to compare all seating categories across the entire 113 seasons in the database. In a future variant of the Cross-Tab browser, you will also be able to study more seating categories in individual venue periods in greater detail.
