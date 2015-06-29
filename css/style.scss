@@ -308,9 +308,12 @@ h3.main_content {
     margin-bottom:1em;
 }
 
-article p.caption {
+article p.caption,
+article p.small {
     font-family: sans-serif;
     font-size: 14px;
+}
+article p.caption {
     margin-top: -1em;
 }
 
