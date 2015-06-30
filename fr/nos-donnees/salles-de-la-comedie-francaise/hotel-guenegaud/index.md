@@ -34,3 +34,5 @@ Beginning with the 1686-1687 season, the ticket category labels become more gene
 
 **Figure 4:** Register page from the 1686-1687 season, Biblioth&egrave;que-mus&eacute;e de la Com&eacute;die-Fran&ccedil;aise, Register R18.
 {: .caption}
+
+[Salle de la rue des Foss&eacute;s-Saint-Germain-des-Pr&egrave;s, 1689-1770](../salle-de-la-rue-des-fosses-saint-germain-des-pres)

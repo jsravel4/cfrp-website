@@ -60,3 +60,5 @@ Figure 7, the register page for the opening night of the 1760-61 season, shows t
 {: .caption}
 
 There are now five different categories of loges for rent, as well as a category for balconies. Individual ticket sales, the last four categories in the list, are now divided into places in the first, second, and third balconies, and parterre tickets. With the elimination of stage seating, it is now possible to identify receipts in the three loges and the parterre with greater precision, although the uncertain number of occupants in each loge rented in its entirety by a single spectator means that precise attendance figures still elude us.
+
+Next: [Salle des Machines, Palais des Tuileries, 1770-1782](../salle-des-machines-palais-des-tuileries)

@@ -44,3 +44,5 @@ The ticket categories recorded in the troupe&rsquo;s receipt registers during th
 
 **Figure 6:** Box Receipt page for 30 March 1778. Biblioth&egrave;que-mus&eacute;e de la Com&eacute;die-Fran&ccedil;aise, Register R143.
 {: .caption}
+
+Next: [Th&eacute;&acirc;tre de l&rsquo;Od&eacute;on, 1782-1793](../theatre-de-l-odeon)
