@@ -11,7 +11,7 @@ The H&ocirc;tel Gu&eacute;n&eacute;gaud is the least well-known of the four spac
 
 [![](/img/guenegaud-1.jpg)](/img/guenegaud-1.jpg){: .fancybox}
 
-**Figure 1:** Salle de l&rsquo;H&ocirc;tel de Gu&eacute;n&eacute;gaud. Archives nationales.
+**Figure 1:** Salle de l&rsquo;H&ocirc;tel de Gu&eacute;n&eacute;gaud. Archives nationales. Cartes et Plans, VA 59, pi&egrave;ces 25, 26, 27.
 {: .caption}
 
 The pre-eminent modern student of this playhouse and the actors and performances it housed, Dr. Jan Clarke, has offered a schematic overview of the theater space as it may have appeared in the 1670s, before the creation of the Com&eacute;die-Fran&ccedil;aise (Figure 2). This rendering, which portrays the theater at the level of the first-row boxes, shows a ring of boxes surrounding a seated amphitheater at the top of the image, with the standing pit just below it. The stage is at the bottom.
