@@ -2,7 +2,7 @@
 lang: fr
 layout: home
 tid: home
-title: Fr Home
+title: Le Projet des registres de la Comédie-Française
 ---
 De 1680 &agrave; 1793, l&rsquo;institution th&eacute;&acirc;trale officielle qu&rsquo;est la Com&eacute;die-Fran&ccedil;aise est au coeur du paysage culturel parisien et programme plus de 34 000 représentations durant cette p&eacute;riode. La troupe du Fran&ccedil;ais joue non seulement les grands auteurs du r&eacute;pertoire classique, tels que Moli&egrave;re, Racine, Corneille, Voltaire et Beaumarchais, elle accueille &eacute;galement de tr&egrave;s nombreux auteurs aujourd’hui méconnus ou oubli&eacute;s. &Eacute;tant l&rsquo;un des symboles forts de la politique culturelle française, ce th&eacute;&acirc;tre occupe un r&ocirc;le symbolique important &agrave; cette p&eacute;riode ce dont t&eacute;moigne la conservation des registres journaliers d&eacute;taillant recettes, d&eacute;penses et distributions pour chaque repr&eacute;sentation. Ces manuscrits pr&eacute;cieusement conserv&eacute;s dans les archives de la troupe du Fran&ccedil;ais ont &eacute;t&eacute; num&eacute;ris&eacute;s dans le cadre de notre programme et sont aujourd&rsquo;hui disponibles &agrave; la consultation en ligne (link)
 

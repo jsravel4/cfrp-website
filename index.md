@@ -2,7 +2,7 @@
 lang: en
 layout: home
 tid: default-home
-title: Default Home
+title: The Comédie-Française Registers Project
 ---
 From 1680 until 1791, only one theater troupe in Paris was allowed to perform the plays of Moli&egrave;re, Corneille, Racine, Voltaire, Beaumarchais, and every other French-language playwright.  This troupe, the Com&eacute;die-Française, played the works of these authors over 34,000 times in this period. Remarkably, the troupe kept detailed records of their box office receipts for every single one of those performances. These daily receipt registers, still housed today in the troupe&rsquo;s archives in the heart of Paris, are now available online via the Com&eacute;die-Fran&ccedil;aise Registers Project.
 
