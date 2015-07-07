@@ -3,18 +3,23 @@ lang: fr
 layout: project-background
 tid: funding
 title: Financements du Projet
+active_nav: project-background
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Le Projet des registres de la Com&eacute;die-Fran&ccedil;aise a &eacute;t&eacute; g&eacute;n&eacute;reusement financ&eacute; par les institutions suivantes:
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+### France
+
+* [Agence Nationale de la Recherche](http://www.agence-nationale-recherche.fr/)
+* [Minist&egrave;re de la Culture](http://www.culturecommunication.gouv.fr/)
+* [Institut Universitaire de France](http://iuf.amue.fr/)
+* [Labex Paris Ouest Pass&eacute;s dans le Pr&eacute;sent](http://passes-present.eu/)
+* [Labex Paris Ouest-Paris VIII Arts H2H](http://www.labex-arts-h2h.fr/)
+* [Universit&eacute; Paris-Sorbonne](http://www.paris-sorbonne.fr/)
+
+### United States
+
+* Florence Gould Foundation
+* [Gladys Krieble Delmas Foundation](http://delmas.org/)
+* [Massachusetts Institute of Technology](http://web.mit.edu/)
+* [Harvard University](http://www.harvard.edu/)

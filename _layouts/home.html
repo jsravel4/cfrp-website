@@ -55,11 +55,11 @@
         <div class="small-12 medium-8 columns">
             <section class="home-basics-column">
                 <article class="home-basics-entry">
-                    <h4>About this project</h4>
+                    <h2>{{ page.title }}</h2>
 
 
                     {{ content }}
-                    <h4><a href="#">Read more</a>
+                    {%comment%}<h4><a href="#">Read more</a></h4>{% endcomment %}
                 </article>
             </section>
         </div>
@@ -68,6 +68,7 @@
         <!--Begin right case study column-->
         <div class="small-12 medium-4 columns">
             <section class="home-case-study-column">
+{% comment %}
 {% for casestudy in site.data.home-case-studies %}
   {% if casestudy.lang == page.lang %}
                 <article class="home-case-study-entry">
@@ -78,7 +79,20 @@
                 </article>
   {% endif %}
 {% endfor %}
-
+{% endcomment %}
+{% if page.lang == 'fr' %}
+                <article class="home-case-study-entry">
+                    <h4>Actualit&eacute;s</h4>
+                    <img src="/img/Afficheur.jpg" />
+                    <p>Colloque internationale sur le Projet des registres de la Com&eacute;die-Fran&ccedil;aise. Paris, 14-16 d&eacute;cembre 2015. Pr&eacute;cisions &agrave; suivre.</p>
+                </article>
+{% else %}
+                <article class="home-case-study-entry">
+                    <h4>News</h4>
+                    <img src="/img/Afficheur.jpg" />
+                    <p>Com&eacute;die-Fran&ccedil;aise Registers Project International Conference, Paris, 14-16 December, 2015. Watch here for more details.</p>
+                </article>
+{% endif %}
             </section>
         </div>
         <!--end right case study column-->

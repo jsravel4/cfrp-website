@@ -14,7 +14,7 @@
         <div class="orbit-caption">
             <div class="row">
                 <div class="small-9 columns hero-captions">
-                    <h6>Access the Data</h6>
+                    <h6>{% for item in site.data.single-translations %}{% if item.lang == page.lang and item.name == "go-to-app" %}{{item.title}}{% endif %}{% endfor %}</h6>
                     <h1>{{ page.title }}</h1>
                 </div>
                 <div class="small-3 columns hero-captions">
@@ -30,7 +30,7 @@
 
     <!--Begin left nav-->
     <div class="small-12 large-4 columns" id="pb-left-nav">
-        <h6>Access the Data</h6>
+        <h6>{% for item in site.data.single-translations %}{% if item.lang == page.lang and item.name == "go-to-app" %}{{item.title}}{% endif %}{% endfor %}</h6>
         <ul>
 {% for navitem in site.data.the-data-navigation-translations %}
   {% if navitem.lang == page.lang %}

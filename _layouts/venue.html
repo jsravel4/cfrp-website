@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" >
+<head>
+{% include head.html %}
+</head>
+    <body>
+    <!-- body content here -->
+{% include header.html %}
+
+<div class="row content_row no-carousel">
+
+<!--Begin left nav-->
+    <div class="small-12 large-4 columns" id="pb-left-nav">
+        <h6>{% for item in site.data.single-translations %}{% if item.lang == page.lang and item.name == "go-to-app" %}{{item.title}}{% endif %}{% endfor %}</h6>
+        <ul>
+{% for navitem in site.data.the-data-navigation-translations %}
+  {% if navitem.lang == page.lang %}
+            <li><a href="{{navitem.url}}"{% if navitem.name == 'theater-venues' %} class="current"{% endif %}>{{navitem.title}}</a></li>
+  {% endif %}
+{% endfor %}
+        </ul>
+    </div>
+<!--End left nav-->
+
+<!--Begin main content area-->
+<div class="small-12 large-8 columns">
+<article>
+    <h1>{{ page.title }}</h1>
+        {{ content }}
+</article>
+</div>
+<!--End main content area-->
+
+</div>
+
+{% include footer.html %}
+        <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+        <script type="text/javascript" src="/fancybox/jquery.fancybox.pack.js"></script>
+        <script>
+            $(document).ready(function() {
+
+                $('.fancybox').fancybox({
+                    fitToView: false,
+
+                    helpers: {
+                        overlay: {
+                            locked: false
+                        }
+                    }
+                })
+            });
+        </script>
+    </body>
+</html>

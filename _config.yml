@@ -6,11 +6,11 @@ baseurl: ""
 url: "http://cfregisters.org"
 twitter_username: mithyperstudio
 github_username:  hyperstudio
+google_analytics: false
 
 # Where things are
 destination:      ./_site
 source:           .
-
 
 # Handling Reading
 exclude:           ["templates", "Gemfile", "Gemfile.lock"]

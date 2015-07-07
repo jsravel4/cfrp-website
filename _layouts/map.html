@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" >
+<head>
+{% include head.html %}
+</head>
+    <body>
+    <!-- body content here -->
+{% include header.html %}
+
+<div id="map-container" style="height: 400px; width: 100%;"><noscript>
+    <p>An interactive map resides here.</p>
+</noscript></div>
+<script type="text/javascript" src="https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.js"></script>
+<link type="text/css" rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.css" media="all" />
+<script type="text/javascript">
+    var attribution_historic = 'Map image from <a href="#">CFRegisters.org</a> via <a href=#">Source</a>';
+    var attribution_mapbox = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, Imagery © <a href="http://mapbox.com">Mapbox</a>';
+
+    var tile_layer_historic = 'http://mapwarper.net/maps/tile/9969/{z}/{x}/{y}.png';
+    var tile_layer_mapbox = 'https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png';
+
+    var mapbox_id = 'clearbold.l4gjpd88';
+
+    // Need to find a way to do this; These are on the left side of object assignment
+    // [variable] worked in Firefox, but halted the JS in Chrome
+    var historic_toggle_label = 'Paris 1788';
+    var modern_toggle_label = 'Paris Present Day';
+
+    var map_center = [48.8580895, 2.3394532];
+    var map_zoom = 14;
+
+    var map_historic = L.tileLayer( tile_layer_historic, { attribution: attribution_historic } );
+    var map_mapbox = L.tileLayer( tile_layer_mapbox, {id: mapbox_id, attribution: attribution_mapbox});
+
+    var map = L.map('map-container', {layers:map_historic});
+
+    // Setting the map interaction defaults. I find that when using a map that fills the page, allowing zoom based on scroll wheel, which is also used to scroll up and down the page, is problematic.
+    map.dragging.enable();
+    map.touchZoom.disable();
+    map.doubleClickZoom.enable();
+    map.scrollWheelZoom.disable();
+
+    // Create a variable to hold all tile sets and name them so we can use it for the toggler
+    // Chrome is balking at this!!!
+    /*var baseMaps = {
+        [modern_toggle_label]: map_mapbox,
+        [historic_toggle_label]: map_historic
+    };*/
+    var baseMaps = {
+        'Paris Present Day': map_mapbox,
+        'Paris 1788': map_historic
+    };
+
+    // Add the tile layer switcher control (toggler)
+    L.control.layers(baseMaps).addTo(map);
+
+    // Zoom and center in
+    // TODO: Make this dynamic based on the map's contents
+    map.setView(map_center, map_zoom);
+
+    // Théâtre de l'Odéon, 1782-1793
+    // 48.8496446506, 2.3387222608
+    var $marker = L.marker([48.8496446506, 2.3387222608]).addTo(map);
+    $theaterContent =  '<div style="max-height: 175px; overflow-y: scroll;">';
+    $theaterContent += '<h3>Th&eacute;&acirc;tre de l&rsquo;Od&eacute;on, 1782-1793</h3>';
+{% if page.lang == 'fr' %}
+    $theaterContent += '<p><a href="/fr/nos-donnees/salles-de-la-comedie-francaise/theatre-de-l-odeon">En savoir plus</a></p>';
+{% else %}
+    $theaterContent += '<p><a href="/en/the-data/theater-venues/theatre-de-l-odeon">Learn more</a></p>';
+{% endif %}
+    $theaterContent += '</div>';
+    $marker.bindPopup( $theaterContent );
+    // Salle de la rue des Fossés-Saint-Germain-des-Près, 1689-1770
+    // 48.8529330254, 2.3385935148
+    var $marker = L.marker([48.8529330254, 2.3385935148]).addTo(map);
+    $theaterContent =  '<div style="max-height: 175px; overflow-y: scroll;">';
+    $theaterContent += '<h3>Salle de la rue des Foss&eacute;s-Saint-Germain-des-Pr&egrave;s, 1689-1770</h3>';
+{% if page.lang == 'fr' %}
+    $theaterContent += '<p><a href="/fr/nos-donnees/salles-de-la-comedie-francaise/salle-de-la-rue-des-fosses-saint-germain-des-pres">En savoir plus</a></p>';
+{% else %}
+    $theaterContent += '<p><a href="/en/the-data/theater-venues/salle-de-la-rue-des-fosses-saint-germain-des-pres">Learn more</a></p>';
+{% endif %}
+    $theaterContent += '</div>';
+    $marker.bindPopup( $theaterContent );
+    // Hôtel Guénégaud, 1680-1689
+    // 48.856324991, 2.3372094949
+    var $marker = L.marker([48.856324991, 2.3372094949]).addTo(map);
+    $theaterContent =  '<div style="max-height: 175px; overflow-y: scroll;">';
+    $theaterContent += '<h3>H&ocirc;tel Gu&eacute;n&eacute;gaud, 1680-1689</h3>';
+{% if page.lang == 'fr' %}
+    $theaterContent += '<p><a href="/fr/nos-donnees/salles-de-la-comedie-francaise/hotel-geunegaud">En savoir plus</a></p>';
+{% else %}
+    $theaterContent += '<p><a href="/en/the-data/theater-venues/hotel-guenegaud">Learn more</a></p>';
+{% endif %}
+    $theaterContent += '</div>';
+    $marker.bindPopup( $theaterContent );
+    // Salle des Machines, Palais des Tuileries, 1770-1782
+    // 48.8629765698, 2.3315447952
+    var $marker = L.marker([48.8629765698, 2.3315447952]).addTo(map);
+    $theaterContent =  '<div style="max-height: 175px; overflow-y: scroll;">';
+    $theaterContent += '<h3>Salle des Machines, Palais des Tuileries, 1770-1782</h3>';
+{% if page.lang == 'fr' %}
+    $theaterContent += '<p><a href="/fr/nos-donnees/salles-de-la-comedie-francaise/salle-des-machines-palais-des-tuileries">En savoir plus</a></p>';
+{% else %}
+    $theaterContent += '<p><a href="/en/the-data/theater-venues/salle-des-machines-palais-des-tuileries">Learn more</a></p>';
+{% endif %}
+    $theaterContent += '</div>';
+    $marker.bindPopup( $theaterContent );
+</script>
+
+<div class="row content_row">
+
+    <!--Begin left nav-->
+    <div class="small-12 large-4 columns" id="pb-left-nav">
+        <h6>{% for item in site.data.single-translations %}{% if item.lang == page.lang and item.name == "go-to-app" %}{{item.title}}{% endif %}{% endfor %}</h6>
+        <ul>
+{% for navitem in site.data.the-data-navigation-translations %}
+  {% if navitem.lang == page.lang %}
+            <li><a href="{{navitem.url}}"{% if navitem.name == page.tid %} class="current"{% endif %}>{{navitem.title}}</a></li>
+  {% endif %}
+{% endfor %}
+</ul>
+</div>
+<!--End left nav-->
+
+<!--Begin main content area-->
+<div class="small-12 large-8 columns">
+<article>
+{{ content }}
+</article>
+</div>
+<!--End main content area-->
+
+</div>
+
+{% include footer.html %}
+    </body>
+</html>
