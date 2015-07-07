@@ -1,7 +1,7 @@
 lang,background-image,small-heading,large-heading,caption,link-text,link-destination
-en,/img/project-history-image-2.jpg,"Le context du project","Historique du Projet","L'équipe, le travail, et l'avenir","En savoir plus",/en/
+en,/img/project-history-image-2.jpg,"Project Background","Project History","The team, the work, and the future","Learn More",/en/project-background/
 fr,/img/project-history-image-2.jpg,"Le context du project","Historique du Projet","L'équipe, le travail, et l'avenir","En savoir plus",/en/
-en,/img/header-img-1.jpg,L'archive,Les Registres,"Images en haute résolution des pages des registres",Feuilleter,/fr/registres
+en,/img/header-img-1.jpg,The Archive,The Registers,"High resolution images of the registers",Browse,/en/registers/
 fr,/img/header-img-1.jpg,L'archive,Les Registres,"Images en haute résolution des pages des registres",Feuilleter,/fr/registres
-en,/img/pivot-browser.png,Les Outils,"La base de données","Approfondir vos connaissances","Démarrer une nouvelle recherche",/fr/ouvrages/
-fr,/img/pivot-browser.png,Les Outils,"La base de données","Approfondir vos connaissances","Démarrer une nouvelle recherche",/fr/ouvrages/
+en,/img/pivot-browser.png,Tools,"The database","Dig deepter","Start a new search",/en/the-data/
+fr,/img/pivot-browser.png,Les Outils,"La base de données","Approfondir vos connaissances","Démarrer une nouvelle recherche",/fr/nos-donnees/
