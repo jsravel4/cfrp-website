@@ -4,7 +4,9 @@ layout: resources
 tid: bibliography
 title: Bibliography
 active_nav: resources
+published: true
 ---
+
 Alasseur, Claude. *La Com&eacute;die-Fran&ccedil;aise au XVIIIe si&egrave;cle. Etude &eacute;conomique.* Paris: Mouton, 1967.
 
 Biet, Christian. *Droit et litt&eacute;rature sous l&rsquo;Ancien R&eacute;gime. Le Jeu de la valeur et de la loi.* Paris: Honor&eacute; Champion, 2002.
