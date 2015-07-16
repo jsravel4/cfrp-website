@@ -67,7 +67,7 @@ Mittman, Barbara. *Spectators on the Paris Stage in the Seventeenth and Eighteen
 
 Rabreau, Daniel. *Le th&eacute;âtre de l&rsquo;Od&eacute;on : du monument de la Nation au th&eacute;âtre de l&rsquo;Europe . Naissance du monument de loisir urbain au XVIIIe si&egrave;cle.* Paris: Belin, 2007.
 
-_____. *Apollon dans la ville. Le th&eacute;âtre et l&rsquo;urbanisme en France eu XVIIIe si&egrave;cle*, Paris: Éditions du Patrimoine, 2008.
+_____. *Apollon dans la ville. Le th&eacute;âtre et l&rsquo;urbanisme en France au XVIIIe si&egrave;cle*, Paris: Éditions du Patrimoine, 2008.
 
 Ravel, Jeffrey S. *The Contested Parterre: Public Theater and French Political Culture, 1680-1791.* Ithaca: Cornell University Press, 1999.
 
